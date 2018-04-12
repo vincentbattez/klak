@@ -22,7 +22,7 @@ class KlakTimer extends Migration
             $table->foreign('idTask')->references('id')->on('klak_tasks');
 
             $table->unsignedInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('users');
+            $table->foreign('idUser')->references('id')->on('klak_users');
 
             $table->string('slug');
             $table->string('content');

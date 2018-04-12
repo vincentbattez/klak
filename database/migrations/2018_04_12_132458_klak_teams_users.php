@@ -19,7 +19,7 @@ class KlakTeamsUsers extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('users');
+            $table->foreign('idUser')->references('id')->on('klak_users');
 
             $table->unsignedInteger('idTeam');
             $table->foreign('idTeam')->references('id')->on('klak_teams');

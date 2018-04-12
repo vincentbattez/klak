@@ -13,7 +13,7 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
+        Schema::create('klak_password_resets', function (Blueprint $table) {
             Schema::dropIfExists('password_resets');
 
             $table->string('email')->index();
