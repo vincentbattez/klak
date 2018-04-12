@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $ TYPOGRAPHY
+\*------------------------------------*/
+body {
+  font-family: $ff-body;
+  font-weight: normal;
+  color:       $secondary;
+  @include     font-size($fz-body);
+}
+
+a {
+  color           : $secondary;
+  text-decoration : none;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family : $ff-title;
+}
+
+.h1 {
+  margin-bottom: 15px;
+  @include font-size($fz-h1);
+}
+
+.h2 {
+  margin-bottom: 10px;
+  @include font-size($fz-h2);
+}
