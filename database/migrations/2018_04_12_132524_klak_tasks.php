@@ -13,7 +13,17 @@ class KlakTasks extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('klak_teams', function (Blueprint $table) {
+            $table->primary('id')->autoIncrement();
+
+            $table->unsignedInteger('idProject');
+            $table->foreign('idProject')->references('id')->on('klak_projects');
+            
+            $table->string('slug');
+            $table->string('content');
+            $table->integer('status');
+            $table->timestamps();
+        });
     }
 
     /**

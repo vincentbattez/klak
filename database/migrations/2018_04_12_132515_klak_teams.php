@@ -13,7 +13,13 @@ class KlakTeams extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('klak_teams', function (Blueprint $table) {
+            $table->primary('id')->autoIncrement();
+            $table->string('name');
+            $table->string('slug');
+            $table->string('img');
+            $table->timestamps();
+        });
     }
 
     /**

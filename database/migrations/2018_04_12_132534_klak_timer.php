@@ -13,7 +13,20 @@ class KlakTimer extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('klak_teams', function (Blueprint $table) {
+            $table->primary('id')->autoIncrement();
+
+            $table->unsignedInteger('idTask');
+            $table->foreign('idTask')->references('id')->on('klak_tasks');
+
+            $table->unsignedInteger('idUser');
+            $table->foreign('idUser')->references('id')->on('klak_users');
+
+            $table->string('slug');
+            $table->string('content');
+            $table->tinyInteger('status');
+            $table->timestamps();
+        });
     }
 
     /**

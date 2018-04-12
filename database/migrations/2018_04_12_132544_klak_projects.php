@@ -13,7 +13,21 @@ class KlakProjects extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('klak_projects', function (Blueprint $table) {
+            $table->primary('id')->autoIncrement();
+
+            $table->unsignedInteger('idUser');
+            $table->foreign('idUser')->references('id')->on('klak_users');
+
+            $table->unsignedInteger('idTeam');
+            $table->foreign('idTeam')->references('id')->on('klak_teams');
+
+            $table->string('name');
+            $table->string('description');
+            $table->string('img');
+            $table->dateTime('deadline');
+            $table->timestamps();
+        });
     }
 
     /**
