@@ -13,8 +13,10 @@ class KlakTasks extends Migration
      */
     public function up()
     {
-        Schema::create('klak_teams', function (Blueprint $table) {
-            $table->primary('id')->autoIncrement();
+        Schema::create('klak_tasks', function (Blueprint $table) {
+            Schema::dropIfExists('klak_tasks');
+
+            $table->increments('id');
 
             $table->unsignedInteger('idProject');
             $table->foreign('idProject')->references('id')->on('klak_projects');

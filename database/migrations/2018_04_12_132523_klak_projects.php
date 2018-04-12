@@ -14,10 +14,12 @@ class KlakProjects extends Migration
     public function up()
     {
         Schema::create('klak_projects', function (Blueprint $table) {
-            $table->primary('id')->autoIncrement();
+            Schema::dropIfExists('klak_projects');
+
+            $table->increments('id');
 
             $table->unsignedInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('klak_users');
+            $table->foreign('idUser')->references('id')->on('users');
 
             $table->unsignedInteger('idTeam');
             $table->foreign('idTeam')->references('id')->on('klak_teams');

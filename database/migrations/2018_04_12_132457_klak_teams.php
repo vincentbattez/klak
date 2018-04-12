@@ -14,7 +14,9 @@ class KlakTeams extends Migration
     public function up()
     {
         Schema::create('klak_teams', function (Blueprint $table) {
-            $table->primary('id')->autoIncrement();
+            Schema::dropIfExists('klak_teams');
+
+            $table->increments('id');
             $table->string('name');
             $table->string('slug');
             $table->string('img');
