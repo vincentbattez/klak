@@ -1,0 +1,21 @@
+{
+	"Commentaire d'un Controlleur": {
+		"prefix": "comcontroller",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"                ${1:TITLE}",
+			"\\*———————————————————————————————————/*",
+			"        @type      [${2|View,Update,Delete,Create|}]",
+			"        @method    ${3|GET,POST,PUT,DELETE|}",
+			"",
+			"        ${4| ,@params    $id   ID du user",
+			"|}",
+			"        @return    ${5:Affiche le dashboard}",
+			"        @location  /resources/views/${6:dashboard}/${7:index}.blade.php",
+			"",
+			"        ${8| ,@redirect  Redirige vers la route nommé \"dashboard\"|}",
+			"*/"	
+		],
+		"description": "Commentaire d'un Controlleur"
+	},
+}
