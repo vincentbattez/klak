@@ -16,13 +16,13 @@
       </div>
     </ul> --}}
 
-    <ul>
-      <li><a href='{{ url('/login') }}' >    Login</a></li>
-      <li><a href='{{ url('/logout') }}'>    Logout</a></li>
-      <li><a href='{{ url('/') }}'>          Landing</a></li>
-      <li><a href='{{ url('/dashboard') }}'> Dashboard</a></li>
-      <li><a href='{{ url('#') }}'>          Created team</a></li>
-      <li><a href='{{ url('#') }}'>          Created project</a></li>
-      <li><a href='{{ url('#') }}'>          Created task</a></li>
+    <ul class="nav">
+      <li class="nav-item"><a href='{{ url('/login') }}'     class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Login</a></li>
+      <li class="nav-item"><a href='{{ url('/logout') }}'    class="nav-link"                                                                 >Logout</a></li>
+      <li class="nav-item"><a href='{{ url('/') }}'          class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}"       >Landing</a></li>
+      <li class="nav-item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Dashboard</a></li>
+      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}"    >Created team</a></li>
+      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}" >Created project</a></li>
+      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}"    >Created task</a></li>
     </ul>
 </nav>
