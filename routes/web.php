@@ -16,4 +16,13 @@
 // });
 
 
-Route::get('/','Index@index');
+//Route::resource('/','Dashboard');
+
+
+Route::get('/','LandingPage@index');
+Route::get('/dashboard','Dashboard@index');//->middleware('auth')
+Route::get('/project/{id}','Project@index')->where('id', '[0-9]+');//->middleware('auth')
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
