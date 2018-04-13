@@ -19,9 +19,9 @@
 //Route::resource('/','Dashboard');
 
 
-Route::get('/','LandingPage@index');
-Route::get('/dashboard','Dashboard@index');//->middleware('auth')
-Route::get('/project/{id}','Project@index')->where('id', '[0-9]+');//->middleware('auth')
+Route::get('/','LandingPageController@index');
+Route::get('/dashboard','DashboardController@index');//->middleware('auth')
+Route::get('/project/{id}','ProjectController@index')->where('id', '[0-9]+');//->middleware('auth')
 
 
 Auth::routes();
