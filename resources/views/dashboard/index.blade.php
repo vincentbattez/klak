@@ -23,6 +23,6 @@
 ----------------}}
 @section('content')
 <section class="container">
-    Dashboard {{$test}}
+    Dashboard 
 </section>
 @endsection

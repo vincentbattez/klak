@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index() {
         if(Auth::check()){
-            return view('dashboard/index', ['test'=>$test]);
+            return view('dashboard/index');
         } else{
             return view('auth/login');
         }
