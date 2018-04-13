@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class KlakTeamsUsers extends Migration
+class KlakProjects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class KlakTeamsUsers extends Migration
      */
     public function up()
     {
-        Schema::create('klak_teamUsers', function (Blueprint $table) {
-            Schema::dropIfExists('klak_teamUsers');
+        Schema::create('klak_projects', function (Blueprint $table) {
+            Schema::dropIfExists('klak_projects');
 
             $table->increments('id');
 
@@ -25,6 +25,9 @@ class KlakTeamsUsers extends Migration
             $table->foreign('idTeam')->references('id')->on('klak_teams');
 
             $table->string('name');
+            $table->string('description');
+            $table->string('img');
+            $table->dateTime('deadline');
             $table->timestamps();
         });
     }
@@ -36,6 +39,6 @@ class KlakTeamsUsers extends Migration
      */
     public function down()
     {
-        Schema::drop('klak_teamUsers');
+        Schema::drop('klak_projects');
     }
 }
