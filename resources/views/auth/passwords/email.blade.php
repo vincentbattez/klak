@@ -1,3 +1,16 @@
+<?php
+    /**
+    * Variables
+    *
+    * @var $categories           @type [{}]      @mean All categories
+    * @var $category->name       @type String    @mean Name of category
+    */
+
+    $currentPage = [
+        'title' => 'Dashboard',
+        'bodyClass' => 'dashboard'
+    ];
+?>
 @extends('layouts.app')
 
 @section('content')

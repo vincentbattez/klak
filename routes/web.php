@@ -26,3 +26,4 @@ Route::get('/project/{id}','Project@index')->where('id', '[0-9]+');//->middlewar
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');

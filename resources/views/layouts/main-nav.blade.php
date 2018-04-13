@@ -17,12 +17,12 @@
     </ul> --}}
 
     <ul>
-      <li><a href='/login'>Login</a></li>
-      <li><a href='/logout'>Logout</a></li>
-      <li><a href='/'>Landing</a></li>
-      <li><a href='/dashboard'>Dashboard</a></li>
-      <li><a href='#'>Created team</a></li>
-      <li><a href='#'>Created project</a></li>
-      <li><a href='#'>Created task</a></li>
+      <li><a href='{{ url('/login') }}' >    Login</a></li>
+      <li><a href='{{ url('/logout') }}'>    Logout</a></li>
+      <li><a href='{{ url('/') }}'>          Landing</a></li>
+      <li><a href='{{ url('/dashboard') }}'> Dashboard</a></li>
+      <li><a href='{{ url('#') }}'>          Created team</a></li>
+      <li><a href='{{ url('#') }}'>          Created project</a></li>
+      <li><a href='{{ url('#') }}'>          Created task</a></li>
     </ul>
 </nav>
