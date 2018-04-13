@@ -23,9 +23,6 @@ class KlakTeamsUsers extends Migration
 
             $table->unsignedInteger('idTeam');
             $table->foreign('idTeam')->references('id')->on('klak_teams');
-
-            $table->string('name');
-            $table->timestamps();
         });
     }
 
