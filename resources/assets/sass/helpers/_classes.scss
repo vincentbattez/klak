@@ -1,3 +1,12 @@
 /*------------------------------------*\
     $ UTILS CLASSES
 \*------------------------------------*/
+@each $name, $color in $list-color {
+  .#{$name} {
+    color: $color;
+  } // .primary
+
+  .bg-#{$name} {
+    background-color: $color;
+  } // .bg-primary
+}

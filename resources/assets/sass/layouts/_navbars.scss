@@ -16,7 +16,7 @@
 	}
 	
 	&__titre{
-		color:              $main-grey2;
+		color:              $grey;
 		font-size:          calculateRem(14px);
 		padding-bottom:     calculateRem(20px);
 	}
@@ -34,12 +34,12 @@
 		width:              100%;
 
 		a{
-			color:             $main-grey2;
+			color:             $grey;
 			font-size:         calculateRem(14px);
 		}
 			
 		&.compte{
-			background-color:  $main-transparent;
+			background-color:  $primary--20;
 			bottom:            0;
 			left:              0px;
 			position:          absolute;
@@ -61,14 +61,14 @@
 	}
 
 	&__mentions{
-		color:             $main-grey2;
+		color:             $grey;
 		font-size:         calculateRem(10px);
 		font-size:         calculateRem(11px);
 		padding:           0 calculateRem($padding-website) calculateRem(10px) calculateRem($padding-website);
 		
 		a{
-			font-size:         calculateRem(11px);
-			color:           $main-grey2;
+			font-size:       calculateRem(11px);
+			color:           $grey;
 		}
 	}
 

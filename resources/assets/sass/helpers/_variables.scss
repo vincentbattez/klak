@@ -6,63 +6,72 @@
 /*------------------------------------*\
     $ COLORS
 \*------------------------------------*/
-  $main-background : #F8F9FF;
-  $main-grey1 : #6E6E6E;
-  $main-grey2 : #A0A0A0;
-  $main : #7297FF;
-  $main-transparent : rgba($main,0.2);
-
-
-  $primary     : #00ACDE;
-  $primary--l1 : #92DBF0;
-  $secondary   : #1D1D1C;
-  $grey--d1    : #9B9B9B;
-  $grey        : #F5F5F5;
+  $primary:     #FF931E;
+  $primary--20: rgba($primary,0.2);
   
-  $danger:   #D0021B;
+  $secondary: #1A1A1A;
+
+  $grey--l2: #F6F6F6;
+  $grey--l1: #D9D9D9;
+  $grey:     #9C9C9C;
+  $grey--d1: #646464;
+
+  $danger:  #D0021B;
   $warning: #ffc107;
-  $success:   $primary;
+  $success: #00DEAF;
   $info:    #03a9f4;
+
+  $blue--gradient:             linear-gradient(-45deg, #4FACFE 0%, #00F2FE 100%);
+  $orange--gradient:           linear-gradient(-45deg, #F6D365 0%, #FF931E 100%);
+  $orange--gradient-topBottom: linear-gradient(-180deg,#F6D365 7%, #FF931E 100%);
+  $green--gradient:            linear-gradient(-45deg, #21ED99 0%, #55D3D4 100%);
 
 /*------------------------------------*\
     $ SHADOWS
 \*------------------------------------*/
-  $shadow--main : 2px 2px 8px rgba(#A9B3CF,0.2);
+  $shadow--main : 2px 2px 8px 0 rgba(0,0,0,0.10);
 
 /*------------------------------------*\
     $ FONTS
 \*------------------------------------*/
 
-  $ff-body:     'Raleway', arial, sans-serif;
-    $fz-body:   16px; 
-  $ff-title:    'Montserrat', arial, sans-serif;
-    $fz-h1:     50px; 
-    $fz-h2:     30px;
+  $ff-body:  'Raleway', arial, sans-serif;
+  $ff-title: 'Montserrat', arial, sans-serif;
 
-    $fz-h1-m:   27px;
+  $fz-small: 12px;
+  $fz-body:  16px; 
+  $fz-h1:    50px; 
+  $fz-h2:    30px;
+  $fz-h3:    20px;
+
+  // Mobile size
+  $fz-small-m: 12px;
+  $fz-body-m:  16px; 
+  $fz-h1-m:    50px; 
+  $fz-h2-m:    30px;
+  $fz-h3-m:    20px;
 
 /*------------------------------------*\
     $ PATHS
 \*------------------------------------*/
-  $pathIMG : "/Jukesound-ressources/public/images/";
+  $pathIMG : "../images/";
 
 /*------------------------------------*\
     $ WIDTH
 \*------------------------------------*/
   $w-nav: 250px;
 
-
-
 /*------------------------------------*\
     $ HEIGHT
 \*------------------------------------*/
-  $h-nav: 105px;
+  $h-nav:   105px;
   $h-nav-m: 60px;
 
 /*------------------------------------*\
     $ TRANSITIONS
 \*------------------------------------*/
   $bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 /*------------------------------------*\
     $ OTHER
 \*------------------------------------*/
@@ -73,8 +82,7 @@
               (info,    $info);
 
   $list-color: (primary, $primary),
-               (secondary, $secondary),
-               (danger, $danger);
+               (secondary, $secondary);
 
 /*------------------------------------*\
     $ MEDIAS
