@@ -18,7 +18,7 @@
 
     <ul class="nav">
       @auth
-      <li class="nav-item">Bonjour <b>{{Auth::user()->name}}</b></li>
+      <li class="nav-item"><a href='/profile/{{Auth::user()->id}}'>{{Auth::user()->name}}</a></li>
       <li class="nav-item"><a href='{{ url('/logout') }}'    class="nav-link"                                                                 >Logout</a></li>
       <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}"    >Created team</a></li>
       <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}"    >Created task</a></li>

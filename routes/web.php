@@ -22,6 +22,15 @@ Route::get('/project/{id}','ProjectController@index')
         ->middleware('auth')
       ;
 
+
+/*———————————————————————————————————*\
+    $ PROFIL
+\*———————————————————————————————————*/
+Route::get('/profile/{id}','ProfileController@index')
+        ->where('id', '[0-9]+')
+        ->middleware('auth')
+      ;
+
 /*———————————————————————————————————*\
     $ AUTH
 \*———————————————————————————————————*/
