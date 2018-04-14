@@ -1,5 +1,9 @@
 <ul class="main-nav__container">
-  <img class='main-nav__logo' src="{{ URL::asset('images/logo/logo-klak.svg') }}" alt="">
+
+  <a href='{{ url('/') }}'>
+    <img class='main-nav__logo' src="{{ URL::asset('images/logo/logo-klak.svg') }}" alt="">
+  </a>
+
   <h1 class='main-nav__titre'>Klak, tasks manager for team</h1>
   @auth
     <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
