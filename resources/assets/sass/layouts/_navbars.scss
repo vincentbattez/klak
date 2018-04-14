@@ -63,12 +63,13 @@
 	&__mentions{
 		color:             $main-grey2;
 		font-size:         calculateRem(10px);
+		font-size:         calculateRem(11px);
 		padding:           0 calculateRem($padding-website) calculateRem(10px) calculateRem($padding-website);
 		
 		a{
+			font-size:         calculateRem(11px);
 			color:           $main-grey2;
 		}
 	}
-
 
 }

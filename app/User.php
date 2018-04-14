@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     protected $table = 'klak_users';
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'img',
     ];
 
     /**
