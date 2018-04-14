@@ -18,13 +18,12 @@
         $ IMAGE
     \* - - - - - - - - - - - - */
     &__image {
-        width:                  100%;
+        border-top-left-radius: $card-radius;
+        border-top-right-radius:$card-radius;
         height:                 240px;
         max-height:             240px;
         object-fit:             cover;
-        border-top-left-radius: $card-radius;
-        border-top-right-radius: $card-radius;
-
+        width:                  100%;
     }
 
     /* - - - - - - - - - - - - *\
