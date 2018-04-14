@@ -2,7 +2,6 @@
     $ LIBRAIRIES
 \*------------------------------------*/
 import 'jquery';
-import './lib/unelib';
 
 /*------------------------------------*\
     $ LIBRAIRIES
