@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="123px" viewBox="0 0 106 123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>logo/normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="23.3854013%" y1="64.6988131%" x2="202.999354%" y2="-27.5564323%" id="linearGradient-1">
+            <stop stop-color="#FF931E" offset="0%"></stop>
+            <stop stop-color="#F15A24" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="8692.0877%" y1="11077%" x2="9372.92077%" y2="9525%" id="linearGradient-2">
+            <stop stop-color="#FF931E" offset="0%"></stop>
+            <stop stop-color="#F15A24" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="30284%" y1="7266.7587%" x2="32816%" y2="5831.17686%" id="linearGradient-3">
+            <stop stop-color="#FF931E" offset="0%"></stop>
+            <stop stop-color="#F15A24" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbol" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo/normal" fill-rule="nonzero">
+            <g id="Fichier-2" transform="translate(0.000000, 0.405643)">
+                <path d="M39.6,24.84 C36.51,25.84 33.99,23.57 34.67,20.61 C35.95,14.99 37.2533333,9.37333333 38.58,3.76 C38.6960951,2.82137545 39.2239655,1.983133 40.0202854,1.47286972 C40.8166054,0.962606435 41.7987316,0.833278264 42.7,1.12 C44.98,1.63 45.97,3.12 45.45,5.34 C44.15,11.07 42.81,16.79 41.45,22.51 C41.2654611,23.5488341 40.569963,24.4247859 39.6,24.84 L39.6,24.84 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                <path d="M95.09,69.54 C92.25,70.39 89.42,71.27 86.58,72.08 C85.1337043,72.601368 83.5273469,71.9450069 82.86,70.56 C81.86,68.63 82.08,66.95 83.47,65.92 C83.9365696,65.5968597 84.4536195,65.3535421 85,65.2 C90.4533333,63.5066667 95.91,61.84 101.37,60.2 C102.256225,59.8191618 103.267408,59.8611598 104.119,60.3141756 C104.970592,60.7671915 105.570534,61.5822531 105.75,62.53 C106.43,64.72 105.66,66.22 103.45,66.91 C100.66,67.77 97.85,68.59 95.05,69.44 L95.09,69.54 Z" id="Shape" fill="url(#linearGradient-2)"></path>
+                <path d="M69.44,42.12 C67.7978385,42.6224523 66.0245249,41.9419947 65.14,40.47 C64.27497,39.2985115 64.3761766,37.6749886 65.38,36.62 C69.5333333,32.12 73.7133333,27.6466667 77.92,23.2 C79.17,21.88 81.01,22.06 82.49,23.47 C83.97,24.88 84.2,26.68 83,28 C78.88,32.48 74.7333333,36.9366667 70.56,41.37 C70.2252514,41.6732964 69.8479204,41.9259735 69.44,42.12 Z" id="Shape" fill="url(#linearGradient-3)"></path>
+                <polygon id="Shape" fill="#1A1A1A" points="61.83 121.29 45.9 121.29 24.14 91.61 13.26 103.61 13.26 121.32 0 121.32 0 52 13.26 52 13.26 86.56 44.52 52 60.15 52 33.54 81.32"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

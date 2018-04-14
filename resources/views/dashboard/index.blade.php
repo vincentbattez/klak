@@ -32,7 +32,7 @@
         <div class="card__content">
             <h4 class="card__title">Prismashop</h4>
             <span class="card__subtitle">Team: Wexperience</span>
-            <a class="card__link" href="#">Go to project @icon('icon-arrow-black', 'icon-arrow')</a>
+            <a class="card__link" href="#">Go to project @icon('icon-arrow', 'icon-arrow')</a>
         </div>
     </article>
 </section>

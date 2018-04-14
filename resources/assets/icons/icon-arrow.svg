@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="11px" viewBox="0 0 7 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/icon-arrow/black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbol" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/icon-arrow/black" fill-rule="nonzero" fill="#1A1A1A">
+            <g id="arrow-point-to-right" transform="translate(0.283607, 0.246312)">
+                <path d="M5.20227618,5.19915617 L1.13396768,9.26733903 C0.875174117,9.52625823 0.455584718,9.52625823 0.196916794,9.26733903 C-0.0617720695,9.00865017 -0.0617720695,8.58908171 0.196916794,8.33041378 L3.79674173,4.73069354 L0.197021492,1.13109894 C-0.0616673711,0.872305381 -0.0616673711,0.4527788 0.197021492,0.194089936 C0.455710356,-0.0647036254 0.875278816,-0.0647036254 1.13407238,0.194089936 L5.20238088,4.26233562 C5.33172531,4.39174287 5.39632424,4.56116586 5.39632424,4.7306726 C5.39632424,4.90026311 5.33159967,5.06981173 5.20227618,5.19915617 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
