@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(12);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -79,12 +79,10 @@ module.exports = __webpack_require__(12);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_unelib__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_unelib___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__lib_unelib__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_Router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_dashboard__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_create__ = __webpack_require__(10);
+throw new Error("Cannot find module \"./lib/unelib\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_Router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_dashboard__ = __webpack_require__(6);
 /*------------------------------------*\
     $ LIBRAIRIES
 \*------------------------------------*/
@@ -99,7 +97,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // PAGES
 
 
-
 /*------------------------------------*\
     $ ROUTER
 \*------------------------------------*/
@@ -107,8 +104,7 @@ var routes = new __WEBPACK_IMPORTED_MODULE_2__util_Router__["a" /* default */]({
     // Commun
     common: __WEBPACK_IMPORTED_MODULE_3__common__["a" /* default */],
     // PAGES
-    dashboard: __WEBPACK_IMPORTED_MODULE_4__pages_dashboard__["a" /* default */],
-    create: __WEBPACK_IMPORTED_MODULE_5__pages_create__["a" /* default */]
+    dashboard: __WEBPACK_IMPORTED_MODULE_4__pages_dashboard__["a" /* default */]
 });
 // Load Events
 // eslint-disable-next-line rule
@@ -10489,16 +10485,10 @@ return jQuery;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-// console.log("lib/unelib.js");
-
-/***/ }),
-/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__camelCase__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__camelCase__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10581,7 +10571,7 @@ var Router = function () {
 /* harmony default export */ __webpack_exports__["a"] = (Router);
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10597,7 +10587,7 @@ var Router = function () {
 });
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10614,364 +10604,26 @@ var Router = function () {
 });
 
 /***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/*------------------------------------*\
+    $ IMPORTS
+\*------------------------------------*/
+/* harmony default export */ __webpack_exports__["a"] = ({
+  init: function init() {// JS déclanché en premier
+  },
+  finalize: function finalize() {
+    // all onclick
+  }
+});
+
+/***/ }),
 /* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_quantity__ = __webpack_require__(8);
-/*------------------------------------*\
-    $ IMPORTS
-\*------------------------------------*/
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  init: function init() {
-    $('#productionForm [type=submit]').attr('disabled', $('#productionForm input[type=number]').attr('max') == 0 ? true : false); // Disabled or not btn "lancer la fabrication" when maxMake = 0
-    $('#productionForm [type=number]').attr('disabled', $('#productionForm input[type=number]').attr('max') == 0 ? true : false); // Disabled or not btn "lancer la fabrication" when maxMake = 0
-    $('[id=decrementForm]').each(function (i, e) {
-      var $decrementNumber = $(e).find('[type=number]');
-      var $decrementSubmit = $(e).find('[type=submit]');
-      var $card = $(e).parents('.card');
-
-      $decrementNumber.attr('disabled', $card.hasClass('card--danger') ? true : false);
-      $decrementSubmit.attr('disabled', $card.hasClass('card--danger') ? true : false);
-    });
-  },
-  finalize: function finalize() {
-    $('#incrementForm, #decrementForm, #productionForm').on('click', '[type=submit]', function (e) {
-      var stockValue = parseInt($(this).parents('.card').find('.stock__value').text());
-      var inputNumberValue = parseInt($(this).parents('.form-inline').find('[type=number]').val());
-
-      if ($(this).attr('id') == 'decrementSubmit') {
-        if (stockValue >= inputNumberValue) {
-          e.preventDefault();
-          __WEBPACK_IMPORTED_MODULE_0__components_quantity__["a" /* ajaxAction */](this);
-        }
-      } else {
-        e.preventDefault();
-        __WEBPACK_IMPORTED_MODULE_0__components_quantity__["a" /* ajaxAction */](this);
-      }
-    });
-  }
-});
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = ajaxAction;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_alerts__ = __webpack_require__(9);
-
-/*------------------------------------*\
-    $ increment
-\*------------------------------------*/
-/**
- * Execute la function php agissant sur le BDD et change le DOM en conséquent
- * 
- * @param {String} el Element trigger
- * 
- * @example 
- * $('#buttonTrigger').on('click', function(e) {
- *    ajaxAction(this);
- * }
- * 
- */
-function ajaxAction(el) {
-    // VARIABLES
-    var $el = $(el);
-    var elOldText = $el.text();
-    var $form = $el.parents('form');
-    var $card = $el.parents('.card');
-    var idCard = $card.attr('id');
-    var $stockValue = $card.find('.stock__value');
-    var quantityJukebox = parseInt($card.find('.stock__quantity-jukebox').text());
-    var $nbJukebox = $('.display-1');
-    var $maxMake = $('#nbMakeJukebox');
-    var oldMakeValue = $maxMake.val();
-    var $submitMaxMake = $('#productionForm [type=submit]');
-    var $decrementSubmit = $card.find('#decrementForm [type=submit]');
-    var $decrementNumber = $card.find('#decrementForm [type=number]');
-    var oldDecrementNumber = parseInt($decrementNumber.attr('value'));
-    var nameRessource = $card.find('.card__title').text();
-    var IdRessource = $card.attr('id');
-    var numberInputValue = $el.closest('.form-group').find('[type=number]').val();
-
-    /* - - - - - - - - - - - - - - - - -*\
-        $ LANCER LA FABRICATION CLICK
-    \* - - - - - - - - - - - - - - - - -*/
-    if ($el.attr('id') == 'launchProduction') {
-        $stockValue = $el.parents('body').find('.stock__value');
-    }
-
-    $.ajax({
-        method: $form.attr('method'),
-        url: $form.attr('action'),
-        data: $form.serialize(),
-        /*------------------------------------*\
-            $ BEFORE SEND
-        \*------------------------------------*/
-        beforeSend: function beforeSend() {
-            /**** REMPLACEMENTS  */
-            /**/$el.attr('disabled', 'true'); // Disabled trigger click
-            /**/$el.text('Chargement'); // replace text trigger click
-        },
-        /*------------------------------------*\
-            $ COMPLETE
-        \*------------------------------------*/
-        complete: function complete(data) {
-            /* - - - - - - - - - - - - *\
-                $ COMMUN
-            \* - - - - - - - - - - - - */
-            // VARIABLES
-            data = data.responseText;
-            var newStockValue = parseInt($(data).find('#' + idCard + ' .stock__value').text());
-            var newNbJukebox = parseInt($(data).find('.display-1').text());
-            var newMaxMake = parseInt($(data).find('#nbMakeJukebox').attr('max'));
-            var $allNewStock = $(data).find('.stock__value');
-            var allNewStock = parseInt($(data).find('.stock__value'));
-            var message = $el.attr('id') == 'incrementSubmit' ? 'Ajout' : 'Suppression';
-            message += ' de <strong>' + numberInputValue + '</strong> <a href="#' + IdRessource + '">' + nameRessource + '</a>';
-
-            /**** REMPLACEMENTS  */
-            /**/$maxMake.attr('value', newMaxMake == 0 ? 0 : 1); // Nombre jukebox réalisable value
-            /**/$maxMake.attr('max', newMaxMake); // max value of "lancer la fabrication"
-            /**/$maxMake.attr('disabled', newMaxMake == 0 ? true : false); // Disabled or not input "lancer la fabrication" when maxMake = 0
-            /**/$submitMaxMake.attr('disabled', newMaxMake == 0 ? true : false); // Disabled or not btn "lancer la fabrication" when maxMake = 0
-            /**/$nbJukebox.text(newNbJukebox); // value of "lancer la fabrication"
-            /**/$el.removeAttr('disabled'); // Disabled trigger click
-            /**/$el.text(elOldText); // replace text trigger click
-            /* - - - - - - - - - - - - - - - - -*\
-                $ LANCER LA FABRICATION CLICK
-            \* - - - - - - - - - - - - - - - - -*/
-            if ($el.attr('id') == 'launchProduction') {
-                var _message = 'Suppression de <strong>toutes les ressources</strong> permettant de fabriquer <strong>' + oldMakeValue + '</strong> Jukebox';
-                $($allNewStock).each(function (i, stock) {
-                    // VARIABLES
-                    newStockValue = parseInt($(stock).text());
-                    quantityJukebox = parseInt($($el.parents('body').find('.stock__quantity-jukebox')[i]).text());
-                    $card = $($el.parents('body').find('.card')[i]);
-                    $decrementSubmit = $($el.parents('body').find('#decrementForm [type=submit]')[i]);
-                    $decrementNumber = $($el.parents('body').find('#decrementForm [type=number]')[i]);
-
-                    /**** REMPLACEMENTS  */
-                    /**/if (newStockValue < quantityJukebox) {
-                        // --if-- nouveau stock est inférieur à la quantité actuelle
-                        /**/$card.removeClass('card--success').addClass('card--danger'); // add class "danger" remove "success" on card
-                        /**/$decrementSubmit.attr('disabled', true); // disabled submit input
-                        /**/$decrementNumber.attr('disabled', true); // disabled number input
-                        /**/
-                    } else {
-                        /**/$decrementSubmit.removeAttr('disabled'); // enable submit input
-                        /**/$decrementNumber.removeAttr('disabled'); // enable number input
-                        /**/
-                    }
-                    /**/$($('.stock__value')[i]).text(newStockValue); // Stock value
-                    /**/$decrementNumber.attr('max', newStockValue); // change max value of decrement input for decrement input
-                }); // Fin each
-                Object(__WEBPACK_IMPORTED_MODULE_0__components_alerts__["a" /* notification */])(_message, 'warning', 'makeNotif', 10000); // Notification
-            } else {
-                /* - - - - - - - - - - - - - - - - -*\
-                    $ OTHER TRIGGER CLICK
-                \* - - - - - - - - - - - - - - - - -*/
-                /**** REMPLACEMENTS  */
-                /**/if (newStockValue < quantityJukebox) {
-                    // --if-- nouveau stock est inférieur à la quantité actuelle
-                    /**/$card.removeClass('card--success').addClass('card--danger'); // add class "danger" remove "success" on card
-                    /**/$decrementSubmit.attr('disabled', true); // disabled submit input
-                    /**/$decrementNumber.attr('disabled', true); // disabled number input
-                    /**/$decrementNumber.attr('value', 0); // value to 0 to number input
-                    /**/
-                } else {
-                    /**/$card.addClass('card--success').removeClass('card--danger'); // add class "success" remove "danger" on card
-                    /**/$decrementSubmit.removeAttr('disabled'); // enable submit input
-                    /**/$decrementNumber.removeAttr('disabled'); // enable number input
-                    /**/$decrementNumber.attr('value', oldDecrementNumber); // value to old value to number input
-                    /**/
-                }
-                /**/$stockValue.text(newStockValue); // Stock value to new Stock Value
-                /**/$decrementNumber.attr('max', newStockValue); // change max decrement to newStockValue
-
-                Object(__WEBPACK_IMPORTED_MODULE_0__components_alerts__["a" /* notification */])(message, 'success', 'addRemoveNotif', 7000); // Notification
-            }
-        },
-
-        /*------------------------------------*\
-            $ ERROR
-        \*------------------------------------*/
-        error: function error() {
-            alert('La mise à jours de la quantité de la ressource à échoué');
-        }
-    });
-}
-
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = notification;
-/*------------------------------------*\
-    $ Notification
-\*------------------------------------*/
-/**
- * 
- * @param {string} message 'message par defaut'
- * @param {string} color   'info'
- * @param {string} id      'defaultNotif'
- * @param {number} time    2000
- */
-function notification() {
-  var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'message par defaut';
-  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'info';
-  var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'defaultNotif';
-  var time = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 2000;
-
-  var templateAlert = '\n    <div class="alert alert-' + color + ' alert-dismissible notification fade show" id="' + id + '" role="alert">\n      ' + message + '\n      <button type="button" class="close" data-dismiss="alert" aria-label="Close">\n        <span aria-hidden="true">&times;</span>\n      </button>\n    </div>\n  ';
-
-  // AJOUT DOM
-  $(templateAlert).appendTo('.alert-container');
-  setTimeout(function () {
-    $('#' + id).alert('close'); // remove alert after $time
-  }, time);
-}
-
-/***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_forms__ = __webpack_require__(11);
-/*------------------------------------*\
-    $ IMPORTS
-\*------------------------------------*/
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  init: function init() {
-    // JS déclanché en premier
-    console.log('create page');
-    __WEBPACK_IMPORTED_MODULE_0__components_forms__["b" /* htmlBtnRemove */]();
-  },
-  finalize: function finalize() {
-    /* - - - - - - - - - - - - *\
-        $ REMOVE FORM
-    \* - - - - - - - - - - - - */
-    $('#ressource-container').on('click', '.js-removeForm', function (e) {
-      e.preventDefault();
-      __WEBPACK_IMPORTED_MODULE_0__components_forms__["c" /* removeForm */](this);
-    });
-    /* - - - - - - - - - - - - *\
-        $ ADD FORM
-    \* - - - - - - - - - - - - */
-    var count = 2;
-    $('#ressource-container').on('click', '.js-addForm', function (e) {
-      e.preventDefault();
-      __WEBPACK_IMPORTED_MODULE_0__components_forms__["a" /* addRessource */](count++);
-    });
-  }
-});
-
-/***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = addRessource;
-/* unused harmony export addCategory */
-/* harmony export (immutable) */ __webpack_exports__["c"] = removeForm;
-/* harmony export (immutable) */ __webpack_exports__["b"] = htmlBtnRemove;
-/*------------------------------------*\
-    $ ADD RESSOURCE
-\*------------------------------------*/
-/**
- * Ajouter le necessaire dans le DOM pour ajouter une nouvelle ressource
- * 
- * @param {Number} count ID de la nouvelle ressource
- * 
- * @example
- * let count = 2;
- * $('@buttonTrigger').on('click', function (e) {
- *  addRessource(count++);
- * }
- */
-function addRessource(count) {
-    var ressource = $('.js-ressource:first-child').clone();
-
-    $(ressource).attr('id', 'ressource' + count);
-    // LABEL
-    $(ressource).find('label[for="image1"]').attr('for', 'image' + count);
-    $(ressource).find('label[for="name1"]').attr('for', 'name' + count);
-    $(ressource).find('label[for="make1"]').attr('for', 'make' + count);
-    $(ressource).find('label[for="buy1"]').attr('for', 'buy' + count);
-    $(ressource).find('label[for="link1"]').attr('for', 'link' + count);
-    // ID
-    $(ressource).find('#image1').attr('id', 'image' + count);
-    $(ressource).find('#name1').attr('id', 'name' + count);
-    $(ressource).find('#make1').attr('id', 'make' + count);
-    $(ressource).find('#buy1').attr('id', 'buy' + count);
-    $(ressource).find('#link1').attr('id', 'link' + count);
-    // DATA TARGET BTN REMOVE
-    $(ressource).find('.js-removeForm').data('target', 'ressource' + count);
-
-    // INSERT
-    $(ressource).insertBefore('.js-addForm');
-}
-
-/*------------------------------------*\
-    $ ADD CATEGORY
-\*------------------------------------*/
-function addCategory() {}
-/*------------------------------------*\
-    $ REMOVE
-\*------------------------------------*/
-/**
- * Supprime du DOM une ligne pour ajouter une nouvelle ressource
- * 
- * @param {String} el Trigger element
- * 
- * @example
- * $('@buttonTrigger').on('click', function (e) {
- *  removeForm(this);
- * }
- */
-function removeForm(el) {
-    if ($('#ressource-container .ressource').length > 1) {
-        var target = $(el).data('target');
-        $('#' + target).remove();
-    }
-}
-
-/*------------------------------------*\
-    $ HTML BTN REMOVE
-\*------------------------------------*/
-/**
- * Génère le boutton pour pouvoir supprimer du DOM une ligne pour ajouter une nouvelle ressource
- */
-function htmlBtnRemove() {
-    /* - - - - - - - - - - - - *\
-        $ RESSOURCE
-    \* - - - - - - - - - - - - */
-    $('.js-ressource').each(function (i, el) {
-        var idTarget = $(el).attr('id');
-        $(this).prepend('<button class="btn-circle remove js-removeForm" data-target="' + idTarget + '"></button>');
-    });
-
-    /* - - - - - - - - - - - - *\
-        $ CATEGORY
-    \* - - - - - - - - - - - - */
-    // $('.js-category').each(function (i, el) {
-    //   let idTarget = $(el).attr('id');
-    //   console.log(idTarget);
-    //   $('#'+ idTarget + '> #category-container').prepend('<button class="remove btn-circle js-removeForm" data-target="'+ idTarget +'"></button>');
-    // });
-}
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \n@import \"lib/bootstrap.scss\";\n^\n      File to import not found or unreadable: lib/bootstrap.scss.\n      in /Applications/MAMP/htdocs/laravel/klak/resources/assets/sass/app.scss (line 15, column 1)\n    at runLoaders (/Applications/MAMP/htdocs/laravel/klak/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Applications/MAMP/htdocs/laravel/klak/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Applications/MAMP/htdocs/laravel/klak/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Applications/MAMP/htdocs/laravel/klak/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Applications/MAMP/htdocs/laravel/klak/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Applications/MAMP/htdocs/laravel/klak/node_modules/neo-async/async.js:7974:18)\n    at options.error (/Applications/MAMP/htdocs/laravel/klak/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ })
 /******/ ]);

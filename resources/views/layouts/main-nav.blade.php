@@ -18,16 +18,23 @@
 
     <ul class="nav">
       @auth
-      <li class="nav-item"><a href='/profile/{{Auth::user()->id}}'>{{Auth::user()->name}}</a></li>
-      <li class="nav-item"><a href='{{ url('/logout') }}'    class="nav-link"                                                                 >Logout</a></li>
-      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}"    >Created team</a></li>
-      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}"    >Created task</a></li>
-      <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}" >Created project</a></li>
-      <li class="nav-item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Dashboard</a></li>
+      <li class="nav-item"><a href='/profile/{{Auth::user()->id}}' class="nav-link"                                                                 >{{Auth::user()->name}}</a></li>
+      <li class="nav-item"><a href='{{ url('/logout') }}'          class="nav-link"                                                                 >Logout</a></li>
+      <li class="nav-item"><a href='{{ url('/dashboard') }}'       class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Dashboard</a></li>
+      <li class="nav-item">
+        New
+        <ul>
+            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}"    >team</a></li>
+            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}" >project</a></li>
+            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}"    >task</a></li>
+        </ul>
+      </li>
+
       @endauth
       @guest
-      <li class="nav-item"><a href='{{ url('/login') }}'     class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Login</a></li>
-      <li class="nav-item"><a href='{{ url('/') }}'          class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}"       >Homepage</a></li>
+      <li class="nav-item"><a href='{{ url('/login') }}'           class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Login</a></li>
+      <li class="nav-item"><a href='{{ url('/register') }}'        class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}"      >Register</a></li>
+      <li class="nav-item"><a href='{{ url('/') }}'                class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}"       >Homepage</a></li>
       @endguest
     </ul>
   </nav>

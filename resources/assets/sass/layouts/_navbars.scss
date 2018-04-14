@@ -2,4 +2,8 @@
     $ NAV
 \*------------------------------------*/
 .main-nav {
+    ul{
+        display: flex;
+        flex-direction: column;
+    }
 }
