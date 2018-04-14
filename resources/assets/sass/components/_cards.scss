@@ -1,3 +1,60 @@
 /*------------------------------------*\
     $ CARDS
 \*------------------------------------*/
+.card {
+    background-color: #fff;
+    border-radius:    $card-radius;
+    box-shadow:       $shadow-main;
+
+    /*___________ Structure  ___________*/
+    /* - - - - - - - - - - - - *\
+        $ Header
+    \* - - - - - - - - - - - - */
+    &__header {
+
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ IMAGE
+    \* - - - - - - - - - - - - */
+    &__image {
+        width:                  100%;
+        height:                 240px;
+        max-height:             240px;
+        object-fit:             cover;
+        border-top-left-radius: $card-radius;
+        border-top-right-radius: $card-radius;
+
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ CONTENT
+    \* - - - - - - - - - - - - */
+    &__content {
+        padding: rem(15px) rem(10px) rem(15px) rem(10px);
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ TITLE
+    \* - - - - - - - - - - - - */
+    &__title {
+        @include font-size($fz-body);
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ SUBTITLE
+    \* - - - - - - - - - - - - */
+    &__subtitle {
+        @include font-size($fz-small);
+        color:   $grey;
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ LINK
+    \* - - - - - - - - - - - - */
+    &__link {  
+        display:    block;
+        text-align: right;
+    }
+    /*___________  Modifier  ___________*/
+}

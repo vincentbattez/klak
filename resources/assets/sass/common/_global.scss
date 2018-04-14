@@ -1,13 +1,13 @@
-body{
+body {
   background-color: $grey--l2;
   
-  > nav{
-    max-width: calculateRem($w-nav);
-    width: 100%;
+  > nav {
+    max-width: rem($w-nav);
+    width:     100%;
   }
   
-  > main{
-    padding:calculateRem($padding-website);
-    padding-left: calculateRem($w-nav + $padding-website);
+  > main {
+    padding:      rem($padding-website);
+    padding-left: rem($w-nav + $padding-website);
   }
 }

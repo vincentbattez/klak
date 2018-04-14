@@ -2,15 +2,19 @@
     $ TYPOGRAPHY
 \*------------------------------------*/
 body {
+  @include     font-size($fz-body);
+  color:       $secondary;
   font-family: $ff-body;
   font-weight: normal;
-  color:       $secondary;
-  @include     font-size($fz-body);
 }
 
 a {
   color           : $secondary;
   text-decoration : none;
+  
+  &:hover {
+    color : $primary;
+  }
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -18,11 +22,19 @@ a {
 }
 
 .h1 {
-  margin-bottom: 15px;
   @include font-size($fz-h1);
 }
 
 .h2 {
-  margin-bottom: 10px;
   @include font-size($fz-h2);
+}
+
+.h3 {
+  @include       font-size($fz-h3);
+  color:         $grey;
+  margin-bottom: rem(10px);
+}
+
+.h4 {
+  @include font-size($fz-h4);
 }

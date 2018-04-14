@@ -3,42 +3,42 @@
 \*------------------------------------*/
 .main-nav {
 	background-color:     #FFF;
-	box-shadow:           $shadow--main;
+	box-shadow:           $shadow-main;
 	display:              flex;
 	flex:                 1;
 	height:               100%;
 	position:             fixed;
 	top:                  0px;
 
-	&__logo{
-		padding-bottom:     calculateRem(15px);
-		width:              calculateRem(150px);
+	&__logo {
+		// padding-bottom:     rem(15px);
+		// width:              rem(150px);
 	}
 	
-	&__titre{
+	&__titre {
 		color:              $grey;
-		font-size:          calculateRem(14px);
-		padding-bottom:     calculateRem(20px);
+		// font-size:          rem(14px);
+		// padding-bottom:     rem(20px);
 	}
 	
-	&__container{
+	&__container {
 		display:            flex;
 		flex-direction:     column;
-		padding:            calculateRem($padding-website);
+		// padding:            rem($padding-website);
 		position:           relative;
 		width:              100%;
 	}
 	
-	&__item{
-		padding:            calculateRem(10px) 0;
+	&__item {
+		// padding:            rem(10px) 0;
 		width:              100%;
 
-		a{
+		a {
 			color:             $grey;
-			font-size:         calculateRem(14px);
+			// font-size:         rem(14px);
 		}
 			
-		&.compte{
+		&.compte {
 			background-color:  $primary--20;
 			bottom:            0;
 			left:              0px;
@@ -47,27 +47,27 @@
 		}
 	}
     
-	&__compte{
+	&__compte {
 		align-items:        center;
 		display:            flex;
-		padding:            calculateRem($padding-website);
+		// padding:            rem($padding-website);
 
-		img{
+		img {
 			border-radius:    100%;
 			height:           30px;
-			margin-right:     calculateRem(10px);
+			// margin-right:     rem(10px);
 			width:            30px;
 		}
 	}
 
-	&__mentions{
+	&__mentions {
 		color:             $grey;
-		font-size:         calculateRem(10px);
-		font-size:         calculateRem(11px);
-		padding:           0 calculateRem($padding-website) calculateRem(10px) calculateRem($padding-website);
+		// font-size:         rem(10px);
+		// font-size:         rem(11px);
+		// // // padding:           0 rem($padding-website) rem(10px) rem($padding-website);
 		
-		a{
-			font-size:       calculateRem(11px);
+		a {
+			// font-size:       rem(11px);
 			color:           $grey;
 		}
 	}

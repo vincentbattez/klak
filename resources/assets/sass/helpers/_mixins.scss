@@ -158,14 +158,14 @@
 /*__.---------------------------*\
     $ FONT-SIZE
 \*__.---------------------------*/
-@function calculateRem($fz-body) {
+@function rem($fz-body) {
   $remSize: $fz-body  / 16px;
   @return  $remSize * 1rem;
 }
 
 @mixin font-size($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size: rem($size);
 }
 /*__.----------*\
     $ USAGE
