@@ -1,40 +1,32 @@
-<nav role="navigation" class="main-nav">
-    {{-- <ul class="nav container">
-      <li class="nav-item logo">
-        <a href="{{ url('/items') }}" class="nav-link"> <img src="{{ asset('images/logo.svg') }}" alt="icon de jukesound administration"> </a>
-      </li>
-      <div class="pull-right">
-        <li class="nav-item {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">
-          <a class="nav-link" href="{{ url('/items') }}">Liste des ressources</a>
-        </li>
-        <li class="nav-item {{ Request::segment(1) === 'add' ? 'active' : null }}">
-          <a class="nav-link" href="{{ url('/items/create') }}">Ajouter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://www.jukebox-vintage.fr/wp-admin">Administration Jukesound</a>
-        </li>
+<ul class="main-nav__container">
+  <img class='main-nav__logo' src="{{ URL::asset('images/logo/logo-klak.svg') }}" alt="">
+  <h1 class='main-nav__titre'>Klak, tasks manager for team</h1>
+  @auth
+    <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
+    <li class="main-nav__item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Dashboard</a></li>
+    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">team</a></li>
+    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">project</a></li>
+    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}">task</a></li>
+
+    <li class="main-nav__item compte">
+      <div class='main-nav__compte'>        
+        <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->img}}' alt='Photo de {{Auth::user()->name}}'/>
+        <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}}</a>
       </div>
-    </ul> --}}
+      <div class='main-nav__mentions'>
+        Klak by <br>
+        <a href='http://jonathanmasson.fr/' target="blank">Jonathan</a>,
+        <a href='http://vincentbattez.fr' target="blank">Vincent</a> &
+        <a href='http://maximejacquet.fr/' target="blank">Maxime</a>
+      </div>
+    </li>
+  @endauth
 
-    <ul class="nav">
-      @auth
-      <li class="nav-item"><a href='/profile/{{Auth::user()->id}}' class="nav-link"                                                                 >{{Auth::user()->name}}</a></li>
-      <li class="nav-item"><a href='{{ url('/logout') }}'          class="nav-link"                                                                 >Logout</a></li>
-      <li class="nav-item"><a href='{{ url('/dashboard') }}'       class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Dashboard</a></li>
-      <li class="nav-item">
-        New
-        <ul>
-            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}"    >team</a></li>
-            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}" >project</a></li>
-            <li class="nav-item"><a href='{{ url('#') }}'          class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}"    >task</a></li>
-        </ul>
-      </li>
 
-      @endauth
-      @guest
-      <li class="nav-item"><a href='{{ url('/login') }}'           class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}"     >Login</a></li>
-      <li class="nav-item"><a href='{{ url('/register') }}'        class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}"      >Register</a></li>
-      <li class="nav-item"><a href='{{ url('/') }}'                class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}"       >Homepage</a></li>
-      @endguest
-    </ul>
-  </nav>
+  @guest
+    <li class="main-nav__item"><a href='{{ url('/login') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Login</a></li>
+    <li class="main-nav__item"><a href='{{ url('/register') }}' class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}">Register</a></li>
+    <li class="main-nav__item"><a href='{{ url('/') }}' class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}">Homepage</a></li>
+  @endguest
+
+</ul>

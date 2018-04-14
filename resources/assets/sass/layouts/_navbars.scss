@@ -2,8 +2,73 @@
     $ NAV
 \*------------------------------------*/
 .main-nav {
-    ul{
-        display: flex;
-        flex-direction: column;
-    }
+	background-color:     #FFF;
+	box-shadow:           $shadow--main;
+	display:              flex;
+	flex:                 1;
+	height:               100%;
+	position:             fixed;
+	top:                  0px;
+
+	&__logo{
+		padding-bottom:     calculateRem(15px);
+		width:              calculateRem(150px);
+	}
+	
+	&__titre{
+		color:              $main-grey2;
+		font-size:          calculateRem(14px);
+		padding-bottom:     calculateRem(20px);
+	}
+	
+	&__container{
+		display:            flex;
+		flex-direction:     column;
+		padding:            calculateRem($padding-website);
+		position:           relative;
+		width:              100%;
+	}
+	
+	&__item{
+		padding:            calculateRem(10px) 0;
+		width:              100%;
+
+		a{
+			color:             $main-grey2;
+			font-size:         calculateRem(14px);
+		}
+			
+		&.compte{
+			background-color:  $main-transparent;
+			bottom:            0;
+			left:              0px;
+			position:          absolute;
+			width:             100%;
+		}
+	}
+    
+	&__compte{
+		align-items:        center;
+		display:            flex;
+		padding:            calculateRem($padding-website);
+
+		img{
+			border-radius:    100%;
+			height:           30px;
+			margin-right:     calculateRem(10px);
+			width:            30px;
+		}
+	}
+
+	&__mentions{
+		color:             $main-grey2;
+		font-size:         calculateRem(10px);
+		padding:           0 calculateRem($padding-website) calculateRem(10px) calculateRem($padding-website);
+		
+		a{
+			color:           $main-grey2;
+		}
+	}
+
+
 }

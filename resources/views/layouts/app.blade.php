@@ -15,10 +15,9 @@
 
 <body class="{{$currentPage['bodyClass']}}">
 
-  <header>
-      @include('layouts.main-nav')
-      @yield('main-header')
-  </header>
+  <nav role="navigation" class="main-nav">
+    @include('layouts.main-nav')
+  </nav>
   
   <main role="document">
     @yield('content')

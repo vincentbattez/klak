@@ -159,7 +159,7 @@
     $ FONT-SIZE
 \*__.---------------------------*/
 @function calculateRem($fz-body) {
-  $remSize: $fz-body / 16px;
+  $remSize: $fz-body  / 16px;
   @return  $remSize * 1rem;
 }
 

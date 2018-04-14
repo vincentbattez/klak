@@ -1,6 +1,18 @@
 /*------------------------------------*\
+    $ PADDING
+\*------------------------------------*/
+  $padding-website : 30px;
+
+/*------------------------------------*\
     $ COLORS
 \*------------------------------------*/
+  $main-background : #F8F9FF;
+  $main-grey1 : #6E6E6E;
+  $main-grey2 : #A0A0A0;
+  $main : #7297FF;
+  $main-transparent : rgba($main,0.2);
+
+
   $primary     : #00ACDE;
   $primary--l1 : #92DBF0;
   $secondary   : #1D1D1C;
@@ -15,26 +27,31 @@
 /*------------------------------------*\
     $ SHADOWS
 \*------------------------------------*/
-  $shadow--1 : 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  $shadow--2 : 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  $shadow--3 : 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  $shadow--4 : 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  $shadow--5 : 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  $shadow--main : 2px 2px 8px rgba(#A9B3CF,0.2);
 
 /*------------------------------------*\
     $ FONTS
 \*------------------------------------*/
-  $ff-body:     'Rubik', Helvetica, Roboto, 'Open Sans', Arial, sans-serif; 
+
+  $ff-body:     'Raleway', arial, sans-serif;
     $fz-body:   16px; 
-  $ff-title:    'Playfair Display', serif;
+  $ff-title:    'Montserrat', arial, sans-serif;
     $fz-h1:     50px; 
     $fz-h2:     30px;
 
-    $fz-h1-m:   27px; 
+    $fz-h1-m:   27px;
+
 /*------------------------------------*\
     $ PATHS
 \*------------------------------------*/
   $pathIMG : "/Jukesound-ressources/public/images/";
+
+/*------------------------------------*\
+    $ WIDTH
+\*------------------------------------*/
+  $w-nav: 250px;
+
+
 
 /*------------------------------------*\
     $ HEIGHT
