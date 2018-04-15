@@ -3,52 +3,54 @@
     $ LANDING PAGE
 \*———————————————————————————————————*/
 Route::get('/','LandingPageController@index')
-        ->name('landingPage.index')
-      ;
+    ->name('landingPage.index')
+;
 
 /*———————————————————————————————————*\
     $ DASHBOARD
 \*———————————————————————————————————*/
 Route::get('/dashboard','DashboardController@index')
-        ->middleware('auth')
-        ->name('dashboard.index')
-      ;
+    ->name('dashboard.index')
+    ->middleware('auth')
+;
 
 /*———————————————————————————————————*\
     $ PROJECT
 \*———————————————————————————————————*/
 Route::get('/project/{id}','ProjectController@index')
-        ->where('id', '[0-9]+')
-        ->middleware('auth')
-      ;
+    ->where('id', '[0-9]+')
+    ->middleware('auth')
+;
 
 
 /*———————————————————————————————————*\
     $ PROFIL
 \*———————————————————————————————————*/
 Route::get('/profile/{id}','ProfileController@index')
-        ->where('id', '[0-9]+')
-        ->middleware('auth')
-      ;
+    ->name('profile.index')
+    ->where('id', '[0-9]+')
+    ->middleware('auth')
+;
 
 /*———————————————————————————————————*\
     $ Styleguide
 \*———————————————————————————————————*/
 Route::view('/styleguide', 'styleguide');
 
+
 /*———————————————————————————————————*\
     $ AUTH
 \*———————————————————————————————————*/
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout')
-        ->name('logout')
-      ;
+    ->name('logout')
+;
 
 
 /*———————————————————————————————————*\
     $ UPLOAD
 \*———————————————————————————————————*/
-Route::post('upload/{idUser}', 'UploadController@upload')
-        ->where('idUser', '[0-9]+')
-        ->middleware('auth')
-    ;
+Route::post('upload/user/picture/{idUser}', 'UploadController@userPicture')
+    ->where('idUser', '[0-9]+')
+    ->middleware('auth')
+;
