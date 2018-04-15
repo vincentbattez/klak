@@ -11,31 +11,31 @@
 	top:                  0px;
 
 	&__logo {
-		// padding-bottom:     rem(15px);
-		// width:              rem(150px);
+		padding-bottom:     rem(15px);
+		width:              rem(150px);
 	}
 	
 	&__titre {
 		color:              $grey;
-		// font-size:          rem(14px);
-		// padding-bottom:     rem(20px);
+		font-size:          rem(14px);
+		padding-bottom:     rem(20px);
 	}
 	
 	&__container {
 		display:            flex;
 		flex-direction:     column;
-		// padding:            rem($padding-website);
+	padding:            rem($padding-website);
 		position:           relative;
 		width:              100%;
 	}
 	
 	&__item {
-		// padding:            rem(10px) 0;
+		padding:            rem(10px) 0;
 		width:              100%;
 
 		a {
 			color:             $grey;
-			// font-size:         rem(14px);
+			font-size:         rem(14px);
 		}
 			
 		&.compte {
@@ -50,24 +50,24 @@
 	&__compte {
 		align-items:        center;
 		display:            flex;
-		// padding:            rem($padding-website);
+		padding:            rem($padding-website);
 
 		img {
 			border-radius:    100%;
 			height:           30px;
-			// margin-right:     rem(10px);
+			margin-right:     rem(10px);
 			width:            30px;
 		}
 	}
 
 	&__mentions {
 		color:             $grey;
-		// font-size:         rem(10px);
-		// font-size:         rem(11px);
-		// // // padding:           0 rem($padding-website) rem(10px) rem($padding-website);
+		font-size:         rem(10px);
+		font-size:         rem(11px);
+		padding:           0 rem($padding-website) rem(10px) rem($padding-website);
 		
 		a {
-			// font-size:       rem(11px);
+			font-size:       rem(11px);
 			color:           $grey;
 		}
 	}
