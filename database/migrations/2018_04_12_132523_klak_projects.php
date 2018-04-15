@@ -18,16 +18,17 @@ class KlakProjects extends Migration
 
             $table->increments('id');
 
-            $table->unsignedInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('klak_users');
+            $table->unsignedInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('klak_users');
 
-            $table->unsignedInteger('idTeam');
-            $table->foreign('idTeam')->references('id')->on('klak_teams');
+            $table->unsignedInteger('id_team')->nullable();
+            $table->foreign('id_team')->references('id')->on('klak_teams');
 
             $table->string('name');
             $table->string('description');
-            $table->string('img');
-            $table->dateTime('deadline');
+            $table->string('img')->nullable();
+            $table->dateTime('deadline')->nullable();
+            
             $table->timestamps();
         });
     }

@@ -21,12 +21,12 @@ class KlakTimer extends Migration
             $table->unsignedInteger('idTask');
             $table->foreign('idTask')->references('id')->on('klak_tasks');
 
-            $table->unsignedInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('klak_users');
+            $table->unsignedInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('klak_users');
 
-            $table->string('slug');
-            $table->string('content');
-            $table->tinyInteger('status');
+            $table->timestampTz('start_time');
+            $table->timestampTz('end_time')->nullable();
+
             $table->timestamps();
         });
     }
