@@ -1,0 +1,35 @@
+// code pour le dashboard
+// class automatiquement rajouter (.dashboard) dans le main.scss
+/*------------------------------------*\
+    $ PROFILE
+\*------------------------------------*/
+
+.profilUser{
+
+	&__image{
+		overflow: hidden;
+		position: relative;
+		max-width: 300px;
+		img{
+			width: 100%;
+		}
+	}
+
+	&__changeimage{
+		height: rem(50px);
+		background-color: rgba(#FFF,0.7);
+		position: absolute;
+		bottom:0px;
+		width: 100%;
+		right:0px;
+
+	}
+
+	&__name{
+
+	}
+
+
+}
+
+

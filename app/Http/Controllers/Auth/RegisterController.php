@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'phone'    => 'nullable|min:4|max:16|string',
             'img'      => 'nullable|string',
         ]);
+
     }
 
     /**
