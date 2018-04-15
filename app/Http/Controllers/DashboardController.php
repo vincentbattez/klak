@@ -32,7 +32,7 @@ class DashboardController extends Controller
             return view('dashboard/index');
         } else {
             // not logged
-            return redirect(301)->route('login');
+            return redirect()->route('login');
         }
     }
 }

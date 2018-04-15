@@ -8,12 +8,12 @@ use Auth;
 class LandingPageController extends Controller
 {
     public function index() {
-        // if(Auth::check()) {
-        //     // logged
-        //     return redirect(301)->route('/dashboard');
-        // } else {
-        //     // not logged
+        if(Auth::check()) {
+            // logged
+            return redirect()->route('dashboard.index');
+        } else {
+            // not logged
             return view('landingPage/index');
-        // }
+        }
     }
 }
