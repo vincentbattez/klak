@@ -19,7 +19,7 @@
         @else
           <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->img}}' alt='Photo de {{Auth::user()->name}}'/>
         @endif
-        <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}}</a>
+        <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}} {{Auth::user()->surname}}</a>
       </div>
       <div class='main-nav__mentions'>
         Klak by <br>

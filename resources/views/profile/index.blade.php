@@ -34,14 +34,19 @@
 			@endif
 
 			<div class="profilUser__changeimage">
-				<form action="">
-					<input type="file" name='img' class="inputfile">
+
+				<form action="{{ URL::to('upload/'.$user->id) }}" method="post" enctype="multipart/form-data">
+					<label>Select image to upload:</label>
+					<input type="file" name="file" id="file">
+				  <input type="submit" value="Upload" name="submit">
+					<input type="hidden" value="{{ csrf_token() }}" name="_token">
 				</form>
+
 			</div>
 		</div>
 		
 		<h1 class="profilUser__name">
-			{{$user->name}}
+			{{$user->name}} {{$user->surname}}
 		</h1>
 
 		<div>
@@ -50,4 +55,11 @@
 
 	</div>
 </section>
+
+
+
+
+
+
+
 @endsection

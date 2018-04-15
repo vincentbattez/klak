@@ -39,5 +39,11 @@ Route::get('logout', 'Auth\LoginController@logout')
         ->name('logout')
       ;
 
-      
-Route::post('image-upload',['as'=>'image.upload.post','uses'=>'ImageUploadController@imageUploadPost']);
+
+/*———————————————————————————————————*\
+    $ UPLOAD
+\*———————————————————————————————————*/
+Route::post('upload/{idUser}', 'UploadController@upload')
+        ->where('idUser', '[0-9]+')
+        ->middleware('auth')
+    ;
