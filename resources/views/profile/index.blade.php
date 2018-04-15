@@ -7,7 +7,7 @@
     */
 
     $currentPage = [
-        'title' => 'Profile',
+        'title' => 'Klak | '.$user->name,
         'bodyClass' => 'profile'
     ];
 ?>
@@ -23,6 +23,31 @@
 ----------------}}
 @section('content')
 <section class="container">
-    Profil  {{$id}}
+	<div class='profilUser'>
+
+
+		<div class="profilUser__image">
+			@if(($user->img) == '')
+			<img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de {{$user->name}}'/>
+			@else
+			<img src='{{ URL::asset('images/profils') }}/{{$user->img}}' alt='Photo de {{$user->name}}'/>
+			@endif
+
+			<div class="profilUser__changeimage">
+				<form action="">
+					<input type="file" name='img' class="inputfile">
+				</form>
+			</div>
+		</div>
+		
+		<h1 class="profilUser__name">
+			{{$user->name}}
+		</h1>
+
+		<div>
+			{{$user->email}}
+		</div>
+
+	</div>
 </section>
 @endsection
