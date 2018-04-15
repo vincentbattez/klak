@@ -1,59 +1,137 @@
 /*------------------------------------*\
     $ CARDS
 \*------------------------------------*/
+
 .card {
-    background-color: #fff;
-    border-radius:    $card-radius;
-    box-shadow:       $shadow-main;
-
-    /*___________ Structure  ___________*/
-    /* - - - - - - - - - - - - *\
+  background-color: #fff;
+  border-radius:    $card-radius;
+  box-shadow:       $shadow-main;
+  
+  /*___________ Structure  ___________*/
+  /* - - - - - - - - - - - - *\
         $ Header
-    \* - - - - - - - - - - - - */
-    &__header {
+  \* - - - - - - - - - - - - */
+  &__header {}
 
-    }
-
-    /* - - - - - - - - - - - - *\
+  /* - - - - - - - - - - - - *\
         $ IMAGE
-    \* - - - - - - - - - - - - */
-    &__image {
-        border-top-left-radius: $card-radius;
-        border-top-right-radius:$card-radius;
-        height:                 240px;
-        max-height:             240px;
-        object-fit:             cover;
-        width:                  100%;
-    }
+  \* - - - - - - - - - - - - */
+  &__image {
+    border-top-left-radius:  $card-radius;
+    border-top-right-radius: $card-radius;
+    height:                  rem(240px);
+    max-height:              rem(240px);
+    object-fit:              cover;
+    width:                   100%;
+  }
 
-    /* - - - - - - - - - - - - *\
+  /* - - - - - - - - - - - - *\
         $ CONTENT
-    \* - - - - - - - - - - - - */
-    &__content {
-        padding: rem(15px) rem(10px) rem(15px) rem(10px);
-    }
+  \* - - - - - - - - - - - - */
+  &__content {
+    padding: rem($card-padding-top) rem($card-padding-right) rem($card-padding-top) rem($card-padding-right);
+  }
 
-    /* - - - - - - - - - - - - *\
+  /* - - - - - - - - - - - - *\
         $ TITLE
-    \* - - - - - - - - - - - - */
-    &__title {
-        @include font-size($fz-body);
-    }
+  \* - - - - - - - - - - - - */
+  &__title {
+    @include font-size($fz-body);
+    font-family: $ff-body;
+    font-weight: 600;
+  }
 
-    /* - - - - - - - - - - - - *\
+  /* - - - - - - - - - - - - *\
         $ SUBTITLE
-    \* - - - - - - - - - - - - */
-    &__subtitle {
-        @include font-size($fz-small);
-        color:   $grey;
+  \* - - - - - - - - - - - - */
+  &__subtitle {
+    @include font-size($fz-small);
+    color: $grey;
+  }
+
+  /* - - - - - - - - - - - - *\
+        $ LINK
+  \* - - - - - - - - - - - - */
+  &__link {
+    display:    block;
+    text-align: right;
+  }
+
+  /* - - - - - - - - - - - - *\
+        $ FOOTER
+  \* - - - - - - - - - - - - */
+  &__footer {
+    display:         flex;
+    justify-content: space-between;
+    padding-left:    rem($card-padding-right);
+    padding-right:   rem($card-padding-right);
+    padding-bottom:  rem($card-padding-top);
+
+    img {
+      border-radius: 50%;
+      height:        rem(30px);
+      width:         rem(30px);
+      margin-right:  rem(10px);
     }
 
-    /* - - - - - - - - - - - - *\
-        $ LINK
-    \* - - - - - - - - - - - - */
-    &__link {  
-        display:    block;
-        text-align: right;
+    a {
+      @extend %f-y;
     }
-    /*___________  Modifier  ___________*/
+  }
+  
+  /* - - - - - - - - - - - - *\
+        $ DEADLINE
+  \* - - - - - - - - - - - - */
+  $height-deadline-bar: 7px;
+  &__deadline {
+    max-width: 150px;
+    width:     30%;
+
+    &-bar {
+      background:    #E3E3E3;
+      border-radius: rem($height-deadline-bar);
+      display:       block;
+      height:        rem($height-deadline-bar);
+      margin-top:    rem(5px);
+      position:      relative;
+      width:         100%;
+
+      &:after {
+        background:    $orange--gradient-rightLeft;
+        border-radius: rem($height-deadline-bar);
+        content:       '';
+        height:        100%;
+        left:          0;
+        position:      absolute;
+        top:           0;
+        width:         60%;
+      }
+    }
+
+    &-date {
+      font-family: $ff-title;
+      font-weight: 500;
+    }
+  }
+
+  /*___________  Modifier  ___________*/
+  /* - - - - - - - - - - - - *\
+        $ HIGH-PRIORITY
+  \* - - - - - - - - - - - - */
+  &--high-priority {
+    background-color: $secondary;
+    color:            white;
+    
+    .card {
+      &__deadline-bar {
+        background:    #474747;
+      }
+      
+      &__footer{
+        .name {
+          color: white;
+        }
+      }
+    }
+  }
 }

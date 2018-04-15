@@ -1,0 +1,303 @@
+{
+	"Comment 0": {
+		"prefix": "com0",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"    $ ${1:TITLE}",
+			"\\*———————————————————————————————————*/"
+		],
+		"description": "Commentaire de profondeur 0"
+	},
+	"Comment 1": {
+		"prefix": "com1",
+		"body": [
+			"/* - - - - - - - - - - - - *\\",
+			"    $ ${1:TITLE}",
+			"\\* - - - - - - - - - - - - */"
+		],
+		"description": "Commentaire de profondeur 1"
+	},
+	"Comment Structure": {
+		"prefix": "com struc",
+		"body": [
+			"/*___________ Structure  ___________*/"
+		],
+		"description": "/*___________ Structure  ___________*/"
+	},
+	"Comment Modifier": {
+		"prefix": "com modif",
+		"body": [
+			"/*___________  Modifier  ___________*/"
+		],
+		"description": "/*___________  Modifier  ___________*/"
+	},
+	"Comment Content": {
+		"prefix": "com content",
+		"body": [
+			"/*___________  Content   ___________*/"
+		],
+		"description": "/*___________  Content   ___________*/"
+	},
+	"BEM": {
+		"prefix": "bem",
+		"body": [
+			"/*___________ Structure  ___________*/",
+			"  &__{}",
+			"/*___________  Modifier  ___________*/",
+			"  &--{}",
+			"/*___________  Content   ___________*/"
+		]
+	},
+	"media": {
+		"prefix": "media",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: ${1:max}-width: ${2:991}px ",
+			"\\*———————————————————————————————————*/"
+			"@media screen and (${1:max}-width: ${2:991}px) {",
+			"  $3",
+			"}"
+		],
+		"description": "(max-width: Xpx)"
+	},
+	"media mobile": {
+		"prefix": "mobile",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: mobile",
+			"\\*———————————————————————————————————*/"
+			"@include mobile {",
+			"  $2",
+			"}"
+		],
+		"description": "(max-width: 767px)"
+	},
+	"media landscape": {
+		"prefix": "landscape",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: landscape",
+			"\\*———————————————————————————————————*/"
+			"@include landscape {",
+			" $2",
+			"}"
+		],
+		"description": "(max-width: 767px)"
+	},
+	"media tablet": {
+		"prefix": "tablet",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: tablet",
+			"\\*———————————————————————————————————*/"
+			"@include tablet {",
+			"  $2",
+			"}"
+		],
+		"description": "(max-width: 992px)"
+	},
+	"media only-tablet": {
+		"prefix": "only-tablet",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: only-tablet",
+			"\\*———————————————————————————————————*/"
+			"@include only-tablet {",
+			"  $2",
+			"}"
+		],
+		"description": "(max-width: 992px)"
+	},
+	"media desktop": {
+		"prefix": "desktop",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: desktop",
+			"\\*———————————————————————————————————*/"
+			"@include desktop {",
+			"  $2",
+			"}"
+		],
+		"description": "(max-width: 1200px)"
+	},
+	"media large-desktop": {
+		"prefix": "large-desktop",
+		"body": [
+			"/*———————————————————————————————————*\\",
+			"		$ media: large-desktop",
+			"\\*———————————————————————————————————*/"
+			"@include large-desktop {",
+			"  $2",
+			"}"
+		],
+		"description": "(max-width: 1200px)"
+	},
+	"$color-primary": {
+		"prefix": "cp",
+		"body": [
+			"color: ${1:$}primary;"
+		],
+		"description": "$color-primary;"
+	},
+	"$color-secondary": {
+		"prefix": "cs",
+		"body": [
+			"color: ${1:$}secondary;"
+		],
+		"description": "$color-secondary;"
+	},
+	"a-x": {
+		"prefix": "center-absolute-x",
+		"body": [
+			"@extend %a-x;"
+		],
+		"description": "@extend %a-x;"
+	},
+	"a-y": {
+		"prefix": "center-absolute-y",
+		"body": [
+			"@extend %a-y;"
+		],
+		"description": "@extend %a-y;"
+	},
+	"a-xy": {
+		"prefix": "center-absolute-xy",
+		"body": [
+			"@extend %a-xy;"
+		],
+		"description": "@extend %a-xy;"
+	},
+	"f-x": {
+		"prefix": "center-flex-x",
+		"body": [
+			"@extend %f-x;"
+		],
+		"description": "@extend %f-x;"
+	},
+	"f-y": {
+		"prefix": "center-flex-y",
+		"body": [
+			"@extend %f-y;"
+		],
+		"description": "@extend %f-y;"
+	},
+	"f-xy": {
+		"prefix": "center-flex-xy",
+		"body": [
+			"@extend %f-xy;"
+		],
+		"description": "@extend %f-xy;"
+	},
+	"b-x": {
+		"prefix": "center-block",
+		"body": [
+			"@extend %b-x;"
+		],
+		"description": "@extend %b-x;"
+	},
+	"font-size mixin": {
+		"prefix": "fz",
+		"body": [
+			"@include font-size(${1:16}px);"
+		],
+		"description": "font-size(16px); font-size(1rem);"
+	},
+	"width height": {
+		"prefix": "wh",
+		"body": [
+			"width: ${1:16}px;",
+			"height: ${1:16}px;"
+		],
+		"description": "width:16px; height:16px;"
+	},
+	"rem": {
+		"prefix": "rem",
+		"body": [
+			"rem(${1:16}px)"
+		],
+		"description": "16px => 1rem"
+	},
+	"each": {
+		"prefix": "each",
+		"body": [
+			"@each $${1:name}, $${2:color} in $${3:list-color} {",
+			"  .#{$${1:name}} {",
+			"    color: $${2:color};",
+			"  }",
+			"}"
+		],
+		"description": "@each $name, $color in $list-color {}"
+	},
+	"doc": {
+		"prefix": "doc",
+		"body": [
+			"////",
+			"  /// @group ${1:Cards}",
+			"////",
+			"",
+			"/// @name .${2:card}",
+			"/// @example javascript - Basic Usage HTML",
+			"///    <div class='${2:card}'></div>",
+			".${2:card} {",
+			"  $3",
+			"}"
+		],
+		"description": "@group @name @exemple"
+	},
+	"docElement": {
+		"prefix": "docElement",
+		"body": [
+			"/// @name .${1:card}",
+			"/// @see {${2:variable}} ${3:$primary}",
+			"///",
+			"/// @example javascript - Basic Usage HTML",
+			"///    <div class='${1:card}'></div>",
+			"/* - - - - - - - - - - - - *\\",
+			"		$ ${1:card}",
+			"\\* - - - - - - - - - - - - */",
+			".${1:card} {",
+			"  $4",
+			"}"
+		],
+		"description": "/// @name .card"
+	},
+	"docSee": {
+		"prefix": "docSee",
+		"body": [
+			"/// @see {${1:variable | mixin | function | extend}}"
+		],
+		"description": "/// @see $primary"
+	},
+	"docName": {
+		"prefix": "docName",
+		"body": [
+			"/// @name .${1:card}"
+		],
+		"description": "/// @name .card"
+	},
+	"docExample": {
+		"prefix": "docExample",
+		"body": [
+			"/// @example javascript - Basic Usage HTML",
+			"///    <div class='${1:card}'></div>"
+		],
+		"description": "@example javascript - Basic Usage HTML"
+	},
+	"docGroup": {
+		"prefix": "docGroup",
+		"body": [
+			"/// @group ${1:Cards}",
+		],
+		"description": "/// @group Cards"
+	},
+	"docGroup2": {
+		"prefix": "docGroup2",
+		"body": [
+			"////",
+			"  /// @group ${1:Cards}",
+			"////"
+		],
+		"description": "//// @group Cards ////"
+	},
+
+}

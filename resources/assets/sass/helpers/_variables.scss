@@ -1,8 +1,10 @@
 /*------------------------------------*\
     $ PADDING
 \*------------------------------------*/
-  $padding-website : 30px;
-
+  $card-padding-right: 10px;
+  $card-padding-top:   15px;
+  $padding-website:    30px;
+  
 /*------------------------------------*\
     $ COLORS
 \*------------------------------------*/
@@ -24,6 +26,7 @@
   $blue--gradient:             linear-gradient(-45deg, #4FACFE 0%, #00F2FE 100%);
   $orange--gradient:           linear-gradient(-45deg, #F6D365 0%, #FF931E 100%);
   $orange--gradient-topBottom: linear-gradient(-180deg,#F6D365 7%, #FF931E 100%);
+  $orange--gradient-rightLeft: linear-gradient(-90deg,#F6D365 7%, #FF931E 100%);
   $green--gradient:            linear-gradient(-45deg, #21ED99 0%, #55D3D4 100%);
 
 /*------------------------------------*\

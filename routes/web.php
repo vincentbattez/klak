@@ -32,6 +32,11 @@ Route::get('/profile/{id}','ProfileController@index')
       ;
 
 /*———————————————————————————————————*\
+    $ Styleguide
+\*———————————————————————————————————*/
+Route::view('/styleguide', 'styleguide');
+
+/*———————————————————————————————————*\
     $ AUTH
 \*———————————————————————————————————*/
 Auth::routes();
