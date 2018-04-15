@@ -159,63 +159,44 @@
     {{----------------  CARD  ----------------}}
     <section id="Card">
       <h2 class="h1">Card</h2>
-      {{-- Card --}}
-      <h3 class="h2">Card</h3>
-
       {{-- Card Projects --}}
       <h3 class="h2">Card Projects</h3>
-      <article class="card">
-        <div class="card__header">
-          <a href="#">
-            <img src="{{ URL::asset('images/profils/avatar-default.png') }}" alt="image du projet" class="card__image">
-          </a>
-        </div>
-        <div class="card__content">
-          <h4 class="card__title">Prismashop</h4>
-          <span class="card__subtitle">Team: Wexperience</span>
-          <a class="card__link" href="#">Go to project @icon('icon-arrow', 'icon-arrow')</a>
-        </div>
-      </article>
+      @cardProject( [
+        'imageUrl' => 'profils/avatar-default.png',
+        'alt'      => 'image du projet',
+        'title'    => 'Prismashop',
+        'team'     => 'Wexperience',
+        'link'     => '#',
+      ])
+      @endcardProject
 
       {{-- Card Tasks --}}
       <h3 class="h2">Card Tasks</h3>
+      <div class="card-container">
+        {{-- high priority --}}
+        @cardTask( [
+          'title'      => 'Design homepage',
+          'priority'   => 'high',
+          'link'       => '#',
+          'imageUrl'   => 'profils/avatar-default.png',
+          'alt'        => 'photo de profil de USER',
+          'nameWorker' => 'Maxime Jacquet',
+          'deadline'   => '30 avril 2018',
+        ])
+        @endcardTask
 
-      {{-- high-priority --}}
-      <article class="card card--high-priority">
-        <div class="card__content">
-          <h4 class="card__title">Redesign homepage</h4>
-          <span class="card__subtitle">High priority</span>
-        </div>
-        <div class="card__footer">
-          <a href="#">
-            <img src="{{ URL::asset('images/profils/avatar-default.png') }}" alt="image du projet">
-            <span class="name">Maxime Jacquet</span>
-          </a>
-          <div class="card__deadline">
-            <span class="card__deadline-date">30 avril 2018</span>
-            <span class="card__deadline-bar"></span>
-          </div>
-        </div>
-      </article>
-      {{-- low-priority --}}
-      <article class="card">
-        <div class="card__content">
-          <h4 class="card__title">Redesign homepage</h4>
-          <span class="card__subtitle">Low priority</span>
-        </div>
-        <div class="card__footer">
-          <a href="#">
-            <img src="{{ URL::asset('images/profils/avatar-default.png') }}" alt="image du projet">
-            <span class="name">Maxime Jacquet</span>
-          </a>
-          <div class="card__deadline">
-            <span class="card__deadline-date">30 avril 2018</span>
-            <span class="card__deadline-bar"></span>
-          </div>
-        </div>
-      </article>
-
-      {{-- low-priority --}}
+        {{-- low priority --}}
+        @cardTask( [
+          'title'      => 'Audit SEO',
+          'priority'   => 'low',
+          'link'       => '#',
+          'imageUrl'   => 'profils/avatar-default.png',
+          'alt'        => 'photo de profil de USER',
+          'nameWorker' => 'Vincent Battez',
+          'deadline'   => '23 mai 2018',
+        ])
+        @endcardTask
+    </div>
     </section>
     <hr>
 </section>
