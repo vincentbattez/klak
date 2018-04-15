@@ -1,11 +1,16 @@
 /*------------------------------------*\
     $ CARDS
 \*------------------------------------*/
+.card-container {
+  @extend .card;
+  padding: 30px;
+}
 
 .card {
   background-color: #fff;
   border-radius:    $card-radius;
   box-shadow:       $shadow-main;
+  position:         relative;
   
   /*___________ Structure  ___________*/
   /* - - - - - - - - - - - - *\
@@ -53,8 +58,10 @@
         $ LINK
   \* - - - - - - - - - - - - */
   &__link {
-    display:    block;
-    text-align: right;
+    &-container {
+      display:    block;
+      text-align: right;
+    }
   }
 
   /* - - - - - - - - - - - - *\
@@ -112,8 +119,17 @@
       font-family: $ff-title;
       font-weight: 500;
     }
-  }
+  } // .deadline
 
+  .icon-done {
+    g {
+      fill: $grey--l1;
+    }
+
+    &:hover g {
+      fill: $green;
+    }
+  }
   /*___________  Modifier  ___________*/
   /* - - - - - - - - - - - - *\
         $ HIGH-PRIORITY
@@ -121,10 +137,11 @@
   &--high-priority {
     background-color: $secondary;
     color:            white;
-    
+
+    /*___________ Structure  ___________*/
     .card {
       &__deadline-bar {
-        background:    #474747;
+        background:#474747;
       }
       
       &__footer{
@@ -133,5 +150,31 @@
         }
       }
     }
+
+    .icon-done g{
+      fill: #474747;
+    }
   }
-}
+  /* - - - - - - - - - - - - *\
+        $ task
+  \* - - - - - - - - - - - - */
+  &--task {
+    box-shadow: none;
+    border:     1px solid $grey--l1;
+    
+    /*___________ Structure  ___________*/
+    .card {
+      &__content {
+        display:         flex;
+        justify-content: space-between;
+      }
+    }
+
+    [type=submit] {
+      background: none;
+      border:     none;
+      padding:    0;
+      cursor:     pointer;
+    }
+  }
+} // .card

@@ -6,4 +6,7 @@
         width: rem(12px);
         height: rem(12px);
     }
+    g:first-child:last-child {
+        transition: all 200ms ease-in;
+    } 
 }

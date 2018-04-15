@@ -18,6 +18,8 @@
   $grey:     #9C9C9C;
   $grey--d1: #646464;
 
+  $green: #21ED99;
+
   $danger:  #D0021B;
   $warning: #ffc107;
   $success: #00DEAF;
@@ -27,7 +29,7 @@
   $orange--gradient:           linear-gradient(-45deg, #F6D365 0%, #FF931E 100%);
   $orange--gradient-topBottom: linear-gradient(-180deg,#F6D365 7%, #FF931E 100%);
   $orange--gradient-rightLeft: linear-gradient(-90deg,#F6D365 7%, #FF931E 100%);
-  $green--gradient:            linear-gradient(-45deg, #21ED99 0%, #55D3D4 100%);
+  $green--gradient:            linear-gradient(-45deg, $green 0%, #55D3D4 100%);
 
 /*------------------------------------*\
     $ SHADOWS
