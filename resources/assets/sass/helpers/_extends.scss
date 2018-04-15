@@ -15,42 +15,42 @@
     $ CENTER ABSOLUTE
 \*------------------------------------*/
 @each $center in 'x', 'y', 'xy' {
-  %center-absolute_#{$center}{
+  %a_#{$center}{
     @include center-absolute($center);
   }
 }
 /* - - - - - - - - - - - - - - - - -*\
     @use :
 
-    @extend %center-absolute_x;
-    @extend %center-absolute_y;
-    @extend %center-absolute_xy;
+    @extend %a_x;
+    @extend %a_y;
+    @extend %a_xy;
 \* - - - - - - - - - - - - - - - - -*/
 
 /*------------------------------------*\
     $ CENTER FLEX
 \*------------------------------------*/
 @each $center in 'x', 'y', 'xy' {
-  %center-flex_#{$center}{
+  %f-#{$center}{
     @include center-flex($center);
   }
 }
 /* - - - - - - - - - - - - - - - - -*\
     @use :
 
-    @extend %center-flex_x;
-    @extend %center-flex_y;
-    @extend %center-flex_xy;
+    @extend %f-x;
+    @extend %f-y;
+    @extend %f-xy;
 \* - - - - - - - - - - - - - - - - -*/
 
 /*------------------------------------*\
     $ CENTER BLOCK
 \*------------------------------------*/
-%center-block {
+%b-x {
   @include center-block;
 }
 /* - - - - - - - - - - - - - - - - -*\
     @use :
 
-    @extend %center-block;
+    @extend %b-x;
 \* - - - - - - - - - - - - - - - - -*/
