@@ -25,7 +25,7 @@ class KlakProjects extends Migration
             $table->foreign('id_team')->references('id')->on('klak_teams');
 
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('img')->nullable();
             $table->dateTime('deadline');
             
