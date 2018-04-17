@@ -12,4 +12,16 @@ class Team extends Model
         'slug',
         'img',
     ];
+
+    /*———————————————————————————————————*\
+                    Users
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  {}
+             
+            @return    Tous les utilisateurs d'une team
+    */
+    public function users() {
+        return $this->belongsToMany('App\User', 'klak_teamUsers', 'id_team', 'id_user');
+    }
 }

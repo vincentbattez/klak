@@ -16,6 +16,19 @@ class Project extends Model
         'deadline',
         'created_at'
     ];
+
+    /*———————————————————————————————————*\
+                    Tasks
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  {}
+    
+            @return    Toutes les tâches d'un projet
+    */
+    public function tasks()
+    {
+        return $this->hasMany('App\Task', 'id_project');
+    }
 }
 
 

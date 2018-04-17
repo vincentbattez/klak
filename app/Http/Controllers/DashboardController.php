@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Team;
 
 class DashboardController extends Controller
 {
@@ -29,7 +30,9 @@ class DashboardController extends Controller
     public function index() {
         if(Auth::check()) {
             // logged
-            return view('dashboard/index');
+            return view('dashboard/index', [
+                'items' => 'toto',
+            ]);
         } else {
             // not logged
             return redirect()->route('login');
