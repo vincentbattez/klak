@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 use App\Team;
+use App\Project;
 
 class DashboardController extends Controller
 {
@@ -31,7 +33,7 @@ class DashboardController extends Controller
         if(Auth::check()) {
             // logged
             return view('dashboard/index', [
-                'items' => 'toto',
+                'projects' => Project::all(),
             ]);
         } else {
             // not logged

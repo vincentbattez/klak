@@ -2,8 +2,8 @@
     /**
     * Variables
     *
-    * @var $categories           @type [{}]      @mean All categories
-    * @var $category->name       @type String    @mean Name of category
+    * @var $projects           @type [{}]      @mean All projects
+    * 
     */
 
     $currentPage = [
@@ -14,16 +14,17 @@
 ?>
 @extends('layouts.app')
 {{----------------
-    HEADER
-----------------}}
-@section('main-header')
-
-@endsection
-{{----------------
     CONTENT
 ----------------}}
 @section('content')
 <section class="container">
     <a href="styleguide">styleguide</a>
+
+    <ul>
+        @foreach($projects as $p)
+            <li><a href="/project/{{$p->id}}">{{$p->name}}</a></li>
+            <li>{{$p->team->name}}</li>
+        @endforeach
+    </ul>  
 </section>
 @endsection
