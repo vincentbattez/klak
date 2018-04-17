@@ -28,16 +28,16 @@
 <section class="container">
     
     @header([
-        'type'        => 'project',
-        'projectName' => $name,
-        'teamName'    => $teamName,
-        'teamSlug'    => $teamSlug,
+        'type'        => 'team',
+        'projectName' => '',
+        'teamName'    => $name,
+        'teamSlug'    => $slug,
         'image'       => $img,
     ])
     @endheader
 
     <div class="projectSingle">
-        Single Project
+        single team
     </div>
 </section>
 @endsection

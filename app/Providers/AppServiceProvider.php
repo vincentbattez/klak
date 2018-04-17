@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         Blade::component('components.cardProject', 'cardProject');
         Blade::component('components.cardTask', 'cardTask');
+        Blade::component('components.header', 'header');
     }
 
     /**

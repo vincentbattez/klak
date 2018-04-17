@@ -1,3 +1,35 @@
 /*------------------------------------*\
     $ HEADER
 \*------------------------------------*/
+
+.header{
+    align-items:               center;
+    background-color:          $grey;
+    background-position:       center;
+    background-size:           cover;
+    box-shadow:                inset 0 0 2000px 2000px rgba(#000, 0.5);
+    display:                   flex;
+    height:                    rem($h-header);
+    justify-content:           center;
+    left:                      - rem($padding-website);
+    //padding:                   $padding-website;
+    position:                  absolute;
+    right:                     0;
+    top:                       0px;
+
+    &__titre{
+        color:                 #FFF;
+        a{
+            padding-bottom:    rem(5px);
+            color:             #FFF;
+            border-bottom:     rem(2px) solid #FFF;
+
+            &:hover{
+                border-bottom: rem(2px) solid $primary;
+            }
+        }
+        span{
+            font-size:         rem(20px);
+        }
+    }
+}
