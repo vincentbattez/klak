@@ -17,8 +17,9 @@ Route::get('/dashboard','DashboardController@index')
 /*———————————————————————————————————*\
     $ PROJECT
 \*———————————————————————————————————*/
-Route::get('/project/{id}','ProjectController@index')
-    ->where('id', '[0-9]+')
+Route::get('/project/{slug}','ProjectController@index')
+    //->where('id', '[0-9]+')
+    ->where('slug', '^[a-z][-a-z0-9]*$')//'[A-Za-z]+')
     ->middleware('auth')
 ;
 

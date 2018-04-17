@@ -23,6 +23,16 @@
 ----------------}}
 @section('content')
 <section class="container">
-    Project {{$id}} 
+    
+    @header([
+        'projectName' => 'test',
+        'teamName' => 'test',
+        'image' => 'project1/ad0d333f062449843308684370333dda.jpg',
+    ])
+    @endheader
+
+    <div class="projectSingle">
+
+    </div>
 </section>
 @endsection

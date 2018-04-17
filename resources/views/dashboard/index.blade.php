@@ -10,7 +10,7 @@
         'title' => 'Dashboard',
         'bodyClass' => 'dashboard'
     ];
-    dd($items);
+
 ?>
 @extends('layouts.app')
 {{----------------

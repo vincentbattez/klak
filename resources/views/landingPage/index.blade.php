@@ -23,6 +23,9 @@
 ----------------}}
 @section('content')
 <section class="container">
-    Landing page
+    <h2 class='h2'>Klak is a Task Manager for Team</h2>
+    <div>
+        You have to <a href='/register'>register</a> or <a href='/login'>loggin</a> to manage your project !
+    </div>
 </section>
 @endsection
