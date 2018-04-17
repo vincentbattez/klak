@@ -25,6 +25,14 @@ Route::get('/project/{slug}','ProjectController@index')
 
 
 /*———————————————————————————————————*\
+    $ TEAMS
+\*———————————————————————————————————*/
+Route::get('/team/{slug}','TeamController@index')
+    ->where('slug', '^[a-z][-a-z0-9]*$')
+;
+
+
+/*———————————————————————————————————*\
     $ PROFIL
 \*———————————————————————————————————*/
 Route::get('/profile/{id}','ProfileController@index')
