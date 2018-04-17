@@ -29,6 +29,19 @@ class Project extends Model
     {
         return $this->hasMany('App\Task', 'id_project');
     }
+
+    /*———————————————————————————————————*\
+                    Tasks
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  {}
+    
+            @return    La team d'un projet
+    */
+    public function team()
+    {
+        return $this->belongsTo('App\Team', 'id_team');
+    }
 }
 
 
