@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'phone'    => 'nullable|min:4|max:16|string',
             'img'      => 'nullable|string',
+            'imgSmall' => 'nullable|string',
         ]);
 
     }
@@ -74,6 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'phone'    => null,
             'img'      => null,
+            'imgSmall' => null,
         ]);
     }
 }

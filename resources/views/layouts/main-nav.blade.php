@@ -14,10 +14,10 @@
 
     <li class="main-nav__item compte">
       <div class='main-nav__compte'>
-        @if((Auth::user()->img) == '')
+        @if((Auth::user()->imgSmall) == '')
           <img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de {{Auth::user()->name}}'/>
         @else
-          <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->img}}' alt='Photo de {{Auth::user()->name}}'/>
+          <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->imgSmall}}' alt='Photo de {{Auth::user()->name}}'/>
         @endif
         <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}} {{Auth::user()->surname}}</a>
       </div>
