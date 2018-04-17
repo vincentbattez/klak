@@ -10,6 +10,7 @@
         'title' => 'Dashboard',
         'bodyClass' => 'dashboard'
     ];
+    dd($items);
 ?>
 @extends('layouts.app')
 {{----------------
@@ -23,7 +24,6 @@
 ----------------}}
 @section('content')
 <section class="container">
-    Dashboard
     <a href="styleguide">styleguide</a>
 </section>
 @endsection

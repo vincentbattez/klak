@@ -34,4 +34,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /*———————————————————————————————————*\
+                    Teams
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  {}
+             
+            @return    Toutes les teams d'un l'utilisateur
+    */
+    public function teams() {
+        return $this->belongsToMany('App\Team', 'klak_teamUsers', 'id_user', 'id_team');
+    }
 }

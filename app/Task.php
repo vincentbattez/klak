@@ -14,4 +14,16 @@ class Task extends Model
         'content',
         'status',
     ];
+
+    /*———————————————————————————————————*\
+                    Project
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  String
+    
+            @return    Le projet d'une tâche
+    */
+    public function project() {
+        return $this->belongsTo('App\Project', 'id_project');
+    }
 }
