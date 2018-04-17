@@ -14,7 +14,6 @@ class ProfileController extends Controller
         //$myProjects = Project::where('id_user', $id);
         //$teamProjects = DB::table('klak_projects')->where('id_user', $id);
             
-
         return view('profile/index', ['id'=>$id, 'user'=>$user]);
     }
 }
