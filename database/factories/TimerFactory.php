@@ -9,5 +9,6 @@ $factory->define(App\Timer::class, function (Faker $faker) {
         'id_user'    => App\User::all(['id'])->random(),
         'start_time' => $date,
         'end_time'   => $faker->dateTime($date),
+        'total_time' => rand(0, 3000),
     ];
 });

@@ -24,8 +24,9 @@ class KlakTimer extends Migration
             $table->unsignedInteger('id_user');
             $table->foreign('id_user')->references('id')->on('klak_users');
 
-            $table->timestampTz('start_time');
+            $table->timestampTz('start_time')->nullable();
             $table->timestampTz('end_time')->nullable();
+            $table->integer('total_time')->nullable();
 
             $table->timestamps();
         });
