@@ -10,7 +10,10 @@ cp .env.example .env
 
 # Migrate
 ``` bash
-php artisan migrate
+- php artisan migrate:reset
 # si ça marche pas :
 /Applications/MAMP/bin/php/php7.1.8/bin/php artisan migrate
+
+- php artisan migrate
+- php artisan db:seed
 ```

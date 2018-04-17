@@ -20,10 +20,12 @@ class KlakTasks extends Migration
 
             $table->unsignedInteger('id_project');
             $table->foreign('id_project')->references('id')->on('klak_projects');
+
+            $table->unsignedInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('klak_users');
             
             $table->string('name');
             $table->string('slug');
-            $table->string('content');
             $table->integer('status');
             $table->timestamps();
         });
