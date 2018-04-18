@@ -32,4 +32,20 @@
             font-size:         rem(20px);
         }
     }
+
+    &__members{
+        display: flex;
+        margin-left: 50px;
+        .avatar{
+            position: relative;
+            z-index: 1;
+            margin-left: -30px;
+            transition: all 150ms ease-out;
+            border:2px solid #FFF;
+            &:hover{
+                box-shadow: $shadow-main;
+                z-index: 2;
+            }
+        }
+    }
 }

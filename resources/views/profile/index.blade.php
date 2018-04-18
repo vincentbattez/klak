@@ -27,11 +27,16 @@
 
 
 		<div class="profilUser__image">
-			@if(($user->img) == '')
-			<img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de {{$user->name}}'/>
-			@else
-			<img src='{{ URL::asset('images/profils') }}/{{$user->img}}' alt='Photo de {{$user->name}}'/>
-			@endif
+
+			@avatar( [
+				'type' => 'medium',
+				'idUser' => $user->id,
+				'name' => $user->name,
+				'surname' => $user->surname,
+				'img' => $user->img,
+			])
+			@endavatar
+
 
 			<div class="profilUser__changeimage">
 

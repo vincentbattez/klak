@@ -14,11 +14,16 @@
 
     <li class="main-nav__item compte">
       <div class='main-nav__compte'>
-        @if((Auth::user()->imgSmall) == '')
-          <img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de {{Auth::user()->name}}'/>
-        @else
-          <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->imgSmall}}' alt='Photo de {{Auth::user()->name}}'/>
-        @endif
+
+        @avatar( [
+          'type' => 'small',
+          'idUser' => Auth::user()->id,
+          'name' => Auth::user()->name,
+          'surname' => Auth::user()->surname,
+          'img' => Auth::user()->imgSmall,
+        ])
+        @endavatar
+
         <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}} {{Auth::user()->surname}}</a>
       </div>
       <div class='main-nav__mentions'>
@@ -36,8 +41,7 @@
     <li class="main-nav__item"><a href='{{ url('/register') }}' class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}">Register</a></li>
     <li class="main-nav__item"><a href='{{ url('/') }}' class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}">Homepage</a></li>
     <li class="main-nav__item compte">
-        <div class='main-nav__compte'>        
-          <img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de ???'/>
+        <div class='main-nav__compte'>
           <a href='/login' class="nav-link">Start session</a>
         </div>
         <div class='main-nav__mentions'>

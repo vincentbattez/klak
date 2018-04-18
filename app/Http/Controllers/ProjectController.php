@@ -16,19 +16,28 @@ class ProjectController extends Controller
 
         if($projectSelect){
             
-            $id       = $projectSelect->id;
-            $id_team  = $projectSelect->id_team;
-            $name     = $projectSelect->name;
-            $img      = $projectSelect->img;
-            $teamName = Project::find($id_team)->team->name;
-            $teamSlug = Project::find($id_team)->team->slug;
+            //THE PROJECT
+            $id        = $projectSelect->id;
+            $id_team   = $projectSelect->id_team;
+            $name      = $projectSelect->name;
+            $img       = $projectSelect->img;
+
+            //THE TEAM 
+            $teamName  = Project::find($id_team)->team->name;
+            $teamSlug  = Project::find($id_team)->team->slug;
+            $teamId    = Project::find($id_team)->team->id;
+
+            //ALL MEMBER IN TEAM
+            $allMember = Project::find($id_team)->team->users;
+
     
             return view('project/index', [
-                'id'       => $id, 
-                'name'     => $name, 
-                'img'      => $img,
-                'teamName' => $teamName,
-                'teamSlug' => $teamSlug,
+                'id'        => $id, 
+                'name'      => $name, 
+                'img'       => $img,
+                'teamName'  => $teamName,
+                'teamSlug'  => $teamSlug,
+                'allMember' => $allMember,
             ]);
         }
         else{
