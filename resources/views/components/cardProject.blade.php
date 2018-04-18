@@ -25,12 +25,12 @@
   {{-- Content --}}  
   <div class="card__content-container">
     <div class="card__content">
-      <h4 class="card__title"><a href="{{$link_project}}">{{$title}}</a></h4>
+      <h4 class="card__title"><a href="{{$link_project}}">&#35;{{$title}}</a></h4>
       <span class="card__subtitle">
         @empty($team)
           Personal project
         @else
-          <a href="{{$link_team}}">{{$team}}</a>
+          <a href="{{$link_team}}">&#64;{{$team}}</a>
         @endempty
       </span>
     </div>
