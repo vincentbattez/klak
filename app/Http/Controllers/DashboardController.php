@@ -34,10 +34,11 @@ class DashboardController extends Controller
         if(Auth::check()) {
             // logged
             return view('dashboard/index', [
-                'projects' => Project::all(),
-                'todos'    => Task::where('status', 0)->count(),
-                'doing'    => Task::where('status', 1)->count(),
-                'done'    => Task::where('status', 2)->count()
+                'projects' => Project::all()->where('id_user', Auth::id()),
+                'todos'    => Task::where('status', 0)->where('id_user', Auth::id())->count(),
+                'doing'    => Task::where('status', 1)->where('id_user', Auth::id())->count(),
+                'done'     => Task::where('status', 2)->where('id_user', Auth::id())->count(),
+                
             ]);
         } else {
             // not logged
