@@ -9,7 +9,8 @@ $factory->define(App\Project::class, function (Faker $faker) {
         'id_team'     => App\Team::all(['id'])->random(),
         'name'        => $projectName,
         'slug'        => str_slug($projectName, '-'),
-        'img'         => $faker->imageUrl,
+        'img'         => '',
+        'imgSmall'    => '',
         'deadline'    => $faker->dateTime(),
     ];
 });

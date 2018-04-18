@@ -14,7 +14,7 @@
     <div class='list list-projects'>
       @foreach($projects as $p)
         @cardProject( [
-            'imageUrl'     => $p->img,
+            'imageUrl'     => $p->imgSmall,
             'alt'          => 'image du projet '.$p->name,
             'title'        => $p->name,
             'team'         => $p->team->name,

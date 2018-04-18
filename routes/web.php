@@ -23,14 +23,12 @@ Route::get('/project/{slug}','ProjectController@index')
     ->middleware('auth')
 ;
 
-
 /*———————————————————————————————————*\
     $ TEAMS
 \*———————————————————————————————————*/
 Route::get('/team/{slug}','TeamController@index')
     ->where('slug', '^[a-z][-a-z0-9]*$')
 ;
-
 
 /*———————————————————————————————————*\
     $ PROFIL
@@ -46,7 +44,6 @@ Route::get('/profile/{id}','ProfileController@index')
 \*———————————————————————————————————*/
 Route::view('/styleguide', 'styleguide');
 
-
 /*———————————————————————————————————*\
     $ AUTH
 \*———————————————————————————————————*/
@@ -55,11 +52,17 @@ Route::get('logout', 'Auth\LoginController@logout')
     ->name('logout')
 ;
 
-
 /*———————————————————————————————————*\
     $ UPLOAD
 \*———————————————————————————————————*/
 Route::post('upload/user/picture/{idUser}', 'UploadController@userPicture')
     ->where('idUser', '[0-9]+')
+    ->middleware('auth')
+;
+
+/*———————————————————————————————————*\
+    $ CREATED (PROJECT, TEAM, TASK)
+\*———————————————————————————————————*/
+Route::post('create/project/', 'createController@project')
     ->middleware('auth')
 ;
