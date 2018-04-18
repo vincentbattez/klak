@@ -4,9 +4,11 @@
 
 /public/css
 /public/js
-/public/images/profils
-/public/images/project
-/public/images/team
+
+
+/public/images/profils/user*/
+/public/images/project/project*/
+/public/images/team/team*/
 
 /public/storage
 /storage/*.key
