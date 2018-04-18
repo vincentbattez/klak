@@ -2,11 +2,39 @@
     $ ICONS
 \*------------------------------------*/
 .icon {
+    g:first-child:last-child {
+        transition: all 200ms ease-in;
+    }
+
     &-arrow {
         width: rem(12px);
         height: rem(12px);
     }
-    g:first-child:last-child {
-        transition: all 200ms ease-in;
-    } 
+    
+    &-todo, &-doing, &-done {
+        width: rem(30px);
+        height: rem(30px);
+    }
+
+    &-todo {
+        &.white g {
+            stroke: white;
+        }
+    }
+    &-doing {
+        &.white {
+            circle {
+                stroke: white;
+            }
+            rect {
+                fill: white;
+            }
+        }
+    }
+    &-done {
+        &.white g {
+            fill: white;
+        }
+    }
+    
 }

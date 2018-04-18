@@ -50,16 +50,6 @@
     @include font-size($fz-body);
     font-family: $ff-body;
     font-weight: 600;
-    a::before{
-      content:'';
-      top:0;
-      left:0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      z-index: 1;
-    }
   }
 
   /* - - - - - - - - - - - - *\
@@ -68,10 +58,6 @@
   &__subtitle {
     @include font-size($fz-small);
     color:   $grey;
-    a{
-      position: relative;
-      z-index: 2;
-    }
   }
 
   /* - - - - - - - - - - - - *\
@@ -144,19 +130,11 @@
     }
 
     &-date {
-      font-family: $ff-title;
       font-weight: 500;
     }
   } // .deadline
 
   .icon-done {
-    g {
-      fill: $grey--l1;
-    }
-
-    &:hover g {
-      fill: $green;
-    }
   }
   /*___________  Modifier  ___________*/
   /* - - - - - - - - - - - - *\
@@ -203,6 +181,40 @@
       border:     none;
       padding:    0;
       cursor:     pointer;
+    }
+  }
+  /* - - - - - - - - - - - - *\
+        $ todo
+  \* - - - - - - - - - - - - */
+  &--todo {
+    color:           white;
+    padding:         rem(5px) rem(20px);
+    padding-right:   rem(50px);
+    @extend          %f-xy;
+    justify-content: flex-end;
+    
+    &.todo  { background-image: $blue--gradient;   }
+    &.doing { background-image: $orange--gradient; }
+    &.done  { background-image: $green--gradient;  }
+    
+    .todo {
+      &__nb {
+        @include      font-size(40px);
+        margin-right: rem(15px);
+      }
+
+      &__type {
+        @include      font-size(20px);
+        margin-right: rem(5px);
+        width:        rem(60px);
+      }
+
+      &__icon {
+
+      }
+    }
+    &.todo--small {
+      max-width: 200px;
     }
   }
 } // .card

@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.cardTask', 'cardTask');
         Blade::component('components.header', 'header');
         Blade::component('components.avatar', 'avatar');
+        Blade::component('components.cardTodo', 'cardTodo');
     }
 
     /**

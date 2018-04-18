@@ -197,7 +197,24 @@
           'deadline'   => '23 mai 2018',
         ])
         @endcardTask
-    </div>
+      </div>
+
+        {{-- high priority --}}
+        @cardTodo( [
+          'type' => '0',
+          'nb'   => '213',
+        ])
+        @endcardTodo
+        @cardTodo( [
+          'type' => '1',
+          'nb'   => '56',
+        ])
+        @endcardTodo
+        @cardTodo( [
+          'type' => '2',
+          'nb'   => '4',
+        ])
+        @endcardTodo
     </section>
     <hr>
 </section>
