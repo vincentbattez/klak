@@ -173,7 +173,6 @@
 
       {{-- Card Tasks --}}
       <h3 class="h2">Card Tasks</h3>
-      <div class="card-container">
         {{-- high priority --}}
         @cardTask( [
           'title'      => 'Design homepage',
@@ -197,7 +196,6 @@
           'deadline'   => '23 mai 2018',
         ])
         @endcardTask
-      </div>
 
         {{-- high priority --}}
         @cardTodo( [

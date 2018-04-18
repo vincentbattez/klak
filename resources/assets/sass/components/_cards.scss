@@ -166,14 +166,14 @@
         background:#474747;
       }
       
-      &__footer{
+      &__footer {
         .name {
           color: white;
         }
       }
     }
 
-    .icon-done g{
+    .icon-done g {
       fill: #474747;
     }
   }
@@ -205,7 +205,6 @@
   &--todo {
     color:           white;
     padding:         rem(5px) rem(20px);
-    padding-right:   rem(50px);
     @extend          %f-xy;
     justify-content: flex-end;
     
@@ -231,6 +230,7 @@
     }
     &.todo--small {
       max-width: 200px;
+      padding-right:   rem(50px);
     }
   }
 } // .card
