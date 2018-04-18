@@ -11,6 +11,6 @@ $factory->define(App\Project::class, function (Faker $faker) {
         'slug'        => str_slug($projectName, '-'),
         'img'         => '',
         'imgSmall'    => '',
-        'deadline'    => $faker->dateTime(),
+        'deadline'    => $faker->date(),
     ];
 });
