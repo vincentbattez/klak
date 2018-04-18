@@ -18,7 +18,7 @@ class KlakTeams extends Migration
 
             $table->increments('id');
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('img');
             $table->timestamps();
         });
