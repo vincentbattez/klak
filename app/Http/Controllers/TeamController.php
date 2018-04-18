@@ -14,17 +14,17 @@ class TeamController extends Controller
         
         if(count($teamSelect) != 0){            
 
-            $id   = $teamSelect->id;
-            $name = $teamSelect->name;
-            $img  = $teamSelect->img;
-            $slug = $teamSelect->slug;
-            $allMember  = Team::find($id)->users;
+            $id        = $teamSelect->id;
+            $name      = $teamSelect->name;
+            $img       = $teamSelect->img;
+            $slug      = $teamSelect->slug;
+            $allMember = Team::find($id)->users;
 
             return view('team/index', [
-                'id'   => $id, 
-                'name' => $name, 
-                'img'  => $img,
-                'slug' => $slug,
+                'id'        => $id, 
+                'name'      => $name, 
+                'img'       => $img,
+                'slug'      => $slug,
                 'allMember' => $allMember,
             ]);
         }

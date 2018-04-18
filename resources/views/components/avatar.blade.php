@@ -24,7 +24,9 @@
         </div>
       @else
         <div class='avatar__content'>
+          @if($name && $surname)
           {{ ucfirst(trans($name[0]))}}{{ ucfirst(trans($surname[0]))}}
+          @endif
         </div>
       @endif
 

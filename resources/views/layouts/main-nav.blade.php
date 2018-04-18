@@ -41,8 +41,7 @@
     <li class="main-nav__item"><a href='{{ url('/register') }}' class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}">Register</a></li>
     <li class="main-nav__item"><a href='{{ url('/') }}' class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}">Homepage</a></li>
     <li class="main-nav__item compte">
-        <div class='main-nav__compte'>        
-          <img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de ???'/>
+        <div class='main-nav__compte'>
           <a href='/login' class="nav-link">Start session</a>
         </div>
         <div class='main-nav__mentions'>

@@ -17,18 +17,18 @@ class ProjectController extends Controller
         if(count($projectSelect) != 0){
             
             //THE PROJECT
-            $id       = $projectSelect->id;
-            $id_team  = $projectSelect->id_team;
-            $name     = $projectSelect->name;
-            $img      = $projectSelect->img;
+            $id        = $projectSelect->id;
+            $id_team   = $projectSelect->id_team;
+            $name      = $projectSelect->name;
+            $img       = $projectSelect->img;
 
             //THE TEAM 
-            $teamName = Project::find($id_team)->team->name;
-            $teamSlug = Project::find($id_team)->team->slug;
-            $teamId   = Project::find($id_team)->team->id;
+            $teamName  = Project::find($id_team)->team->name;
+            $teamSlug  = Project::find($id_team)->team->slug;
+            $teamId    = Project::find($id_team)->team->id;
 
             //ALL MEMBER IN TEAM
-            $allMember  = Project::find($id_team)->team->users;
+            $allMember = Project::find($id_team)->team->users;
 
     
             return view('project/index', [
