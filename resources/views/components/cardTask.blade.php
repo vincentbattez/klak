@@ -30,10 +30,6 @@
   </div>
   {{-- Footer --}}
   <div class="card__footer">
-    <a href="{{$link}}">
-      <img src="{{ URL::asset('images/'.$imageUrl.'') }}" alt="{{$alt}}">
-      <span class="name">{{$nameWorker}}</span>
-    </a>
     <div class="card__deadline">
       <span class="card__deadline-date">{{$deadline}}</span>
       <span class="card__deadline-bar"></span>
