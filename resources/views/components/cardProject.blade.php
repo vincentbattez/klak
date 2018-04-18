@@ -15,7 +15,11 @@
 
   {{-- Header --}}  
   <div class="card__header">
-    <img src="{{ URL::asset('images/'.$imageUrl.'') }}" alt="{{$alt}}" class="card__image">
+    @if($imageUrl)
+    <img src="{{ URL::asset('images/project/'.$imageUrl.'') }}" alt="{{$alt}}" class="card__image">
+    @else
+    <img src="{{ URL::asset('images/project/bg-default.jpg') }}" alt="{{$alt}}" class="card__image">
+    @endif
   </div>
 
   {{-- Content --}}  

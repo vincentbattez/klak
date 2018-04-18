@@ -6,13 +6,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use app\User;
-use DB;
+//use DB;
+use Image;
 
 
 // include composer autoload
 //require 'vendor/autoload.php';
 // import the Intervention Image Manager Class
-use Image;
 
 class UploadController extends Controller {
 
@@ -38,8 +38,7 @@ class UploadController extends Controller {
 			$img = Image::make($urlImg.$nameImg);
 			$img->fit(50, 50);
 			$img->save($urlImg.'50x50-'.$nameImg);
-
-			
+	
 		//ADD NAME FILE IN DB USER
 			User::where('id', $idUser)
 			->update(array('img' => 'user'.$idUser.'/300x300-'.$nameImg , 'imgSmall' => 'user'.$idUser.'/50x50-'.$nameImg));

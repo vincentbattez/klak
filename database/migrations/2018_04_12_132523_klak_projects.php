@@ -27,8 +27,9 @@ class KlakProjects extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('img')->nullable();
-            $table->date('deadline');
+            $table->string('imgSmall')->nullable();
             
+            $table->date('deadline');
             $table->timestamps();
         });
     }

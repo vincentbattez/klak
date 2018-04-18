@@ -7,6 +7,6 @@ $factory->define(App\Team::class, function (Faker $faker) {
     return [
         'name' => $company,
         'slug' => str_slug($company, '-'),
-        'img'  => $faker->imageUrl,
+        'img'  => '',
     ];
 });

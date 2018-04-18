@@ -23,8 +23,8 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email'          => strtolower($name) .'.'. strtolower($firstName) . '@gmail.com',
         'password'       => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'phone'          => $faker->e164PhoneNumber,
-        'img'            => $image,
-        'imgSmall'       => $image,
+        'img'            => '',
+        'imgSmall'       => '',
         'remember_token' => str_random(10),
     ];
 });

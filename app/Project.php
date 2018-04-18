@@ -11,8 +11,10 @@ class Project extends Model
         'id_user',
         'id_team',
         'name',
+        'slug',
         'description',
         'img',
+        'imgSmall',
         'deadline',
         'created_at'
     ];
