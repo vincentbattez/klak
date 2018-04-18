@@ -162,11 +162,12 @@
       {{-- Card Projects --}}
       <h3 class="h2">Card Projects</h3>
       @cardProject( [
-        'imageUrl' => 'profils/avatar-default.png',
-        'alt'      => 'image du projet',
-        'title'    => 'Prismashop',
-        'team'     => 'Wexperience',
-        'link'     => '#',
+        'imageUrl'     => 'profils/avatar-default.png',
+        'alt'          => 'image du projet',
+        'title'        => 'Prismashop',
+        'team'         => 'Wexperience',
+        'link_project' => '#',
+        'link_team'    => '#',
       ])
       @endcardProject
 

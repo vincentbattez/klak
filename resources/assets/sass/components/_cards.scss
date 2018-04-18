@@ -11,6 +11,9 @@
   border-radius:    $card-radius;
   box-shadow:       $shadow-main;
   position:         relative;
+  display:          flex;
+  min-height:       rem(60px);
+  max-height:       rem(60px);
   
   /*___________ Structure  ___________*/
   /* - - - - - - - - - - - - *\
@@ -22,19 +25,22 @@
         $ IMAGE
   \* - - - - - - - - - - - - */
   &__image {
-    border-top-left-radius:  $card-radius;
-    border-top-right-radius: $card-radius;
-    height:                  rem(240px);
-    max-height:              rem(240px);
-    object-fit:              cover;
-    width:                   100%;
+    border-top-left-radius:    $card-radius;
+    border-bottom-left-radius: $card-radius;
+    object-fit:                cover;
+    width:                     100%;
+    width:                     rem(60px);
+    height:                    rem(60px);
   }
 
   /* - - - - - - - - - - - - *\
         $ CONTENT
   \* - - - - - - - - - - - - */
-  &__content {
+  &__content-container {
     padding: rem($card-padding-top) rem($card-padding-right) rem($card-padding-top) rem($card-padding-right);
+    width:   100%;
+    @extend  %f-y;
+    justify-content: space-between;
   }
 
   /* - - - - - - - - - - - - *\
@@ -51,16 +57,24 @@
   \* - - - - - - - - - - - - */
   &__subtitle {
     @include font-size($fz-small);
-    color: $grey;
+    color:   $grey;
   }
 
   /* - - - - - - - - - - - - *\
         $ LINK
   \* - - - - - - - - - - - - */
   &__link {
+    padding-top:    rem(20px);
+    padding-bottom: rem(20px);
+    padding-right:  rem(20px);
+    padding-left:   rem(10px);
+    position:       relative;
+    left:           rem(10px);
+
     &-container {
-      display:    block;
+      display:    inline-block;
       text-align: right;
+
     }
   }
 
@@ -164,7 +178,7 @@
     
     /*___________ Structure  ___________*/
     .card {
-      &__content {
+      &__content-container {
         display:         flex;
         justify-content: space-between;
       }
