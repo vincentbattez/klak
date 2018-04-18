@@ -12,7 +12,7 @@ class TeamController extends Controller
         // ON RECUREPERE LES INFORMATION DE LA TEAM
         $teamSelect = Team::where('slug', $slug)->first();
         
-        if(count($teamSelect) != 0){            
+        if($teamSelect){            
 
             $id   = $teamSelect->id;
             $name = $teamSelect->name;

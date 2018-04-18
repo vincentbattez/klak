@@ -9,10 +9,11 @@ class Task extends Model
     protected $table = 'klak_tasks';
     protected $fillable = [
         'id_project',
+        'id_user',
         'name',
         'slug',
         'content',
-        'status',
+        'status', // 0 = todo, 1 = doing, 2 = done
     ];
 
     /*———————————————————————————————————*\
@@ -25,5 +26,17 @@ class Task extends Model
     */
     public function project() {
         return $this->belongsTo('App\Project', 'id_project');
+    }
+
+    /*———————————————————————————————————*\
+                    Tasks
+    \*———————————————————————————————————/*
+            @type      [Data]
+            @dataType  []
+    
+            @return    Les tâches d'un user
+    */
+    public function tasks() {
+        return $this->hasMany('App\User', 'id_user');
     }
 }

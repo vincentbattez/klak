@@ -20,11 +20,23 @@
 <section class="container">
     <a href="styleguide">styleguide</a>
 
-    <ul>
         @foreach($projects as $p)
-            <li><a href="/project/{{$p->slug}}">{{$p->name}}</a></li>
-            <li>{{$p->team->name}}</li>
+            @cardProject( [
+                'imageUrl'     => $p->img,
+                'alt'          => 'image du projet',
+                'title'        => $p->name,
+                'team'         => $p->team->name,
+                'link_project' => "/project/$p->slug",
+                'link_team'    => '/team/'.$p->team->slug,
+            ])
+            @endcardProject
         @endforeach
-    </ul>  
+
+
+    {{$todos}} Tasks done    
+    
+    {{$todos}} Todos
+    {{$doing}} Doing
+    {{$done}} Done
 </section>
 @endsection

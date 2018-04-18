@@ -31,7 +31,7 @@ class Project extends Model
     }
 
     /*———————————————————————————————————*\
-                    Tasks
+                    Team
     \*———————————————————————————————————/*
             @type      [Data]
             @dataType  {}

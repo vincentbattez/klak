@@ -14,7 +14,7 @@ class ProjectController extends Controller
         // ON RECUREPERE LES INFORMATION DU PROJET
         $projectSelect = Project::where('slug', $slug)->first();
 
-        if(count($projectSelect) != 0){
+        if($projectSelect){
             
             $id       = $projectSelect->id;
             $id_team  = $projectSelect->id_team;

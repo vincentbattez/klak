@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use App\Team;
 use App\Project;
+use App\Task;
 
 class DashboardController extends Controller
 {
@@ -34,6 +35,9 @@ class DashboardController extends Controller
             // logged
             return view('dashboard/index', [
                 'projects' => Project::all(),
+                'todos'    => Task::where('status', 0)->count(),
+                'doing'    => Task::where('status', 1)->count(),
+                'done'    => Task::where('status', 2)->count()
             ]);
         } else {
             // not logged
