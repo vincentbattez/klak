@@ -12,27 +12,21 @@ class ProjectController extends Controller
     public function index($slug) {
 
         // ON RECUREPERE LES INFORMATION DU PROJET
-        $projectSelect = Project::where('slug', $slug)->get();
+        $projectSelect = Project::where('slug', $slug)->first();
 
         if(count($projectSelect) != 0){
-            foreach($projectSelect as $p){
-                $id = $p->id;
-                $id_team = $p->id_team;
-                $name = $p->name;
-                $img = $p->img;
-            }        
-    
-            $teamSelect = Team::where('id', $id_team)->get();
-    
-            foreach($teamSelect as $t){
-                $teamName = $t->name;
-                $teamSlug = $t->slug;
-            }
+            
+            $id       = $projectSelect->id;
+            $id_team  = $projectSelect->id_team;
+            $name     = $projectSelect->name;
+            $img      = $projectSelect->img;
+            $teamName = Project::find($id_team)->team->name;
+            $teamSlug = Project::find($id_team)->team->slug;
     
             return view('project/index', [
-                'id'=>$id, 
-                'name'=>$name, 
-                'img'=>$img,
+                'id'       => $id, 
+                'name'     => $name, 
+                'img'      => $img,
                 'teamName' => $teamName,
                 'teamSlug' => $teamSlug,
             ]);

@@ -10,23 +10,21 @@ class TeamController extends Controller
     public function index($slug) {
 
         // ON RECUREPERE LES INFORMATION DE LA TEAM
-        $teamSelect = Team::where('slug', $slug)->get();
+        $teamSelect = Team::where('slug', $slug)->first();
         
-        if(count($teamSelect) != 0){
-            foreach($teamSelect as $t){
-                $id = $t->id;
-                $name = $t->name;
-                $img = $t->img;
-                $slug = $t->slug;
-            }        
+        if(count($teamSelect) != 0){            
+
+            $id   = $teamSelect->id;
+            $name = $teamSelect->name;
+            $img  = $teamSelect->img;
+            $slug = $teamSelect->slug;       
 
             return view('team/index', [
-                'id'=>$id, 
-                'name'=>$name, 
-                'img'=>$img,
+                'id'   => $id, 
+                'name' => $name, 
+                'img'  => $img,
                 'slug' => $slug,
             ]);
-
         }
         else{
             return redirect()->route('dashboard.index');
