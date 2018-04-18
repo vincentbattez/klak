@@ -6,7 +6,7 @@
   * Variables
   *
   * @var $type            @optional   @type String   Modificateur
-  * @var $image           @optional   @type String   Modificateur
+  * @var $image           @optional   @type String   Image de fond
   * @var $teamName        @required   @type String   Titre de la tâche
   * @var $teamSlug        @required   @type String   Priorité de la tâche
   * @var $projectName     @required   @type String   Priorité de la tâche
@@ -30,20 +30,20 @@
         <a href='/team/{{$teamSlug}}'>&#64;{{$teamName}}</a>
       @endif
     </h1>
-
-
-    <div class="header__members">
-      @foreach($allMember as $member)
+    
+    @if($allMember)
+      <div class="header__members">
+        @foreach($allMember as $member)
         @avatar( [
           'type' => 'small',
           'idUser' => $member->id,
           'name' => $member->name,
           'surname' => $member->surname,
           'img' => $member->imgSmall,
-        ])
-        @endavatar
-      @endforeach
-
-    </div>
+          ])
+          @endavatar
+        @endforeach    
+      </div>
+    @endif
 
   </div>

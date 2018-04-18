@@ -38,7 +38,11 @@
     @endheader
 
     <div class="projectSingle">
-        single team
+        @listProject([
+            'title'=>'Projects List',
+            'projects'=>$projects,
+        ])
+        @endlistProject
     </div>
 </section>
 @endsection

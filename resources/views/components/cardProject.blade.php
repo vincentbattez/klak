@@ -12,12 +12,12 @@
     */
 ?>
 <article class="card {{ $modifier ?? '' }}">
+
   {{-- Header --}}  
   <div class="card__header">
-    <a href="{{$link_project}}">
-      <img src="{{ URL::asset('images/'.$imageUrl.'') }}" alt="{{$alt}}" class="card__image">
-    </a>
+    <img src="{{ URL::asset('images/'.$imageUrl.'') }}" alt="{{$alt}}" class="card__image">
   </div>
+
   {{-- Content --}}  
   <div class="card__content-container">
     <div class="card__content">
@@ -31,7 +31,8 @@
       </span>
     </div>
     <div class="card__link-container">
-      <a class="card__link" href="{{$link_project}}">@icon('icon-arrow', 'icon-arrow')</a>
+      <div class="card__link">@icon('icon-arrow', 'icon-arrow')</div>
     </div>
   </div>
+
 </article>

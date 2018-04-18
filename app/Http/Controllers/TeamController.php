@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use App\Project;
 
 class TeamController extends Controller
 {
@@ -19,6 +20,7 @@ class TeamController extends Controller
             $img       = $teamSelect->img;
             $slug      = $teamSelect->slug;
             $allMember = Team::find($id)->users;
+            $projects  = Project::all()->where('id_team', $id);
 
             return view('team/index', [
                 'id'        => $id, 
@@ -26,6 +28,7 @@ class TeamController extends Controller
                 'img'       => $img,
                 'slug'      => $slug,
                 'allMember' => $allMember,
+                'projects'  => $projects,
             ]);
         }
         else{

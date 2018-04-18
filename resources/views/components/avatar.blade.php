@@ -5,11 +5,11 @@
 /**
   * Variables
   *
-  * @var $type           @optional   @type String   Modificateur
-  * @var $idUser         @optional   @type String   Modificateur
-  * @var $name           @optional   @type String   Modificateur
-  * @var $surname        @optional   @type String   Modificateur
-  * @var $img            @optional   @type String   Modificateur
+  * @var $type           @optional   @type String   Class
+  * @var $idUser         @optional   @type Number   Id
+  * @var $name           @optional   @type String   Name
+  * @var $surname        @optional   @type String   Surname
+  * @var $img            @optional   @type String   Image
 */
 
 ?>
