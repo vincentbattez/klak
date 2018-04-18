@@ -31,4 +31,19 @@
       @endif
     </h1>
 
+
+    <div class="header__members">
+      @foreach($allMember as $member)
+        @avatar( [
+          'type' => 'small',
+          'idUser' => $member->id,
+          'name' => $member->name,
+          'surname' => $member->surname,
+          'img' => $member->imgSmall,
+        ])
+        @endavatar
+      @endforeach
+
+    </div>
+
   </div>

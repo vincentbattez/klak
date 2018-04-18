@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    $ AVATAR
+\*------------------------------------*/
+
+.avatar{
+  $sizeImg :       45px;
+  $sizeImg2 :      200px;
+  
+  background:      $orange--gradient;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  margin-right:    rem(10px);
+  overflow:        hidden;
+  
+  &.small{
+    border-radius:   100%;
+    font-size:     rem(18px);
+    height:        rem($sizeImg);
+    width:         rem($sizeImg);
+  }
+  
+  &.medium{
+    font-size:     rem(100px);
+    height:        rem($sizeImg2);
+    width:         rem($sizeImg2);
+  }
+
+  &__content{
+    color:         #FFF;
+    overflow:      hidden;
+    text-align:    center;
+  }
+}

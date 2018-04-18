@@ -14,11 +14,16 @@
 
     <li class="main-nav__item compte">
       <div class='main-nav__compte'>
-        @if((Auth::user()->imgSmall) == '')
-          <img src='{{ URL::asset('images/profils/avatar-default.png') }}' alt='Photo de {{Auth::user()->name}}'/>
-        @else
-          <img src='{{ URL::asset('images/profils') }}/{{Auth::user()->imgSmall}}' alt='Photo de {{Auth::user()->name}}'/>
-        @endif
+
+        @avatar( [
+          'type' => 'small',
+          'idUser' => Auth::user()->id,
+          'name' => Auth::user()->name,
+          'surname' => Auth::user()->surname,
+          'img' => Auth::user()->imgSmall,
+        ])
+        @endavatar
+
         <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}} {{Auth::user()->surname}}</a>
       </div>
       <div class='main-nav__mentions'>

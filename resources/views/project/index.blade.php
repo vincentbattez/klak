@@ -33,6 +33,7 @@
         'teamName'    => $teamName,
         'teamSlug'    => $teamSlug,
         'image'       => $img,
+        'allMember'   => $allMember,
     ])
     @endheader
 

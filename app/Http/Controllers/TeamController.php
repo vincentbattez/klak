@@ -17,13 +17,15 @@ class TeamController extends Controller
             $id   = $teamSelect->id;
             $name = $teamSelect->name;
             $img  = $teamSelect->img;
-            $slug = $teamSelect->slug;       
+            $slug = $teamSelect->slug;
+            $allMember  = Team::find($id)->users;
 
             return view('team/index', [
                 'id'   => $id, 
                 'name' => $name, 
                 'img'  => $img,
                 'slug' => $slug,
+                'allMember' => $allMember,
             ]);
         }
         else{
