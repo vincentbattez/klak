@@ -10,6 +10,6 @@ $factory->define(App\Project::class, function (Faker $faker) {
         'name'        => $projectName,
         'slug'        => str_slug($projectName, '-'),
         'img'         => $faker->imageUrl,
-        'deadline'    => $faker->dateTime(),
+        'deadline'    => $faker->date(),
     ];
 });
