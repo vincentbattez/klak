@@ -20,6 +20,7 @@ class KlakTeams extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('img');
+            $table->string('imgSmall');
             $table->timestamps();
         });
     }

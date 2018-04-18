@@ -11,6 +11,7 @@ class Team extends Model
         'name',
         'slug',
         'img',
+        'imgSmall',
     ];
 
     /*———————————————————————————————————*\

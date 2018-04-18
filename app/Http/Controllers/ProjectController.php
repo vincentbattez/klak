@@ -23,9 +23,9 @@ class ProjectController extends Controller
             $img       = $projectSelect->img;
 
             //THE TEAM 
-            $teamName  = Project::find($id_team)->team->name;
-            $teamSlug  = Project::find($id_team)->team->slug;
-            $teamId    = Project::find($id_team)->team->id;
+            $teamName  = Team::find($id_team)->name;
+            $teamSlug  = Team::find($id_team)->slug;
+            $teamId    = Team::find($id_team)->id;
 
             //ALL MEMBER IN TEAM
             $allMember = Project::find($id_team)->team->users;

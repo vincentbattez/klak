@@ -41,25 +41,19 @@
         @listProject([
             'title'=>'Projects List',
             'projects'=>$projects,
-        ])
+            ])
         @endlistProject
-    </div>
+        
+        
+        <div class="addProject">
+            <h3>Add project</h3>
+            @addProject([
+                'id'=>$id,
+            ])
+            @endaddProject
+        </div>
 
-
-    
-    <div class="addProject">
-        <form action="{{ URL::to('create/project') }}" method="post" enctype="multipart/form-data">
-
-            <label>Add project</label><br>
-            <input type="text" placeholder='Project Name' name="name" placeh><br>
-            <input type="file" name="img"><br>
-            <input type="date" name="deadline"><br>
-            <input type="submit" value="Upload" name="submit">
-
-            <input type="hidden" name="id_user" value='{{Auth::user()->id}}'>
-            <input type="hidden" name="id_team" value='{{$id}}'>
-            <input type="hidden" value="{{ csrf_token() }}" name="_token">
-        </form>
+        
     </div>
 </section>
 @endsection

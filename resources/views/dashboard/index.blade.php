@@ -26,6 +26,11 @@
     ])
     @endlistProject
 
+    <div class="addProject">
+        <h3>Add team</h3>
+        @addTeam
+        @endaddTeam
+    </div>
 
 
 
