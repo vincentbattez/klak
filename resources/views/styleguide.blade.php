@@ -197,7 +197,6 @@
         ])
         @endcardTask
 
-        {{-- high priority --}}
         @cardTodo( [
           'type' => '0',
           'nb'   => '213',

@@ -14,25 +14,31 @@
   * @var $nameWorker       @required   @type String   Nom de l'employer
   * @var $deadline         @required   @type String   Deadline de la tâche
 */
-  $priotityModifier = ($priority == "high") ? "card--high-priority " : '';
+  $priotityModifier = ($priority == "high") ? "high-priority " : '';
 ?>
 
 <article class="card card--task {{$priotityModifier}}{{$modifier ?? ''}}">
   {{-- Content --}}
   <div class="card__content">
+    <form action="#">
+      <button class="changeStatus" type="submit">@icon('icon-done', 'icon-done')</button>
+    </form>
     <div>
       <h4 class="card__title">{{$title}}</h4>
       <span class="card__subtitle">{{$priority}} priority</span>
     </div>
+  </div>
+  <div class="card__action">
+    <span class="timePassed">1:50:10</span>
     <form action="#">
-      <button type="submit">@icon('icon-done', 'icon-done')</button>
+      <button class="launchTimer" type="submit"> @icon('icon-timer', 'icon-timer') </button>
     </form>
   </div>
   {{-- Footer --}}
-  <div class="card__footer">
+  {{-- <div class="card__footer">
     <div class="card__deadline">
       <span class="card__deadline-date">{{$deadline}}</span>
       <span class="card__deadline-bar"></span>
     </div>
-  </div>
+  </div> --}}
 </article>

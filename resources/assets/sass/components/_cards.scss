@@ -48,8 +48,6 @@
   \* - - - - - - - - - - - - */
   &__title {
     @include font-size($fz-body);
-    font-family: $ff-body;
-    font-weight: 600;
 
     a::before{
       content:'';
@@ -149,47 +147,54 @@
       font-weight: 500;
     }
   } // .deadline
-
-  .icon-done {
-  }
   /*___________  Modifier  ___________*/
-  /* - - - - - - - - - - - - *\
-        $ HIGH-PRIORITY
-  \* - - - - - - - - - - - - */
-  &--high-priority {
-    background-color: $secondary;
-    color:            white;
-
-    /*___________ Structure  ___________*/
-    .card {
-      &__deadline-bar {
-        background:#474747;
-      }
-      
-      &__footer {
-        .name {
-          color: white;
-        }
-      }
-    }
-
-    .icon-done g {
-      fill: #474747;
-    }
-  }
   /* - - - - - - - - - - - - *\
         $ task
   \* - - - - - - - - - - - - */
   &--task {
-    box-shadow: none;
-    border:     1px solid $grey--l1;
+    box-shadow:      none;
+    border:          1px solid $grey--l1;
+    justify-content: space-between;
+    padding:         rem($card-padding-task);
     
     /*___________ Structure  ___________*/
     .card {
+      &__content {
+        @extend %f-xy;
+      }
+
       &__content-container {
         display:         flex;
         justify-content: space-between;
       }
+
+      &__action {
+        @extend %f-xy;
+
+        .launchTimer {
+          padding: rem($card-padding-task);
+        }
+
+        &.active {
+          g {
+            fill: url(#gradient-orange) !important;
+          }
+          .timePassed {
+            color: $secondary;
+          }
+        }
+      }
+    }
+    .timePassed {
+      color: $grey--l1;
+    }
+
+    .icon g {
+      fill: $grey--l1;
+    }
+
+    .changeStatus {
+      margin-right: 10px;
     }
 
     [type=submit] {
@@ -197,6 +202,39 @@
       border:     none;
       padding:    0;
       cursor:     pointer;
+      padding: rem(10px);
+    }
+    /* - - - - - - - - - - - - *\
+          $ HIGH-PRIORITY
+    \* - - - - - - - - - - - - */
+    &.high-priority {
+      background-color: $secondary;
+      color:            white;
+
+      .card {
+        &__deadline-bar {
+          background:#474747;
+        }
+        
+        &__footer {
+          .name {
+            color: white;
+          }
+        }
+      }
+  
+      .icon g {
+        fill: $grey--d2;
+      }
+
+      .timePassed {
+        color: #999999;
+      }
+      .active {
+        .timePassed {
+          color: white;
+        }
+      }
     }
   }
   /* - - - - - - - - - - - - *\
