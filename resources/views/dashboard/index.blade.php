@@ -32,12 +32,20 @@
         @endaddTeam
     </div>
 
-
-
-    {{$todos}} Tasks done    
-    
-    {{$todos}} Todos
-    {{$doing}} Doing
-    {{$done}} Done
+    @cardTodo( [
+        'type' => '0',
+        'nb'   => $todos,
+    ])
+    @endcardTodo
+    @cardTodo( [
+        'type' => '1',
+        'nb'   => $doing,
+    ])
+    @endcardTodo
+    @cardTodo( [
+        'type' => '2',
+        'nb'   => $done,
+    ])
+    @endcardTodo
 </section>
 @endsection
