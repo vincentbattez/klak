@@ -38,7 +38,14 @@
     @endheader
 
     <div class="projectSingle">
-        Single Project
+        <div class="addUser">
+            <h3>Add task</h3>
+            @addTask([
+                'idProject' => $id,
+                'allMember' => $allMember,
+            ])
+            @endaddTask
+        </div>
     </div>
 </section>
 @endsection

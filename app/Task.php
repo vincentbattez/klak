@@ -11,8 +11,6 @@ class Task extends Model
         'id_project',
         'id_user',
         'name',
-        'slug',
-        'content',
         'status', // 0 = todo, 1 = doing, 2 = done
     ];
 

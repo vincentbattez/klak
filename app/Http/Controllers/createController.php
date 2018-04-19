@@ -7,18 +7,19 @@ use App\Project;
 use App\Team;
 use App\TeamUsers;
 use App\User;
+use App\Task;
 use Illuminate\Support\Facades\Input;
 use Image;
 
 class createController extends Controller
 {
     
+    //FUNCTION ADD USER IN TEAM
     public function userteam(Request $request){
         $request->validate([
             'email'   => 'required|string|email|max:255',
             'id_team' => 'required',
         ]);
-        
         $user = User::where('email', $request->email)->first();
         if($user){
             //ADD USER IN THIS TEAM
@@ -27,10 +28,10 @@ class createController extends Controller
                 'id_team' => $request->id_team
             ]);
         }
-
         //REDIRECT TO TEAM
         return redirect()->back();
     }
+
 
     //FUNCTION CREATED A NEW TEAM
     public function team(Request $request){
@@ -39,10 +40,8 @@ class createController extends Controller
             'name' => 'required|string|min:3',
             'id_user' => 'required',
         ]);
-
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
-
         //SAVE IN BDD
         $newTeam = Team::create([
             'name' => $request->name,
@@ -51,18 +50,15 @@ class createController extends Controller
             'imgSmall' => '',
             'id_user' => $request->id_user,
         ]);
-
         //ADD AUTHOR IN THIS TEAM
         TeamUsers::create([
             'id_user' => $request->id_user,
             'id_team' => $newTeam->id
         ]);
-
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             createController::uploadImg($newTeam->id, 'team', new Team);
         }
-
         //REDIRECT
         return redirect("/team/".$slug);
     }
@@ -77,10 +73,8 @@ class createController extends Controller
             'id_user' => 'required',
             'id_team' => 'required'
         ]);
-        
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
-
         //SAVE IN BDD
         $newProject = Project::create([
             'name' => $request->name,
@@ -91,14 +85,36 @@ class createController extends Controller
             'id_team' => $request->id_team,
             'deadline' => $request->deadline,
         ]);
-
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             createController::uploadImg($newProject->id, 'project', new Project);
         }
-
         //REDIRECT
         return redirect("/project/".$slug);
+    }
+
+
+    //FUNCTION CREATED A NEW PROJECT
+    public function task(Request $request){
+
+        //GET FIELD
+        $request->validate([
+            'name' => 'required|string|min:3',
+            'status' => 'required',
+            'id_user' => 'required',
+            'id_project' => 'required',
+        ]);
+
+        //SAVE IN BDD
+        $newProject = Task::create([
+            'name' => $request->name,
+            'status' => $request->status,
+            'id_user' => $request->id_user,
+            'id_project' => $request->id_project,
+        ]);
+
+        //REDIRECT TO TEAM
+        return redirect()->back();
     }
 
 
