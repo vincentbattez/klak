@@ -5,14 +5,15 @@
 /**
   * Variables
   *
-  * @var $type           @optional   @type String   Class
-  * @var $idUser         @optional   @type Number   Id
-  * @var $name           @optional   @type String   Name
-  * @var $surname        @optional   @type String   Surname
-  * @var $img            @optional   @type String   Image
-  * @var $isName         @optional   @type Bolean   Image
+  * @var $type           @required   @type String   Class
+  * @var $idUser         @required   @type Number   Id
+  * @var $name           @required   @type String   Name
+  * @var $surname        @required   @type String   Surname
+  * @var $img            @required   @type String   Image
+  *
+  * @var $isName         @optional   @type Bolean   nom de l'avatar
 */
-
+if(!isset($isName)) $isName = false;
 ?>
 
 <div class="member">
@@ -31,12 +32,11 @@
           @endif
         </div>
       @endif
-
       
     </a>
   </div>
   
-  @if($isName)
+  @if(isset($isName) && $isName)
     <div class="member__name">
       {{$surname}} {{$name}} 
     </div>
