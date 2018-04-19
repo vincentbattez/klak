@@ -70,6 +70,9 @@ Route::post('create/project/', 'createController@project')
 Route::post('create/team/', 'createController@team')
     ->middleware('auth')
 ;
+Route::post('create/userteam/', 'createController@userteam')
+    ->middleware('auth')
+;
 
 
 /*———————————————————————————————————*\

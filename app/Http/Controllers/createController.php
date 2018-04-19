@@ -6,12 +6,31 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Team;
 use App\TeamUsers;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Image;
 
 class createController extends Controller
 {
+    
+    public function userteam(Request $request){
+        $request->validate([
+            'email'   => 'required|string|email|max:255',
+            'id_team' => 'required',
+        ]);
+        
+        $user = User::where('email', $request->email)->first();
+        if($user){
+            //ADD USER IN THIS TEAM
+            TeamUsers::create([
+                'id_user' => $user->id,
+                'id_team' => $request->id_team
+            ]);
+        }
 
+        //REDIRECT TO TEAM
+        return redirect()->back();
+    }
 
     //FUNCTION CREATED A NEW TEAM
     public function team(Request $request){

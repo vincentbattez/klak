@@ -11,10 +11,10 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/project') }}" method="post" enctype="multipart/form-data">
+<form class='forms' action="{{ URL::to('create/userteam') }}" method="post">
                 
-  <input type="text" placeholder='Add User' name="name"><br>
-  <input type="submit" value="Upload" name="submit">
+  <input type="text" placeholder='Email' name="email"><br>
+  <input type="submit" value="Add user" name="submit">
   
   <input type="hidden" name="id_team" value='{{$id}}'>
   <input type="hidden" value="{{ csrf_token() }}" name="_token">
