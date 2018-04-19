@@ -36,15 +36,17 @@
     &__members{
         display: flex;
         margin-left: 50px;
-        .avatar{
-            position: relative;
-            z-index: 1;
-            margin-left: -30px;
-            transition: all 150ms ease-out;
-            border:2px solid #FFF;
-            &:hover{
-                box-shadow: $shadow-main;
-                z-index: 2;
+        .member{
+            margin-left: - rem(30px);
+            &__avatar{
+                position: relative;
+                z-index: 1;
+                transition: all 150ms ease-out;
+                border:2px solid #FFF;
+                &:hover{
+                    box-shadow: $shadow-main;
+                    z-index: 2;
+                }
             }
         }
     }

@@ -28,8 +28,7 @@ class ProjectController extends Controller
             $teamId    = Team::find($id_team)->id;
 
             //ALL MEMBER IN TEAM
-            $allMember = Project::find($id_team)->team->users;
-
+            $allMember = Team::find($id_team)->users;
     
             return view('project/index', [
                 'id'        => $id, 

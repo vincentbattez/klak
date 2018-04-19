@@ -21,10 +21,10 @@
           'name' => Auth::user()->name,
           'surname' => Auth::user()->surname,
           'img' => Auth::user()->imgSmall,
+          'isName' => true,
         ])
         @endavatar
 
-        <a href='/profile/{{Auth::user()->id}}' class="nav-link">{{Auth::user()->name}} {{Auth::user()->surname}}</a>
       </div>
       <div class='main-nav__mentions'>
         Klak by <br>

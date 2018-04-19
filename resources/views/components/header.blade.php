@@ -34,13 +34,14 @@
     @if($allMember)
       <div class="header__members">
         @foreach($allMember as $member)
-        @avatar( [
-          'type' => 'small',
-          'idUser' => $member->id,
-          'name' => $member->name,
-          'surname' => $member->surname,
-          'img' => $member->imgSmall,
-          ])
+          @avatar( [
+            'type' => 'small',
+            'idUser' => $member->id,
+            'name' => $member->name,
+            'surname' => $member->surname,
+            'img' => $member->imgSmall,
+            'isName' => false,
+            ])
           @endavatar
         @endforeach    
       </div>

@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Team;
+use App\TeamUsers;
 use Illuminate\Support\Facades\Input;
 use Image;
 
 class createController extends Controller
 {
+
 
     //FUNCTION CREATED A NEW TEAM
     public function team(Request $request){
@@ -31,6 +33,12 @@ class createController extends Controller
             'id_user' => $request->id_user,
         ]);
 
+        //ADD AUTHOR IN THIS TEAM
+        TeamUsers::create([
+            'id_user' => $request->id_user,
+            'id_team' => $newTeam->id
+        ]);
+
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             createController::uploadImg($newTeam->id, 'team', new Team);
@@ -39,6 +47,7 @@ class createController extends Controller
         //REDIRECT
         return redirect("/team/".$slug);
     }
+
 
 
     //FUNCTION CREATED A NEW PROJECT

@@ -70,3 +70,11 @@ Route::post('create/project/', 'createController@project')
 Route::post('create/team/', 'createController@team')
     ->middleware('auth')
 ;
+
+
+/*———————————————————————————————————*\
+    $ REMOVE (PROJECT, TEAM, TASK)
+\*———————————————————————————————————*/
+Route::post('remove/userteam/', 'removeController@userteam')
+    ->middleware('auth')
+;
