@@ -66,8 +66,13 @@ Route::post('upload/user/picture/{idUser}', 'UploadController@userPicture')
 Route::post('create/project/', 'createController@project')
     ->middleware('auth')
 ;
-
 Route::post('create/team/', 'createController@team')
+    ->middleware('auth')
+;
+Route::post('create/userteam/', 'createController@userteam')
+    ->middleware('auth')
+;
+Route::post('create/task/', 'createController@task')
     ->middleware('auth')
 ;
 

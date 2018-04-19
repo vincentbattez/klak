@@ -8,7 +8,6 @@ $factory->define(App\Task::class, function (Faker $faker) {
         'id_project' => App\Project::all(['id'])->random(),
         'id_user'    => App\User::all(['id'])->random(),
         'name'       => $name,
-        'slug'       => str_slug($name, '-'),
         'status'     => rand(0,2),
     ];
 });

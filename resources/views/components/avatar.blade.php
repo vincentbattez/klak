@@ -28,7 +28,7 @@ if(!isset($isName)) $isName = false;
       @else
         <div class='member__avatar__content'>
           @if($name && $surname)
-          {{ ucfirst(trans($surname[0]))}}{{ ucfirst(trans($name[0]))}}
+          {{ucfirst(trans($surname[0]))}}{{ucfirst(trans($name[0]))}}
           @endif
         </div>
       @endif

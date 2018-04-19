@@ -25,7 +25,6 @@ class KlakTasks extends Migration
             $table->foreign('id_user')->references('id')->on('klak_users');
             
             $table->string('name');
-            $table->string('slug')->unique();
             $table->integer('status');
             $table->timestamps();
         });

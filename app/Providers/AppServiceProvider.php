@@ -26,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('forms.addProject', 'addProject');
         Blade::component('forms.addTeam', 'addTeam');
         Blade::component('forms.addUser', 'addUser');
+        Blade::component('forms.addUser', 'addUser');
+        Blade::component('forms.addTask', 'addTask');
     }
 
     /**
