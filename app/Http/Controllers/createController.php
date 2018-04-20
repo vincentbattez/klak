@@ -96,7 +96,6 @@ class createController extends Controller
 
     //FUNCTION CREATED A NEW PROJECT
     public function task(Request $request){
-
         //GET FIELD
         $request->validate([
             'name' => 'required|string|min:3',
@@ -104,7 +103,6 @@ class createController extends Controller
             'id_user' => 'required',
             'id_project' => 'required',
         ]);
-
         //SAVE IN BDD
         $newProject = Task::create([
             'name' => $request->name,
@@ -112,7 +110,6 @@ class createController extends Controller
             'id_user' => $request->id_user,
             'id_project' => $request->id_project,
         ]);
-
         //REDIRECT TO TEAM
         return redirect()->back();
     }
