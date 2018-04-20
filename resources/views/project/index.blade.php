@@ -46,6 +46,28 @@
             ])
             @endaddTask
         </div>
-    </div>
+
+        @cardTodo( [
+        'type' => '0',
+        'nb'   => $nbTodos,
+        ])
+        @endcardTodo 
+        @cardTodo( [
+            'type' => '1',
+            'nb'   => $nbDoing,
+        ])
+        @endcardTodo
+        @cardTodo( [
+            'type' => '2',
+            'nb'   => $nbDone,
+        ])
+        @endcardTodo
+
+        @foreach($todos as $t)
+          {{$t->name}}
+        @endforeach
+
+        {{$teamTodos}} {{$teamDoing}} {{$teamDone}}
+      </div>
 </section>
 @endsection

@@ -10,7 +10,6 @@
         'title' => 'Dashboard',
         'bodyClass' => 'dashboard'
     ];
-
 ?>
 @extends('layouts.app')
 {{----------------
@@ -47,5 +46,8 @@
         'nb'   => $done,
     ])
     @endcardTodo
+
+    
+    
 </section>
 @endsection
