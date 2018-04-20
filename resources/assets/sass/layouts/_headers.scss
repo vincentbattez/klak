@@ -3,51 +3,58 @@
 \*------------------------------------*/
 
 .header{
-    align-items:               center;
-    background-color:          $grey;
-    background-position:       center;
-    background-size:           cover;
-    box-shadow:                inset 0 0 2000px 2000px rgba(#000, 0.5);
-    display:                   flex;
-    height:                    rem($h-header);
-    justify-content:           center;
-    left:                      - rem($padding-website);
-    //padding:                   $padding-website;
-    position:                  absolute;
-    right:                     0;
-    top:                       0px;
+    align-items:                center;
+    background-color:           $grey;
+    background-position:        center;
+    background-size:            cover;
+    box-shadow:                 inset 0 0 2000px 2000px rgba(#000, 0.5);
+    display:                    flex;
+    height:                     rem($h-header);
+    justify-content:            center;
+    left:                       - rem($padding-website);
+    position:                   absolute;
+    right:                      0;
+    top:                        0px;
 
     &__titre{
-        color:                 #FFF;
+        color:                  #FFF;
         a{
-            padding-bottom:    rem(5px);
-            color:             #FFF;
-            border-bottom:     rem(2px) solid #FFF;
+            border-bottom:      rem(2px) solid #FFF;
+            color:              #FFF;
+            padding-bottom:     rem(5px);
 
             &:hover{
-                border-bottom: rem(2px) solid $primary;
+                border-bottom:  rem(2px) solid $primary;
             }
         }
         span{
-            font-size:         rem(20px);
+            font-size:          rem(20px);
         }
     }
 
     &__members{
-        display: flex;
-        margin-left: 50px;
+        display:                flex;
+        margin-left:            50px;
+        
         .member{
-            margin-left: - rem(30px);
+            margin-left:        - rem(30px);
+
             &__avatar{
-                position: relative;
-                z-index: 1;
-                transition: all 150ms ease-out;
-                border:2px solid #FFF;
+                border:         2px solid #FFF;
+                position:       relative;
+                transition:     all 150ms ease-out;
+                z-index:        1;
                 &:hover{
                     box-shadow: $shadow-main;
-                    z-index: 2;
+                    z-index:    2;
                 }
             }
         }
+    }
+
+    &__upload{
+        bottom:                 0px;
+        position:               absolute;
+        right:                  0px;
     }
 }

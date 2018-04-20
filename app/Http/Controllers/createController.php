@@ -114,6 +114,26 @@ class createController extends Controller
         return redirect()->back();
     }
 
+    //FONCTION ONLY CALL UPLOAD IMAGE
+    public function addImage(Request $request){
+        //GET FIELD
+        $request->validate([
+            'type' => 'required|string|min:3',
+            'id' => 'required',
+        ]);
+        //UPLOAD IMAGE
+        if(Input::hasFile('img')){
+            if($request->type == 'project'){
+                createController::uploadImg($request->id, $request->type, new Project);
+            }
+            else if($request->type == 'team'){
+                createController::uploadImg($request->id, $request->type, new Team);
+            }
+        }
+        //REDIRECT TO TEAM
+        return redirect()->back();
+    }
+    
 
     //FONCTION TO ADD IMAGE ON WEBSITE AND BDD
     public function uploadImg($id, $type, $class){

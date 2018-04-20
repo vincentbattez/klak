@@ -29,6 +29,7 @@
     
     @header([
         'type'        => 'project',
+        'id'          => $id,
         'projectName' => $name,
         'teamName'    => $teamName,
         'teamSlug'    => $teamSlug,

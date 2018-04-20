@@ -29,6 +29,7 @@
     
     @header([
         'type'        => 'team',
+        'id'          => $id,
         'projectName' => '',
         'teamName'    => $name,
         'teamSlug'    => $slug,
@@ -56,13 +57,13 @@
             <h3>Manege team</h3>
             @foreach($allMember as $member)
                 @avatar( [
-                    'type' => 'small',
-                    'idUser' => $member->id,
-                    'name' => $member->name,
+                    'type'    => 'small',
+                    'idUser'  => $member->id,
+                    'name'    => $member->name,
                     'surname' => $member->surname,
-                    'img' => $member->imgSmall,
-                    'isName' => true,
-                    ])
+                    'img'     => $member->imgSmall,
+                    'isName'  => true,
+                ])
                 @endavatar
                 <form class='' action="{{ URL::to('remove/userteam') }}" method="post">
                     <input type="submit" value="Remove user" name="submit">

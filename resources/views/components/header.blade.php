@@ -5,6 +5,7 @@
 /**
   * Variables
   *
+  * @var $id              @optional   @type Numver   id current project / team
   * @var $type            @optional   @type String   Modificateur
   * @var $image           @optional   @type String   Image de fond
   * @var $teamName        @required   @type String   Titre de la tâche
@@ -46,5 +47,15 @@
         @endforeach    
       </div>
     @endif
+
+    <div class="header__upload">
+      <form class='' action="{{ URL::to('create/addImage') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name='img'>
+        <input type="submit" value='Upload'>
+        <input type="hidden" name='type' value='{{$type}}'>
+        <input type="hidden" name='id' value='{{$id}}'>
+        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+      </form>
+    </div>
 
   </div>
