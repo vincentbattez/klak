@@ -15,18 +15,17 @@ class ProjectController extends Controller
         $project = Project::where('slug', $slug)->first();
 
         if($project){
-            $tasks = Task::projectTasks($project->id);
 
             $projectTasks = (object) [
-                'todo'  => $tasks->todo(),
-                'doing' => $tasks->doing(),
-                'done'  => $tasks->done(),
+                'todo'  => Task::projectTasks($project->id)->todo(),
+                'doing' => Task::projectTasks($project->id)->doing(),
+                'done'  => Task::projectTasks($project->id)->done(),
             ];
 
             $myTasks = (object) [
-                'todo'  => $tasks->myTasks()->todo(),
-                'doing' => $tasks->myTasks()->doing(),
-                'done'  => $tasks->myTasks()->done(),
+                'todo'  => Task::projectTasks($project->id)->myTasks()->todo(),
+                'doing' => Task::projectTasks($project->id)->myTasks()->doing(),
+                'done'  => Task::projectTasks($project->id)->myTasks()->done(),
             ];
 
             return view('project/index', [
@@ -36,7 +35,7 @@ class ProjectController extends Controller
             ]);
         }
         else{
-            return redirect()->route('dashboard.index');
+            return redirect()->route('dashboard/index');
         }
     }
 }

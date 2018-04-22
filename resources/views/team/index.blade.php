@@ -13,28 +13,19 @@
 ?>
 @extends('layouts.app')
 {{----------------
-    HEADER
-----------------}}
-@section('main-header')
-
-@endsection
-{{----------------
     CONTENT
 ----------------}}
-<?php
-
-?>
 @section('content')
 <section class="container">
     
     @header([
         'type'        => 'team',
-        'id'          => $id,
+        'id'          => $team->id,
         'projectName' => '',
-        'teamName'    => $name,
-        'teamSlug'    => $slug,
-        'image'       => $img,
-        'allMember'   => $allMember,
+        'teamName'    => $team->name,
+        'teamSlug'    => $team->slug,
+        'image'       => $team->img,
+        'allMember'   => $team->users,
     ])
     @endheader
 
@@ -49,13 +40,13 @@
         <div class="addProject">
             <h3>Add project</h3>
             @addProject([
-                'id'=>$id,
+                'id'=>$team->id,
             ])
             @endaddProject
         </div>
         <div class="addUser">
             <h3>Manege team</h3>
-            @foreach($allMember as $member)
+            @foreach($team->users as $member)
                 @avatar( [
                     'type'    => 'small',
                     'idUser'  => $member->id,
@@ -68,13 +59,13 @@
                 <form class='' action="{{ URL::to('remove/userteam') }}" method="post">
                     <input type="submit" value="Remove user" name="submit">
                     <input type="hidden" name="id_user" value='{{$member->id}}'>
-                    <input type="hidden" name="id_team" value='{{$id}}'>
+                    <input type="hidden" name="id_team" value='{{$team->id}}'>
                     <input type="hidden" value="{{ csrf_token() }}" name="_token">
                 </form>
             @endforeach
 
             @addUser([
-                'id'=>$id,
+                'id'=>$team->id,
             ])
             @endaddUser
         </div>

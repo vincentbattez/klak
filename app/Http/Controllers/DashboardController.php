@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\User;
-use App\Team;
-use App\TeamUsers;
 use App\Project;
 use App\Task;
 
@@ -34,15 +31,13 @@ class DashboardController extends Controller
     public function index() {
         if(Auth::check()) {
             // logged
-
-            $allProject = Project::whereRaw("id_team in (SELECT klak_teams.id FROM klak_teams Join klak_teamUsers ON klak_teamUsers.id_team=klak_teams.id WHERE id_user=?)", [Auth::id()])->get();
+            $allProject = Project::myProject()->get();
 
             return view('dashboard/index', [
                 'projects' => $allProject,
-                'todos'    => Task::where('status', 0)->where('id_user', Auth::id())->count(),
-                'doing'    => Task::where('status', 1)->where('id_user', Auth::id())->count(),
-                'done'     => Task::where('status', 2)->where('id_user', Auth::id())->count(),
-                
+                'todos'    => Task::myTasks()->todo()->count,
+                'doing'    => Task::myTasks()->doing()->count,
+                'done'     => Task::myTasks()->done()->count,
             ]);
         } else {
             // not logged

@@ -41,27 +41,23 @@ class Task extends Model
     /*———————————————————————————————————*\
                     myTasks
     \*———————————————————————————————————/*
-            @type      [Data]
-            @dataType  {}
+            @type      [Query]
     
-            @return    Toutes les tâches du user authentifier
+            @return    Tâche de l'utilisateur connecté
     */
     public function scopeMyTasks($query) {
-        return $query
-                ->where('id_user', Auth::id());
+        return $query->where('id_user', Auth::id());
     }
 
     /*———————————————————————————————————*\
-                myProjectTasks
+                projectTasks
     \*———————————————————————————————————/*
-            @type      [Data]
-            @dataType  {}
+            @type      [Query]
     
-            @return    Toutes les tâches du user authentifier pour un projet spécifique
+            @return    Tâche d'un projet specifique
     */
     public function scopeProjectTasks($query, $idProject) {
-        return $query
-                ->where('id_project', $idProject);
+        return $query->where('id_project', $idProject);
     }
 
     /*———————————————————————————————————*\
@@ -70,7 +66,7 @@ class Task extends Model
             @type      [Data]
             @dataType  {}
     
-            @return    Tous les todos + count
+            @return    Toutes les tâches todos + count
     */
     public function scopeTodo($query) {
         $todo  = $query->where('status', 0)->get();
@@ -87,7 +83,7 @@ class Task extends Model
             @type      [Data]
             @dataType  {}
     
-            @return    Tous les doing + count
+            @return    Toutes les tâches doing + count
     */
     public function scopeDoing($query) {
         $doing = $query->where('status', 1)->get();
@@ -104,7 +100,7 @@ class Task extends Model
             @type      [Data]
             @dataType  {}
     
-            @return    Tous les done + count
+            @return    Toutes les tâches done + count
     */
     public function scopeDone($query) {
         $done  = $query->where('status', 2)->get();

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Project extends Model
 {
@@ -16,7 +17,6 @@ class Project extends Model
         'img',
         'imgSmall',
         'deadline',
-        'created_at'
     ];
 
     /*———————————————————————————————————*\
@@ -43,6 +43,28 @@ class Project extends Model
     public function team()
     {
         return $this->belongsTo('App\Team', 'id_team');
+    }
+
+    /*———————————————————————————————————*\
+                    myProject
+    \*———————————————————————————————————/*
+            @type      [Query]
+    
+            @return    Projet de l'utilisateur connecté
+    */
+    public function scopeMyProject($query) {
+        return $query->where('id_user', Auth::id());
+    }
+
+    /*———————————————————————————————————*\
+                    byTeam
+    \*———————————————————————————————————/*
+            @type      [Query]
+             
+            @return    get project by team
+    */
+    public function scopeByTeam($query, $idTeam) {
+        return $query->where('id_team', $idTeam);
     }
 }
 

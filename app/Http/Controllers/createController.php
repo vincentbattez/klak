@@ -152,17 +152,17 @@ class createController extends Controller
     public function task(Request $request){
         //GET & VALIDATE FIELD
         $request->validate([
-            'name' => 'required|string|min:3',
-            'status' => 'required',
-            'id_user' => 'required',
+            'name'       => 'required|string|min:3',
+            'status'     => 'required',
+            'id_user'    => 'required',
             'id_project' => 'required',
         ]);
 
         //SAVE IN BDD
         $newProject = Task::create([
-            'name' => $request->name,
-            'status' => $request->status,
-            'id_user' => $request->id_user,
+            'name'       => $request->name,
+            'status'     => $request->status,
+            'id_user'    => $request->id_user,
             'id_project' => $request->id_project,
         ]);
 
