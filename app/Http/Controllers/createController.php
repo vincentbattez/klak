@@ -14,34 +14,62 @@ use Image;
 class createController extends Controller
 {
     
-    //FUNCTION ADD USER IN TEAM
+    /*———————————————————————————————————*\
+                    userteam
+    \*———————————————————————————————————/*
+            @type      [Create]
+            @method    POST
+    
+            @params    $request   Data du formulaire submit
+
+            @return    Ajoute un utilisateur une équipe
+            @redirect  Retour à la page précédente
+             
+    */
     public function userteam(Request $request){
+        //GET & VALIDATE FIELD        
         $request->validate([
             'email'   => 'required|string|email|max:255',
             'id_team' => 'required',
         ]);
+
+        // user exist
         $user = User::where('email', $request->email)->first();
+
+        //SAVE IN BDD
         if($user){
-            //ADD USER IN THIS TEAM
             TeamUsers::create([
                 'id_user' => $user->id,
                 'id_team' => $request->id_team
             ]);
         }
+
         //REDIRECT TO TEAM
         return redirect()->back();
     }
 
 
-    //FUNCTION CREATED A NEW TEAM
+    /*———————————————————————————————————*\
+                    team
+    \*———————————————————————————————————/*
+            @type      [Create]
+            @method    POST
+    
+            @params    $request   Data du formulaire submit
+                
+            @return    Ajoute une nouvelle équipe
+            @redirect  Redirige vers la page de la nouvelle l'équipe
+    */
     public function team(Request $request){
-        //GET FIELD
+        //GET & VALIDATE FIELD
         $request->validate([
             'name' => 'required|string|min:3',
             'id_user' => 'required',
         ]);
+
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
+
         //SAVE IN BDD
         $newTeam = Team::create([
             'name' => $request->name,
@@ -50,31 +78,45 @@ class createController extends Controller
             'imgSmall' => '',
             'id_user' => $request->id_user,
         ]);
+
         //ADD AUTHOR IN THIS TEAM
         TeamUsers::create([
             'id_user' => $request->id_user,
             'id_team' => $newTeam->id
         ]);
+
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             createController::uploadImg($newTeam->id, 'team', new Team);
         }
+
         //REDIRECT
         return redirect("/team/".$slug);
     }
 
 
-
-    //FUNCTION CREATED A NEW PROJECT
+    /*———————————————————————————————————*\
+                    project
+    \*———————————————————————————————————/*
+            @type      [Create]
+            @method    POST
+    
+            @params    $request   Data du formulaire submit
+                
+            @return    Ajoute un nouveau projet à une équipe
+            @redirect  Redirige vers la page du nouveau projet
+    */
     public function project(Request $request){
-        //GET FIELD
+        //GET & VALIDATE FIELD
         $request->validate([
             'name' => 'required|string|min:3',
             'id_user' => 'required',
             'id_team' => 'required'
         ]);
+
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
+
         //SAVE IN BDD
         $newProject = Project::create([
             'name' => $request->name,
@@ -85,24 +127,37 @@ class createController extends Controller
             'id_team' => $request->id_team,
             'deadline' => $request->deadline,
         ]);
+
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             createController::uploadImg($newProject->id, 'project', new Project);
         }
+
         //REDIRECT
         return redirect("/project/".$slug);
     }
 
 
-    //FUNCTION CREATED A NEW PROJECT
+    /*———————————————————————————————————*\
+                    task
+    \*———————————————————————————————————/*
+            @type      [Create]
+            @method    POST
+    
+            @params    $request   Data du formulaire submit
+                
+            @return    Ajoute une nouvelle tâche à un project
+            @redirect  Retour à la page précédente
+    */
     public function task(Request $request){
-        //GET FIELD
+        //GET & VALIDATE FIELD
         $request->validate([
             'name' => 'required|string|min:3',
             'status' => 'required',
             'id_user' => 'required',
             'id_project' => 'required',
         ]);
+
         //SAVE IN BDD
         $newProject = Task::create([
             'name' => $request->name,
@@ -110,17 +165,30 @@ class createController extends Controller
             'id_user' => $request->id_user,
             'id_project' => $request->id_project,
         ]);
+
         //REDIRECT TO TEAM
         return redirect()->back();
     }
+    
 
-    //FONCTION ONLY CALL UPLOAD IMAGE
+    /*———————————————————————————————————*\
+                    addImage
+    \*———————————————————————————————————/*
+            @type      [Update]
+            @method    POST
+    
+            @params    $request   Data du formulaire submit
+                
+            @return    Appel le controller pour upload une image
+            @redirect  Retour à la page précédente
+    */
     public function addImage(Request $request){
-        //GET FIELD
+        //GET & VALIDATE FIELD
         $request->validate([
             'type' => 'required|string|min:3',
             'id' => 'required',
         ]);
+
         //UPLOAD IMAGE
         if(Input::hasFile('img')){
             if($request->type == 'project'){
@@ -130,28 +198,48 @@ class createController extends Controller
                 createController::uploadImg($request->id, $request->type, new Team);
             }
         }
+
         //REDIRECT TO TEAM
         return redirect()->back();
     }
     
 
+    /*———————————————————————————————————*\
+                    uploadImg
+    \*———————————————————————————————————/*
+            @type      [Update]
+            @method    POST
+
+            @params    $id     (1)
+            @params    $type   (team)
+            @params    $model  (new Team)
+             
+            @return    Upload une image et l'ajoute dans la bonne table
+    */
     //FONCTION TO ADD IMAGE ON WEBSITE AND BDD
-    public function uploadImg($id, $type, $class){
+    public function uploadImg($id, $type, $model){
         $file = Input::file('img');
         $urlImg = 'images/'.$type.'/'.$type.$id.'/';
         $nameImg = md5($file->getClientOriginalName()).'.'.$file->getClientOriginalExtension();
+
         //TAILLE L'ORIGINAL
         $file->move($urlImg, $nameImg);
+
         //TAILLE 1
         $img = Image::make($urlImg.$nameImg);
         $img->fit(1500, 350);
         $img->save($urlImg.'1500x350-'.$nameImg);
+
         //TAILLE 2
         $img = Image::make($urlImg.$nameImg);
         $img->fit(60, 60);
         $img->save($urlImg.'60x60-'.$nameImg);
+
         //ADD NAME FILE IN DB USER
-        $class::where('id', $id)
-        ->update(array('img' => ''.$type.$id.'/1500x350-'.$nameImg , 'imgSmall' => ''.$type.$id.'/60x60-'.$nameImg));
+        $model::where('id', $id)
+        ->update([
+            'img' => ''.$type.$id.'/1500x350-'.$nameImg ,
+            'imgSmall' => ''.$type.$id.'/60x60-'.$nameImg
+        ]);
     }
 }

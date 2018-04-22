@@ -12,7 +12,6 @@
 			"|}",
 			"        @return    ${5:Affiche le dashboard}",
 			"        @location  /resources/views/${6:dashboard}/${7:index}.blade.php",
-			"",
 			"        ${8| ,@redirect  Redirige vers la route nommé \"dashboard\"|}",
 			"*/"	
 		],
