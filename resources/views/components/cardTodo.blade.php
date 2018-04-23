@@ -22,10 +22,10 @@ switch ($type) {
 }
 ?>
 
-<article class="card card--todo todo--small {{$typeName}} {{$modifier ?? ''}}">
+<div class="card card--todo todo--small {{$typeName}} {{$modifier ?? ''}}">
   <span class="todo__nb">{{$nb}}</span>
   <div class="f-y">
     <span class="todo__type">{{ucfirst($typeName)}}</span>
     <span class="todo__icon">@icon("icon-$typeName", "icon-$typeName white")</span>
   </div>
-</article>
+</div>

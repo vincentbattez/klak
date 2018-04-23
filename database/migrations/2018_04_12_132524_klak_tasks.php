@@ -13,9 +13,9 @@ class KlakTasks extends Migration
      */
     public function up()
     {
+        // TODO: add priority
         Schema::create('klak_tasks', function (Blueprint $table) {
             Schema::dropIfExists('klak_tasks');
-
             $table->increments('id');
 
             $table->unsignedInteger('id_project')->index();

@@ -4,13 +4,13 @@
     <title>icon/icon-done</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="100%" y1="2.22044605e-14%" x2="3.00891668%" y2="94.5482623%" id="linearGradient-1">
+        <linearGradient x1="100%" y1="2.22044605e-14%" x2="3.00891668%" y2="94.5482623%" id="linearGradient-green">
             <stop stop-color="#37ECBA" offset="0%"></stop>
             <stop stop-color="#72C5D3" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Maquettes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Single-project" transform="translate(-876.000000, -242.000000)" fill="url(#linearGradient-1)">
+        <g id="Single-project" transform="translate(-876.000000, -242.000000)" fill="url(#linearGradient-green)">
             <g id="Group-23" transform="translate(575.000000, 233.000000)">
                 <g id="Group-14" transform="translate(301.000000, 0.000000)">
                     <g id="icon/todo/icon-done/normal" transform="translate(0.000000, 8.810638)">

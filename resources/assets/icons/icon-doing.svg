@@ -4,11 +4,7 @@
     <title>icon/icon-doing</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="93.5157493%" y1="13.2602992%" x2="8.80433009%" y2="96.5597566%" id="linearGradient-1">
-            <stop stop-color="#F6D365" offset="0%"></stop>
-            <stop stop-color="#FF931E" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="138.60772%" y1="-38.4781156%" x2="-44.0034977%" y2="140.887328%" id="linearGradient-2">
+        <linearGradient x1="138.60772%" y1="-38.4781156%" x2="-44.0034977%" y2="140.887328%" id="linearGradient-orange">
             <stop stop-color="#F6D365" offset="0%"></stop>
             <stop stop-color="#FF931E" offset="100%"></stop>
         </linearGradient>
@@ -19,8 +15,8 @@
                 <g id="Group-12" transform="translate(170.500000, 0.000000)">
                     <g id="icon/todo/icon-doing/normal" transform="translate(0.000000, 8.310638)">
                         <g id="Group-11" transform="translate(0.952090, 0.810638)">
-                            <circle id="Oval-2-Copy" stroke="url(#linearGradient-1)" stroke-width="3" cx="15.6382266" cy="15.3504156" r="13.5"></circle>
-                            <rect id="Rectangle" fill="url(#linearGradient-2)" x="7.64585508" y="7.35804401" width="15.9847431" height="15.9847431" rx="7.99237154"></rect>
+                            <circle id="Oval-2-Copy" stroke="url(#linearGradient-orange)" stroke-width="3" cx="15.6382266" cy="15.3504156" r="13.5"></circle>
+                            <rect id="Rectangle" fill="url(#linearGradient-orange)" x="7.64585508" y="7.35804401" width="15.9847431" height="15.9847431" rx="7.99237154"></rect>
                         </g>
                     </g>
                 </g>

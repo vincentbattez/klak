@@ -40,47 +40,52 @@
             ])
             @endaddTask
         </div>
-        {{--
-            @cardTodo(['type' => '0', 'nb' => $myTasks->nbTodo,])@endcardTodo 
-            @cardTodo(['type' => '1', 'nb' => $myTasks->nbDoing,])@endcardTodo 
-            @cardTodo(['type' => '2', 'nb' => $myTasks->nbDone,])@endcardTodo
-        --}}
         
-        <h1 class="h1">My tasks</h1>
+        {{-- TODO: créer composant list todo --}}
+        <section>
+            <h2 class="h2">My tasks</h2>
+            <div class='list list-tasks'>
+                <section>
+                    @cardTodo(['type' => '0', 'nb' => $myTasks->todo->count,])@endcardTodo 
+                    @foreach($myTasks->todo->tasks as $t)
+                        @cardTask( [
+                            'title'      => $t->name,
+                            'status'     => 'todo',
+                            'priority'   => 'low',
+                        ])
+                        @endcardTask
+                    @endforeach
+                </section>
+                <section>                
+                    @cardTodo(['type' => '1', 'nb' => $myTasks->doing->count,])@endcardTodo
+                    @foreach($myTasks->doing->tasks as $t)
+                        @cardTask( [
+                            'title'      => $t->name,
+                            'status'     => 'doing',
+                            'priority'   => 'low',
+                        ])
+                        @endcardTask
+                    @endforeach
+                </section>
+                <section>                
+                    @cardTodo(['type' => '2', 'nb' => $myTasks->done->count,])@endcardTodo
+                    @foreach($myTasks->done->tasks as $t)
+                        @cardTask( [
+                            'title'      => $t->name,
+                            'status'     => 'done',
+                            'priority'   => 'low',
+                        ])
+                        @endcardTask
+                    @endforeach
+                </section>
+            </div>
+        </section>
+        
+        <h2 class="h2">Project tasks</h2>
         <ul>
-            <h2>MY: TODO {{$myTasks->todo->count}}</h2>
-            @foreach($myTasks->todo->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
-
-            <h2>MY: DOING {{$myTasks->doing->count}}</h2>
-            @foreach($myTasks->doing->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
-
-            <h2>MY: DONE {{$myTasks->done->count}}</h2>
-            @foreach($myTasks->done->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
-        </ul>
-        
-        
-        <h1 class="h1">Project tasks</h1>
-        <ul>
-            <h2>MY: TODO {{$projectTasks->todo->count}}</h2>
-            @foreach($projectTasks->todo->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
-
-            <h2>MY: DOING {{$projectTasks->doing->count}}</h2>
-            @foreach($projectTasks->doing->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
-
-            <h2>MY: DONE {{$projectTasks->done->count}}</h2>
-            @foreach($projectTasks->done->tasks as $t)
-                <li>- {{$t->name}}</li>
-            @endforeach
+            <h1>@icon('icon-todo')  <span class="h1"> {{$projectTasks->todo->count}}  </span></h1>
+            <h1>@icon('icon-doing') <span class="h1"> {{$projectTasks->doing->count}} </span></h1>
+            <h1>@icon('icon-done')  <span class="h1"> {{$projectTasks->done->count}}  </span></h1>
         </ul>
         {{-- 
         {{$teamTodos}} {{$teamDoing}} {{$teamDone}}

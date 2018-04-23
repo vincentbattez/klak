@@ -8,11 +8,7 @@
   * @var $modifier         @optional   @type String   Modificateur
   * @var $title            @required   @type String   Titre de la tâche
   * @var $priority         @required   @type String   Priorité de la tâche
-  * @var $link             @required   @type String   Url du lien vers la tâche
-  * @var $imageUrl         @required   @type String   Image de l'employer qui travail sur la tâche
-  * @var $alt              @required   @type String   Alt de l'image de l'employer
-  * @var $nameWorker       @required   @type String   Nom de l'employer
-  * @var $deadline         @required   @type String   Deadline de la tâche
+  * @var $status           @required   @type String   todo, doing, done
 */
   $priotityModifier = ($priority == "high") ? "high-priority " : '';
 ?>
@@ -21,11 +17,10 @@
   {{-- Content --}}
   <div class="card__content">
     <form action="#">
-      <button class="changeStatus" type="submit">@icon('icon-done', 'icon-done')</button>
+      <button class="changeStatus" type="submit">@icon("icon-$status", "icon-$status")</button>
     </form>
     <div>
       <h4 class="card__title">{{$title}}</h4>
-      <span class="card__subtitle">{{$priority}} priority</span>
     </div>
   </div>
   <div class="card__action">

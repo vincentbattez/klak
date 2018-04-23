@@ -189,9 +189,15 @@
       color: $grey--l1;
     }
 
-    .icon g {
-      fill: $grey--l1;
-    }
+    // todo
+    .icon-todo circle  { stroke: $grey--l1; }
+    // doing
+    .icon-doing circle { stroke: $grey--l1; }
+    .icon-doing rect   { fill: $grey--l1; }
+    // done
+    .icon-done g       { fill: $grey--l1; }
+    // timer
+    .icon-timer g      { fill: $grey--l1; }
 
     .changeStatus {
       margin-right: 10px;

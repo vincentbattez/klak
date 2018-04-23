@@ -177,11 +177,6 @@
         @cardTask( [
           'title'      => 'Design homepage',
           'priority'   => 'high',
-          'link'       => '#',
-          'imageUrl'   => 'profils/avatar-default.png',
-          'alt'        => 'photo de profil de USER',
-          'nameWorker' => 'Maxime Jacquet',
-          'deadline'   => '30 avril 2018',
         ])
         @endcardTask
 
@@ -189,11 +184,6 @@
         @cardTask( [
           'title'      => 'Audit SEO',
           'priority'   => 'low',
-          'link'       => '#',
-          'imageUrl'   => 'profils/avatar-default.png',
-          'alt'        => 'photo de profil de USER',
-          'nameWorker' => 'Vincent Battez',
-          'deadline'   => '23 mai 2018',
         ])
         @endcardTask
 
