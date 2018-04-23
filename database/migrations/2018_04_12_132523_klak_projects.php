@@ -18,11 +18,8 @@ class KlakProjects extends Migration
 
             $table->increments('id');
 
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('klak_users');
-
-            $table->unsignedInteger('id_team')->nullable();
-            $table->foreign('id_team')->references('id')->on('klak_teams');
+            $table->unsignedInteger('id_team')->index();
+            $table->foreign('id_team')->references('id')->on('klak_teams')->onDelete('cascade');
 
             $table->string('name');
             $table->string('slug')->unique();

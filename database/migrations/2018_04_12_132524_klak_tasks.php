@@ -18,11 +18,11 @@ class KlakTasks extends Migration
 
             $table->increments('id');
 
-            $table->unsignedInteger('id_project');
-            $table->foreign('id_project')->references('id')->on('klak_projects');
+            $table->unsignedInteger('id_project')->index();
+            $table->foreign('id_project')->references('id')->on('klak_projects')->onDelete('cascade');
 
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('klak_users');
+            $table->unsignedInteger('id_user')->index();
+            $table->foreign('id_user')->references('id')->on('klak_users')->onDelete('cascade');
             
             $table->string('name');
             $table->integer('status');

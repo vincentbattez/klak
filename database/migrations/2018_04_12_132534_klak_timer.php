@@ -18,11 +18,11 @@ class KlakTimer extends Migration
 
             $table->increments('id');
 
-            $table->unsignedInteger('id_task');
-            $table->foreign('id_task')->references('id')->on('klak_tasks');
+            $table->unsignedInteger('id_task')->index();
+            $table->foreign('id_task')->references('id')->on('klak_tasks')->onDelete('cascade');
 
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('klak_users');
+            $table->unsignedInteger('id_user')->index();
+            $table->foreign('id_user')->references('id')->on('klak_users')->onDelete('cascade');
 
             $table->timestampTz('start_time')->nullable();
             $table->timestampTz('end_time')->nullable();

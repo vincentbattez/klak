@@ -18,11 +18,11 @@ class KlakTeamsUsers extends Migration
 
             $table->increments('id');
 
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('klak_users');
+            $table->unsignedInteger('id_user')->index();
+            $table->foreign('id_user')->references('id')->on('klak_users')->onDelete('cascade');
 
-            $table->unsignedInteger('id_team');
-            $table->foreign('id_team')->references('id')->on('klak_teams');
+            $table->unsignedInteger('id_team')->index();
+            $table->foreign('id_team')->references('id')->on('klak_teams')->onDelete('cascade');
         });
     }
 
