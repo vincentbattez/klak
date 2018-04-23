@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Project;
 use App\Task;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -31,7 +32,7 @@ class DashboardController extends Controller
     public function index() {
         if(Auth::check()) {
             // logged
-            $allProject = Project::myProject()->get();
+            $allProject = User::myProjects();
 
             return view('dashboard/index', [
                 'projects' => $allProject,

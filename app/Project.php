@@ -9,7 +9,6 @@ class Project extends Model
 {
     protected $table = 'klak_projects';
     protected $fillable = [
-        'id_user',
         'id_team',
         'name',
         'slug',
@@ -43,17 +42,6 @@ class Project extends Model
     public function team()
     {
         return $this->belongsTo('App\Team', 'id_team');
-    }
-
-    /*———————————————————————————————————*\
-                    myProject
-    \*———————————————————————————————————/*
-            @type      [Query]
-    
-            @return    Projet de l'utilisateur connecté
-    */
-    public function scopeMyProject($query) {
-        return $query->where('id_user', Auth::id());
     }
 
     /*———————————————————————————————————*\
