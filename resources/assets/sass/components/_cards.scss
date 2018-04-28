@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $ CARDS
-\*------------------------------------*/
+/*———————————————————————————————————*\
+    $ CARD
+\*———————————————————————————————————*/
 .card-container {
   @extend .card;
   padding: 30px;
@@ -146,135 +146,154 @@
     &-date {
       font-weight: 500;
     }
-  } // .deadline
-  /*___________  Modifier  ___________*/
-  /* - - - - - - - - - - - - *\
-        $ task
-  \* - - - - - - - - - - - - */
-  &--task {
-    box-shadow:      none;
-    border:          1px solid $grey--l1;
-    justify-content: space-between;
-    padding:         rem($card-padding-task);
-    
-    /*___________ Structure  ___________*/
-    .card {
-      &__content {
-        @extend %f-xy;
-      }
+  } // .card
+} // .deadline
 
-      &__content-container {
-        display:         flex;
-        justify-content: space-between;
-      }
 
-      &__action {
-        @extend %f-xy;
 
-        .launchTimer {
-          padding: rem($card-padding-task);
-        }
 
-        &.active {
-          g {
-            fill: url(#gradient-orange) !important;
-          }
-          .timePassed {
-            color: $secondary;
-          }
-        }
-      }
-    }
-    .timePassed {
-      color: $grey--l1;
-    }
 
-    // todo
-    .icon-todo circle  { stroke: $grey--l1; }
-    // doing
-    .icon-doing circle { stroke: $grey--l1; }
-    .icon-doing rect   { fill: $grey--l1; }
-    // done
-    .icon-done g       { fill: $grey--l1; }
-    // timer
-    .icon-timer g      { fill: $grey--l1; }
 
-    .changeStatus {
-      margin-right: 10px;
-    }
-
-    [type=submit] {
-      background: none;
-      border:     none;
-      padding:    0;
-      cursor:     pointer;
-      padding: rem(10px);
-    }
-    /* - - - - - - - - - - - - *\
-          $ HIGH-PRIORITY
-    \* - - - - - - - - - - - - */
-    &.high-priority {
-      background-color: $secondary;
-      color:            white;
-
-      .card {
-        &__deadline-bar {
-          background:#474747;
-        }
-        
-        &__footer {
-          .name {
-            color: white;
-          }
-        }
-      }
+/*———————————————————————————————————*\
+    $ CARD--TASK
+\*———————————————————————————————————*/
+.card--task {
+  box-shadow:      none;
+  border:          1px solid $grey--l1;
+  justify-content: space-between;
+  padding:         rem($card-padding-task);
   
-      .icon g {
-        fill: $grey--d2;
+  /*___________ Structure  ___________*/
+  .card {
+
+    /* - - - - - - - - - - - - *\
+        $ CONTENT
+    \* - - - - - - - - - - - - */
+    &__content {
+      @extend %f-xy;
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ CONTENT-CONTAINER
+    \* - - - - - - - - - - - - */
+    &__content-container {
+      display:         flex;
+      justify-content: space-between;
+    }
+
+    /* - - - - - - - - - - - - *\
+        $ ACTION
+    \* - - - - - - - - - - - - */
+    &__action {
+      @extend %f-xy;
+
+      .launchTimer {
+        padding: rem($card-padding-task);
       }
 
-      .timePassed {
-        color: #999999;
-      }
-      .active {
+      &.active {
+        g {
+          fill: url(#gradient-orange) !important;
+        }
         .timePassed {
+          color: $secondary;
+        }
+      }
+    }
+  } // .card
+  
+  .timePassed {
+    color: $grey--l1;
+  }
+
+  // todo
+  .icon-todo circle  { stroke: $grey--l1; }
+  // doing
+  .icon-doing circle { stroke: $grey--l1; }
+  .icon-doing rect   { fill: $grey--l1; }
+  // done
+  .icon-done g       { fill: $grey--l1; }
+  // timer
+  .icon-timer g      { fill: $grey--l1; }
+
+  .changeStatus {
+    margin-right: 10px;
+  }
+
+  [type=submit] {
+    background: none;
+    border:     none;
+    padding:    0;
+    cursor:     pointer;
+    padding: rem(10px);
+  }
+  /* - - - - - - - - - - - - *\
+        $ HIGH-PRIORITY
+  \* - - - - - - - - - - - - */
+  &.high-priority {
+    background-color: $secondary;
+    color:            white;
+
+    .card {
+      &__deadline-bar {
+        background:#474747;
+      }
+      
+      &__footer {
+        .name {
           color: white;
         }
       }
     }
-  }
-  /* - - - - - - - - - - - - *\
-        $ todo
-  \* - - - - - - - - - - - - */
-  &--todo {
-    color:           white;
-    padding:         rem(5px) rem(20px);
-    @extend          %f-xy;
-    justify-content: flex-end;
-    
-    &.todo  { background-image: $blue--gradient;   }
-    &.doing { background-image: $orange--gradient; }
-    &.done  { background-image: $green--gradient;  }
-    
-    .todo {
-      &__nb {
-        @include      font-size(40px);
-        margin-right: rem(15px);
-      }
 
-      &__type {
-        @include      font-size(20px);
-        margin-right: rem(5px);
-        width:        rem(60px);
-      }
+    .icon g {
+      fill: $grey--d2;
+    }
 
-      &__icon {
-
+    .timePassed {
+      color: #999999;
+    }
+    .active {
+      .timePassed {
+        color: white;
       }
     }
-    &.todo--small {
-      max-width: 200px;
-      padding-right:   rem(50px);
+  }
+} // .card--task
+
+
+
+/*———————————————————————————————————*\
+    $ CARD--TODO
+\*———————————————————————————————————*/
+.card--todo {
+  color:           white;
+  padding:         rem(5px) rem(20px);
+  @extend          %f-xy;
+  justify-content: flex-end;
+  
+  &.todo  { background-image: $blue--gradient;   }
+  &.doing { background-image: $orange--gradient; }
+  &.done  { background-image: $green--gradient;  }
+  
+  .todo {
+    &__nb {
+      @include      font-size(40px);
+      margin-right: rem(15px);
+    }
+
+    &__type {
+      @include      font-size(20px);
+      margin-right: rem(5px);
+      width:        rem(60px);
+    }
+
+    &__icon {
+
     }
   }
-} // .card
+  &.todo--small {
+    max-width: 200px;
+    padding-right:   rem(50px);
+  }
+} // .card--todo

@@ -15,7 +15,7 @@
     $ CENTER ABSOLUTE
 \*------------------------------------*/
 @each $center in 'x', 'y', 'xy' {
-  %a_#{$center}{
+  %a-#{$center}{
     @include center-absolute($center);
   }
 }
