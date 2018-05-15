@@ -17,22 +17,28 @@ Route::get('/dashboard','DashboardController@index')
 /*———————————————————————————————————*\
     $ PROJECT
 \*———————————————————————————————————*/
+Route::get('/projects','ProjectController@myProjects')
+    ->middleware('auth')
+;
+
 Route::get('/project/{slug}','ProjectController@index')
-    //->where('id', '[0-9]+')
-    ->where('slug', '^[a-z][-a-z0-9]*$')//'[A-Za-z]+')
+    ->where('slug', '^[a-z][-a-z0-9]*$')
     ->middleware('auth')
 ;
 
 Route::get('/project/{slug}/tasks','ProjectController@allTask')
-    //->where('id', '[0-9]+')
-    ->where('slug', '^[a-z][-a-z0-9]*$')//'[A-Za-z]+')
+    ->where('slug', '^[a-z][-a-z0-9]*$')
     ->middleware('auth')
 ;
 
 /*———————————————————————————————————*\
     $ TEAMS
 \*———————————————————————————————————*/
+Route::get('/teams','TeamController@index')
+    ->middleware('auth')
+;
 Route::get('/team/{slug}','TeamController@index')
+    ->middleware('auth')
     ->where('slug', '^[a-z][-a-z0-9]*$')
 ;
 

@@ -38,7 +38,7 @@ if(!isset($isName)) $isName = false;
   
   @if(isset($isName) && $isName)
     <div class="member__name">
-      {{$surname}} {{$name}} 
+      <a href="/profile/{{$idUser}}">{{$surname}} {{$name}}</a>
     </div>
   @endif
 

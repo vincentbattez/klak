@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use App\Project;
 use App\Task;
+use App\User;
 
 class ProjectController extends Controller
 {
+    public function myProjects() {
+        if(Auth::check()) {
+            // logged
+            $allProject = User::myProjects();
+            return view('project/my-projects', [
+                'projects' => $allProject,
+            ]);
+        } else {
+            // not logged
+            return redirect()->route('login');
+        }
+    }
+
     public function index($slug) {
 
         // ON RECUREPERE LES INFORMATION DU PROJET

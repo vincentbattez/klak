@@ -8,8 +8,8 @@
     margin-top:            rem($h-header);
 
     &__titre{
-        grid-column-end:   4;
         grid-column-start: 1;
+        grid-column-end:   5;
     }
 
     &__list{
