@@ -175,6 +175,7 @@
       <h3 class="h2">Card Tasks</h3>
         {{-- high priority --}}
         @cardTask( [
+          'id'         => '1',
           'title'      => 'Design homepage',
           'priority'   => 'high',
           'status'     =>  'doing',
@@ -183,6 +184,7 @@
 
         {{-- low priority --}}
         @cardTask( [
+          'id'         => '2',
           'title'      => 'Audit SEO',
           'priority'   => 'low',
           'status'     => 'todo',
@@ -204,6 +206,14 @@
           'nb'   => '4',
         ])
         @endcardTodo
+
+
+        @deadline([
+          'start' => '2 mai 2018',
+          'end'   => '6 juin 2018',
+          'timer' => '2 mois 4 jours',
+        ])
+        @enddeadline
     </section>
     <hr>
 </section>

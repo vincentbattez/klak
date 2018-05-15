@@ -1,0 +1,66 @@
+.deadline {
+  background: #fff;
+  padding: 1.875rem;
+  /*———————————————————————————————————*\
+      $ DATE
+  \*———————————————————————————————————*/
+  &__dates-container {
+    display:         flex;
+    justify-content: space-between;
+    @include         font-size(20px);
+  }
+
+  &__date {
+  
+    &.date-start {
+      color: $grey--d1;
+    }
+  }
+
+  /*———————————————————————————————————*\
+      $ LINE
+  \*———————————————————————————————————*/
+  $h-deadline: 10px;
+  &__line {
+    width:            100%;
+    height:           rem($h-deadline);
+    display:          block;
+    position:         relative;
+    margin-top:       5px;
+    margin-bottom:    10px;
+    border-radius:    rem($h-deadline);
+    background-color: $grey--l1;
+
+    &:after {
+      content:          '';
+      width:            100%;
+      height:           rem($h-deadline);
+      display:          inline-block;
+      position:         absolute;
+      top:              0;
+      left:             0;
+      border-radius:    rem($h-deadline);
+      background-image: $orange--gradient-rightLeft;
+
+    }
+  }
+
+  /*———————————————————————————————————*\
+      $ TIMER
+  \*———————————————————————————————————*/
+  &__timer-container {
+    .icon {
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+
+      g {
+        fill: $secondary;
+      }
+    }
+  }
+
+  &__timer {
+    margin-left: 10px;
+  }
+}

@@ -15,4 +15,14 @@
         box-shadow: none;
         padding: 0;
     }
+
+    &-projectTasks {
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        .h1 {
+            margin-left: rem(10px);
+        }
+    }
 }

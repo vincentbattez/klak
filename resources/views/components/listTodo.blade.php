@@ -15,16 +15,19 @@
         @cardTodo( [
           'type' => '0',
           'nb'   => $todos,
+          'large'=> true,
         ])
         @endcardTodo
         @cardTodo( [
           'type' => '1',
           'nb'   => $doing,
+          'large'=> true,          
         ])
         @endcardTodo
         @cardTodo( [
           'type' => '2',
           'nb'   => $done,
+          'large'=> true,          
         ])
         @endcardTodo
     </div>

@@ -6,4 +6,23 @@
 
 .projectSingle{
     margin-top:rem($h-header);
+    display:               grid;
+    grid-gap:              rem($padding-website);
+    grid-template-columns: 1.4fr 1.6fr;
+    margin-left:           rem(-20px);
+
+    &__deadline {
+        margin-top: rem(25px);
+    }
+
+    &__addUser {
+        margin-top: rem(25px);
+    }
 }
+
+@include media('min-width:1540px'){
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+  };

@@ -32,21 +32,13 @@
     @endheader
 
     <div class="projectSingle">
-        <div class="addUser">
-            <h3>Add task</h3>
-            @addTask([
-                'idProject' => $project->id,
-                'allMember' => $project->team->users,
-            ])
-            @endaddTask
-        </div>
         
         {{-- TODO: créer composant list todo --}}
         <section>
-            <h2 class="h2">My tasks</h2>
+            <h3 class="h3">My tasks</h3>
             <div class='list list-tasks'>
                 <section>
-                    @cardTodo(['type' => '0', 'nb' => $myTasks->todo->count,])@endcardTodo 
+                    @cardTodo(['type' => '0', 'nb' => $myTasks->todo->count, 'large' => true])@endcardTodo 
                     @foreach($myTasks->todo->tasks as $t)
                         @cardTask( [
                             'id'         => $t->id,
@@ -58,7 +50,7 @@
                     @endforeach
                 </section>
                 <section>                
-                    @cardTodo(['type' => '1', 'nb' => $myTasks->doing->count,])@endcardTodo
+                    @cardTodo(['type' => '1', 'nb' => $myTasks->doing->count, 'large' => true])@endcardTodo
                     @foreach($myTasks->doing->tasks as $t)
                         @cardTask( [
                             'id'         => $t->id,
@@ -70,7 +62,7 @@
                     @endforeach
                 </section>
                 <section>                
-                    @cardTodo(['type' => '2', 'nb' => $myTasks->done->count,])@endcardTodo
+                    @cardTodo(['type' => '2', 'nb' => $myTasks->done->count, 'large' => true])@endcardTodo
                     @foreach($myTasks->done->tasks as $t)
                         @cardTask( [
                             'id'         => $t->id,
@@ -82,18 +74,40 @@
                     @endforeach
                 </section>
             </div>
-            <a href="/project/{{$project->slug}}/tasks">see all task</a>
-            
+            <a href="/project/{{$project->slug}}/tasks">see all task</a>         
         </section>
         
-        <h2 class="h2">Project tasks</h2>
-        <ul>
-            <h1>@icon('icon-todo')  <span class="h1"> {{$projectTasks->todo->count}}  </span></h1>
-            <h1>@icon('icon-doing') <span class="h1"> {{$projectTasks->doing->count}} </span></h1>
-            <h1>@icon('icon-done')  <span class="h1"> {{$projectTasks->done->count}}  </span></h1>
-        </ul>
-        {{-- 
-        {{$teamTodos}} {{$teamDoing}} {{$teamDone}}
-      </div> --}}
+        <div class="projectSingle__projectTasks">
+            <section>
+                <h3 class="h3">Project tasks</h3>
+                <div class="list list-projectTasks">
+                    <ul>
+                        <h1>@icon('icon-todo')  <span class="h1"> {{$projectTasks->todo->count}}  </span></h1>
+                        <h1>@icon('icon-doing') <span class="h1"> {{$projectTasks->doing->count}} </span></h1>
+                        <h1>@icon('icon-done')  <span class="h1"> {{$projectTasks->done->count}}  </span></h1>
+                    </ul>
+                </div>
+            </section>
+            
+            <div class="projectSingle__deadline">
+                <h3 class="h3">Deadline</h3>
+                @deadline([
+                    'start' => '2 mai 2018',
+                    'end'   => '6 juin 2018',
+                    'timer' => '2 mois 4 jours',
+                    ])
+                @enddeadline
+            </div>
+
+            <div class="projectSingle__addUser">
+                <h3 class="h3">Add task</h3>
+                @addTask([
+                    'idProject' => $project->id,
+                    'allMember' => $project->team->users,
+                ])
+                @endaddTask
+            </div>
+        </div>
+    </div>
 </section>
 @endsection

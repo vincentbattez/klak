@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use Carbon\Carbon;
 
 class Project extends Model
 {
@@ -16,6 +17,9 @@ class Project extends Model
         'img',
         'imgSmall',
         'deadline',
+    ];
+    protected $appends = [
+        'date_formated',
     ];
 
     /*———————————————————————————————————*\
@@ -53,6 +57,41 @@ class Project extends Model
     */
     public function scopeByTeam($query, $idTeam) {
         return $query->where('id_team', $idTeam);
+    }
+
+    /*———————————————————————————————————*\
+                date_formated
+    \*———————————————————————————————————/*
+            @type      [Attribute]
+            @dataType  {Object}
+    
+            @return    Formate et effectue des calculs sur les dates
+    */
+    public function getDateFormatedAttribute() {
+        
+        $dateCreated       = Carbon::parse($this->created_at);
+        $humansDateCreated = Carbon::parse($this->created_at)->format('l j F Y');
+        
+        $deadline       = Carbon::parse($this->deadline);
+        $humansDeadline = Carbon::parse($this->deadline)->format('l j F Y');
+
+        $humansDeadlineDiff = $dateCreated->diffForHumans($deadline, true, false, 3);
+        $deadlineDiff       = $dateCreated->diff($deadline);
+
+        if($deadlineDiff->invert === 0) { 
+            $humansDeadlineDiff = "Passed since " . $humansDeadlineDiff;
+        } 
+
+        $date_formated = (object) [
+            'humans'   => (object) [
+                'created'          => $humansDateCreated,
+                'deadline'         => $humansDeadline,
+                'diffWithDeadline' => $humansDeadlineDiff,
+            ],
+            'diffWithDeadline'     => $deadlineDiff->invert,
+        ];
+        return $date_formated;
+
     }
 }
 

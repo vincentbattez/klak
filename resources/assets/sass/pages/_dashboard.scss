@@ -7,6 +7,6 @@
     &__content {
         display:               grid;
         grid-gap:              rem($padding-website);
-        grid-template-columns: 1fr 300px 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }

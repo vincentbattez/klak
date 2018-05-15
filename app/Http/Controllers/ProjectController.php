@@ -59,7 +59,7 @@ class ProjectController extends Controller
         // ON RECUREPERE LES INFORMATION DU PROJET
         $project = Project::where('slug', $slug)->first();
 
-        if($project){
+        if($project) {
 
             $projectTasks = (object) [
                 'todo'  => Task::projectTasks($project->id)->todo(),
