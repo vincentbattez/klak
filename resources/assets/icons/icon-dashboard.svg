@@ -1,17 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-    <title>icon/icon-dashboard/black</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbol" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon/icon-dashboard/black" fill-rule="nonzero" fill="#1A1A1A">
-            <g id="dashboard" transform="translate(0.000000, 0.328683)">
-                <rect id="Rectangle-path" x="10.4968662" y="0" width="9.4800804" height="7.11004641" rx="1"></rect>
-                <rect id="Rectangle-path" x="0" y="0" width="9.4800804" height="11.8500588" rx="1"></rect>
-                <rect id="Rectangle-path" x="0" y="12.8669002" width="9.4800804" height="7.11004641" rx="1"></rect>
-                <rect id="Rectangle-path" x="10.4968662" y="8.1268878" width="9.4800804" height="11.8500588" rx="1"></rect>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1A1A1A;}
+</style>
+<g id="Symbol">
+	<g id="icon_x2F_icon-dashboard_x2F_black">
+		<g id="dashboard" transform="translate(0.000000, 0.328683)">
+			<path id="Rectangle-path" class="st0" d="M187.9,8h117c8.6,0,15.6,7,15.6,15.6v80c0,8.6-7,15.6-15.6,15.6h-117
+				c-8.6,0-15.6-7-15.6-15.6v-80C172.2,15,179.2,8,187.9,8z"/>
+			<path id="Rectangle-path_1_" class="st0" d="M23.6,8h117c8.6,0,15.6,7,15.6,15.6v154.1c0,8.6-7,15.6-15.6,15.6h-117
+				c-8.6,0-15.6-7-15.6-15.6V23.6C8,15,15,8,23.6,8z"/>
+			<path id="Rectangle-path_2_" class="st0" d="M23.6,209.3h117c8.6,0,15.6,7,15.6,15.6v80c0,8.6-7,15.6-15.6,15.6h-117
+				c-8.6,0-15.6-7-15.6-15.6v-80C8,216.3,15,209.3,23.6,209.3z"/>
+			<path id="Rectangle-path_3_" class="st0" d="M187.9,135.2h117c8.6,0,15.6,7,15.6,15.6v154.1c0,8.6-7,15.6-15.6,15.6h-117
+				c-8.6,0-15.6-7-15.6-15.6V150.8C172.2,142.2,179.2,135.2,187.9,135.2z"/>
+		</g>
+	</g>
+</g>
 </svg>

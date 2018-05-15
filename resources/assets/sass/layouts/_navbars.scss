@@ -24,7 +24,7 @@
 	&__container {
 		display:            flex;
 		flex-direction:     column;
-	padding:            rem($padding-website);
+		padding:            rem($padding-website);
 		position:           relative;
 		width:              100%;
 	}
@@ -33,9 +33,24 @@
 		padding:            rem(10px) 0;
 		width:              100%;
 
-		a {
+		&:hover a{
+			color:$primary;
+		}
+
+		svg{
+			width:						rem(30px);
+			height:						rem(20px);
+			max-width:				rem(30px);
+			max-height:				rem(20px);
+			margin-right:			rem(10px);
+		}
+
+		> a {
 			color:             $grey;
 			font-size:         rem(14px);
+			display:           flex;
+			align-items:       center;
+			transition: 			 all 150ms ease-out;
 		}
 			
 		&.compte {
