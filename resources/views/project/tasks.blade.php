@@ -41,6 +41,7 @@
             @cardTodo(['type' => '0', 'nb' => $projectTasks->todo->count, 'large'=>true])@endcardTodo 
             @foreach($projectTasks->todo->tasks as $t)
                 @cardTask( [
+                    'id'         => $t->id,
                     'title'      => $t->name,
                     'status'     => 'todo',
                     'priority'   => 'low',
@@ -53,6 +54,7 @@
             @cardTodo(['type' => '1', 'nb' => $projectTasks->doing->count, 'large'=>true])@endcardTodo
             @foreach($projectTasks->doing->tasks as $t)
                 @cardTask( [
+                    'id'         => $t->id,
                     'title'      => $t->name,
                     'status'     => 'doing',
                     'priority'   => 'low',
@@ -65,6 +67,7 @@
             @cardTodo(['type' => '2', 'nb' => $projectTasks->done->count, 'large'=>true])@endcardTodo
             @foreach($projectTasks->done->tasks as $t)
                 @cardTask( [
+                    'id'         => $t->id,
                     'title'      => $t->name,
                     'status'     => 'done',
                     'priority'   => 'low',

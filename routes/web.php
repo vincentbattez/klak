@@ -34,7 +34,7 @@ Route::get('/project/{slug}/tasks','ProjectController@allTask')
 /*———————————————————————————————————*\
     $ TEAMS
 \*———————————————————————————————————*/
-Route::get('/teams','TeamController@index')
+Route::get('/teams','TeamController@myTeams')
     ->middleware('auth')
 ;
 Route::get('/team/{slug}','TeamController@index')

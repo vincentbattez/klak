@@ -4,12 +4,11 @@
 .projectTasks{
     display:               grid;
     grid-gap:              rem($padding-website);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top:            rem($h-header);
 
     &__titre{
-        grid-column-start: 1;
-        grid-column-end:   5;
+        grid-column: 1 / 4;
     }
 
     &__list{
