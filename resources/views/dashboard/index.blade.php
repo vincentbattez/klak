@@ -17,37 +17,26 @@
 ----------------}}
 @section('content')
 <section class="container">
-    <a href="styleguide">styleguide</a>
 
     @listProject([
-        'title'=>'Projects List',
+        'title'=>'Latest projects',
         'projects'=>$projects,
     ])
     @endlistProject
 
+    @listTodo([
+        'title'=>'All Tasks Statistics',
+        'todos'=>$todos,
+        'doing'=>$doing,
+        'done'=>$done,
+    ])
+    @endlistTodo
+    
     <div class="addProject">
-        <h3>Add team</h3>
+        <h3 class='h3'>Add team</h3>
         @addTeam
         @endaddTeam
     </div>
-
-    @cardTodo( [
-        'type' => '0',
-        'nb'   => $todos,
-    ])
-    @endcardTodo
-    @cardTodo( [
-        'type' => '1',
-        'nb'   => $doing,
-    ])
-    @endcardTodo
-    @cardTodo( [
-        'type' => '2',
-        'nb'   => $done,
-    ])
-    @endcardTodo
-
-    
     
 </section>
 @endsection

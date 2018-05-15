@@ -30,7 +30,7 @@ a {
 
 .h3 {
   @include       font-size($fz-h3);
-  color:         $grey;
+  color:         $grey--d1;
   margin-bottom: rem(10px);
 }
 
