@@ -272,9 +272,9 @@
     $ CARD--TODO
 \*———————————————————————————————————*/
 .card--todo {
+  @extend          %f-xy;
   color:           white;
   padding:         rem(5px) rem(20px);
-  @extend          %f-xy;
   justify-content: flex-end;
   
   &.todo  { background-image: $blue--gradient;   }
@@ -300,5 +300,9 @@
   &.todo--small {
     max-width: 200px;
     padding-right:   rem(50px);
+  }
+  &.todo--large {
+    max-width: 100%;
+    justify-content: center;
   }
 } // .card--todo
