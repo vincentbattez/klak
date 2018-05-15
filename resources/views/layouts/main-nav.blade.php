@@ -5,12 +5,13 @@
   </a>
 
   <h1 class='main-nav__titre'>Klak, tasks manager for team</h1>
+
+
   @auth
-    <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
-    <li class="main-nav__item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Dashboard</a></li>
-    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">team</a></li>
-    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">project</a></li>
-    <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTask' ? 'active' : null }}">task</a></li>
+  <li class="main-nav__item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Dashboard</a></li>
+  <li class="main-nav__item"><a href='{{ url('/projects') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">Projects</a></li>
+  <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">Teams</a></li>
+  <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
 
     <li class="main-nav__item compte">
       <div class='main-nav__compte'>

@@ -34,7 +34,9 @@
         
     
     <section class="projectTasks">
-            <h2 class="h2 projectTasks__titre">All tasks : <a href="/project/{{$project->slug}}">#{{$project->name}}</a></h2>
+        
+        <h2 class="h2 projectTasks__titre">All tasks</h2>
+        
         <section class="projectTasks__list">
             @cardTodo(['type' => '0', 'nb' => $projectTasks->todo->count, 'large'=>true])@endcardTodo 
             @foreach($projectTasks->todo->tasks as $t)
@@ -46,6 +48,7 @@
                 @endcardTask
             @endforeach
         </section>
+        
         <section class="projectTasks__list">                
             @cardTodo(['type' => '1', 'nb' => $projectTasks->doing->count, 'large'=>true])@endcardTodo
             @foreach($projectTasks->doing->tasks as $t)
@@ -57,6 +60,7 @@
                 @endcardTask
             @endforeach
         </section>
+        
         <section class="projectTasks__list">                
             @cardTodo(['type' => '2', 'nb' => $projectTasks->done->count, 'large'=>true])@endcardTodo
             @foreach($projectTasks->done->tasks as $t)
