@@ -8,10 +8,30 @@
 
 
   @auth
-  <li class="main-nav__item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Dashboard</a></li>
-  <li class="main-nav__item"><a href='{{ url('/projects') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">Projects</a></li>
-  <li class="main-nav__item"><a href='{{ url('/teams') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">Teams</a></li>
-  <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
+  <li class="main-nav__item">
+    <a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">
+      @icon('icon-dashboard', 'icon-dashboard')
+      Dashboard
+    </a>
+  </li>
+  <li class="main-nav__item">
+    <a href='{{ url('/projects') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">
+      @icon('icon-project', 'icon-project')
+      Projects
+    </a>
+  </li>
+  <li class="main-nav__item">
+    <a href='{{ url('/teams') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">
+      @icon('icon-team', 'icon-team')
+      Teams
+    </a>
+  </li>
+  <li class="main-nav__item">
+    <a href='{{ url('/logout') }}'class="nav-link">
+      @icon('icon-logout', 'icon-logout')
+      Logout
+    </a>
+  </li>
 
     <li class="main-nav__item compte">
       <div class='main-nav__compte'>
@@ -38,9 +58,18 @@
 
 
   @guest
-    <li class="main-nav__item"><a href='{{ url('/login') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Login</a></li>
-    <li class="main-nav__item"><a href='{{ url('/register') }}' class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}">Register</a></li>
-    <li class="main-nav__item"><a href='{{ url('/') }}' class="nav-link {{ Request::segment(1) === 'Landing' ? 'active' : null }}">Homepage</a></li>
+    <li class="main-nav__item">
+      <a href='{{ url('/login') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">
+        @icon('icon-lock', 'icon-lock')
+        Login
+      </a>
+    </li>
+    <li class="main-nav__item">
+      <a href='{{ url('/register') }}' class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}">
+        @icon('icon-edit', 'icon-edit')
+        Register
+      </a>
+    </li>
     <li class="main-nav__item compte">
         <div class='main-nav__compte'>
           <a href='/login' class="nav-link">Start session</a>
