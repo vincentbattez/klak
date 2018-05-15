@@ -42,8 +42,6 @@ class ProjectController extends Controller
                 'done'  => Task::projectTasks($project->id)->myTasks()->done(),
             ];
 
-            dd($project->date_formated);
-
             return view('project/index', [
                 'project'      => $project,
                 'projectTasks' => $projectTasks,
