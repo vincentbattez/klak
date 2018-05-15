@@ -1,2 +1,50 @@
 {
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/tests":        true,
+    "**/vendor":       true,
+    "**/storage":      true,
+    "**/bootstrap":    true,
+    "**/public":       true,
+
+
+    "resources/lang": true,
+    
+    "routes/api.php":      true,
+    "routes/channels.php": true,
+    "routes/console.php":  true,
+    
+    "app/Exceptions":                             true,
+    "app/Providers/AuthServiceProvider.php":      true,
+    "app/Providers/BroadcastServiceProvider.php": true,
+    "app/Providers/EventServiceProvider.php":     true,
+    "app/Providers/RouteServiceProvider.php":     true,
+    "app/Http/Middleware":                        true,
+    "app/Http/Kernel.php":                        true,
+    "app/Console":                                true,
+
+    "config/broadcasting.php": true,
+    "config/cache.php":        true,
+    "config/filesystems.php":  true,
+    "config/hashing.php":      true,
+    "config/image.php":        true,
+    "config/logging.php":      true,
+    "config/mail.php":         true,
+    "config/queue.php":        true,
+    "config/services.php":     true,
+    "config/session.php":      true,
+    "config/view.php":         true,
+
+
+    "**/**/.git*": true,
+    ".vscode*":    true,
+    ".env*":       true,
+    "artisan":     true,
+    "composer*":   true,
+    "package*":    true,
+    "phpunit.xml": true,
+    "readme.md":   true,
+    "server.php":  true,
+    "webpack*":    true,
+  }
 }
