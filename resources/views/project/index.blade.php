@@ -49,6 +49,7 @@
                     @cardTodo(['type' => '0', 'nb' => $myTasks->todo->count,])@endcardTodo 
                     @foreach($myTasks->todo->tasks as $t)
                         @cardTask( [
+                            'id'         => $t->id,
                             'title'      => $t->name,
                             'status'     => 'todo',
                             'priority'   => 'low',
@@ -60,6 +61,7 @@
                     @cardTodo(['type' => '1', 'nb' => $myTasks->doing->count,])@endcardTodo
                     @foreach($myTasks->doing->tasks as $t)
                         @cardTask( [
+                            'id'         => $t->id,
                             'title'      => $t->name,
                             'status'     => 'doing',
                             'priority'   => 'low',
@@ -71,6 +73,7 @@
                     @cardTodo(['type' => '2', 'nb' => $myTasks->done->count,])@endcardTodo
                     @foreach($myTasks->done->tasks as $t)
                         @cardTask( [
+                            'id'         => $t->id,
                             'title'      => $t->name,
                             'status'     => 'done',
                             'priority'   => 'low',
