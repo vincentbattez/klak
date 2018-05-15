@@ -212,17 +212,24 @@
   }
 
   // todo
-  .icon-todo circle  { stroke: $grey--l1; }
+  .icon-todo circle  { stroke: $grey--l1;  }
   // doing
-  .icon-doing circle { stroke: $grey--l1; }
-  .icon-doing rect   { fill: $grey--l1; }
+  .icon-doing circle { stroke: $grey--l1;  }
+  .icon-doing rect   { fill: $grey--l1;    }
   // done
-  .icon-done g       { fill: $grey--l1; }
+  .icon-done g       { fill: $grey--l1;    }
   // timer
-  .icon-timer g      { fill: $grey--l1; }
+  .icon-timer g      { fill: $grey--l1;    }
 
   .changeStatus {
     margin-right: 10px;
+
+    &:hover {
+      .icon-todo circle  { stroke: url(#linearGradient-blue);    }
+      .icon-doing rect   { fill: url(#linearGradient-orange);    }
+      .icon-doing circle { stroke: url(#linearGradient-orange);  }
+      .icon-done g       { fill: url(#linearGradient-green);     }
+    }
   }
 
   [type=submit] {

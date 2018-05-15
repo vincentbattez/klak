@@ -85,6 +85,14 @@ Route::post('create/task/', 'createController@task')
     ->middleware('auth')
 ;
 
+/*———————————————————————————————————*\
+    $ UPDATE
+\*———————————————————————————————————*/
+Route::post('update/task/{idTask}', 'UpdateController@changeStatusTask')
+    ->name('updateStatusTask')
+    ->where('idUser', '[0-9]+')
+    ->middleware('auth')
+;
 
 /*———————————————————————————————————*\
     $ REMOVE (PROJECT, TEAM, TASK)

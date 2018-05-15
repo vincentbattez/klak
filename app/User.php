@@ -77,7 +77,7 @@ class User extends Authenticatable
             @type      [Data]
             @dataType  {}
              
-            @return    Toutes les équipes de l'utilisateur connecté
+            @return    Tous les projets de l'utilisateur connecté
     */
     public function scopeMyProjects() {
         $project = Project::select('*');
