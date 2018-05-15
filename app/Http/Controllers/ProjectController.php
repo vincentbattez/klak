@@ -42,6 +42,8 @@ class ProjectController extends Controller
                 'done'  => Task::projectTasks($project->id)->myTasks()->done(),
             ];
 
+            
+
             return view('project/index', [
                 'project'      => $project,
                 'projectTasks' => $projectTasks,

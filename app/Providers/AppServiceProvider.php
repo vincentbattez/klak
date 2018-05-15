@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.avatar', 'avatar');
         Blade::component('components.cardTodo', 'cardTodo');
         Blade::component('components.listTodo', 'listTodo');
+        Blade::component('components.deadline', 'deadline');
 
         Blade::component('forms.addProject', 'addProject');
         Blade::component('forms.addTeam', 'addTeam');
