@@ -8,6 +8,11 @@ php artisan key:generate
 cp .env.example .env
 ```
 
+# Start work
+```bash
+php artisan serve
+```
+
 # Migrate
 ``` bash
 - php artisan migrate:reset

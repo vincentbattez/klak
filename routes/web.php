@@ -23,6 +23,12 @@ Route::get('/project/{slug}','ProjectController@index')
     ->middleware('auth')
 ;
 
+Route::get('/project/{slug}/tasks','ProjectController@allTask')
+    //->where('id', '[0-9]+')
+    ->where('slug', '^[a-z][-a-z0-9]*$')//'[A-Za-z]+')
+    ->middleware('auth')
+;
+
 /*———————————————————————————————————*\
     $ TEAMS
 \*———————————————————————————————————*/

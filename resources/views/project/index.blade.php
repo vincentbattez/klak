@@ -79,6 +79,8 @@
                     @endforeach
                 </section>
             </div>
+            <a href="/project/{{$project->slug}}/tasks">see all task</a>
+            
         </section>
         
         <h2 class="h2">Project tasks</h2>

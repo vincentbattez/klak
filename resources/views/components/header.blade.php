@@ -57,5 +57,5 @@
         <input type="hidden" value="{{ csrf_token() }}" name="_token">
       </form>
     </div>
-
+    
   </div>
