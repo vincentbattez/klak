@@ -42,8 +42,6 @@ class ProjectController extends Controller
                 'done'  => Task::projectTasks($project->id)->myTasks()->done(),
             ];
 
-            
-
             return view('project/index', [
                 'project'      => $project,
                 'projectTasks' => $projectTasks,
@@ -61,7 +59,7 @@ class ProjectController extends Controller
         // ON RECUREPERE LES INFORMATION DU PROJET
         $project = Project::where('slug', $slug)->first();
 
-        if($project){
+        if($project) {
 
             $projectTasks = (object) [
                 'todo'  => Task::projectTasks($project->id)->todo(),
