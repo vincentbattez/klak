@@ -92,9 +92,9 @@
             <div class="projectSingle__deadline">
                 <h3 class="h3">Deadline</h3>
                 @deadline([
-                    'start' => '2 mai 2018',
-                    'end'   => '6 juin 2018',
-                    'timer' => '2 mois 4 jours',
+                    'start' => $project->date_formated->humans->created,
+                    'end'   => $project->date_formated->humans->deadline,
+                    'timer' => $project->date_formated->humans->diffWithDeadline,
                     ])
                 @enddeadline
             </div>
