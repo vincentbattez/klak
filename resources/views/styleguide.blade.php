@@ -177,6 +177,7 @@
         @cardTask( [
           'title'      => 'Design homepage',
           'priority'   => 'high',
+          'status'     =>  'doing',
         ])
         @endcardTask
 
@@ -184,6 +185,7 @@
         @cardTask( [
           'title'      => 'Audit SEO',
           'priority'   => 'low',
+          'status'     => 'todo',
         ])
         @endcardTask
 

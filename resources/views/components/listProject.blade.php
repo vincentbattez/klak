@@ -10,7 +10,7 @@
 
 @if($projects)
   <section>
-    <h3>{{$title}}</h3>
+    <h3 class='h3'>{{$title}}</h3>
     <div class='list list-projects'>
       @foreach($projects as $p)
         @cardProject( [
