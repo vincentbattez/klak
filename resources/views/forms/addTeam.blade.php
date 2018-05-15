@@ -12,6 +12,7 @@
 
 <form class='forms' action="{{ URL::to('create/team') }}" method="post" enctype="multipart/form-data">
 
+  <label for="name">Team name *</label> <br>
   <input type="text" placeholder='New team name' name="name"><br>
   <input type="file" name="img"><br>
   <input type="submit" value="Upload" name="submit">

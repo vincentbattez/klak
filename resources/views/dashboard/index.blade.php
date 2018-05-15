@@ -17,26 +17,26 @@
 ----------------}}
 @section('content')
 <section class="container">
+    <div class="dashboard__content">
+        @listProject([
+            'title'=>'Latest projects',
+            'projects'=>$projects,
+        ])
+        @endlistProject
 
-    @listProject([
-        'title'=>'Latest projects',
-        'projects'=>$projects,
-    ])
-    @endlistProject
-
-    @listTodo([
-        'title'=>'All Tasks Statistics',
-        'todos'=>$todos,
-        'doing'=>$doing,
-        'done'=>$done,
-    ])
-    @endlistTodo
-    
-    <div class="addProject">
-        <h3 class='h3'>Add team</h3>
-        @addTeam
-        @endaddTeam
+        @listTodo([
+            'title'=>'All Tasks Statistics',
+            'todos'=>$todos,
+            'doing'=>$doing,
+            'done'=>$done,
+        ])
+        @endlistTodo
+        
+        <div class="addProject">
+            <h3 class='h3'>Create a new team</h3>
+            @addTeam
+            @endaddTeam
+        </div>
     </div>
-    
 </section>
 @endsection

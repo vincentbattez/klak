@@ -3,3 +3,10 @@
 /*------------------------------------*\
     $ DASHBOARD
 \*------------------------------------*/
+.dashboard {
+    &__content {
+        display:               grid;
+        grid-gap:              rem($padding-website);
+        grid-template-columns: 1fr 300px 1fr;
+    }
+}
