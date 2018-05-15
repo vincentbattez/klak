@@ -38,4 +38,29 @@ class ProjectController extends Controller
             return redirect()->route('dashboard/index');
         }
     }
+
+
+    public function allTask($slug) {
+
+        // ON RECUREPERE LES INFORMATION DU PROJET
+        $project = Project::where('slug', $slug)->first();
+
+        if($project){
+
+            $projectTasks = (object) [
+                'todo'  => Task::projectTasks($project->id)->todo(),
+                'doing' => Task::projectTasks($project->id)->doing(),
+                'done'  => Task::projectTasks($project->id)->done(),
+            ];
+
+            return view('project/tasks', [
+                'project' => $project,
+                'projectTasks' => $projectTasks,
+            ]);
+        }
+        else{
+            return redirect()->route('dashboard/index');
+        }
+    }
+
 }

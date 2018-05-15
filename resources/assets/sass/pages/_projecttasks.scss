@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    $ projectTasks
+\*------------------------------------*/
+.projectTasks{
+    display:               grid;
+    grid-gap:              rem($padding-website);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top:            rem($h-header);
+
+    &__titre{
+        grid-column-end:   4;
+        grid-column-start: 1;
+    }
+
+    &__list{
+
+    }
+}
