@@ -53,6 +53,7 @@
   \* - - - - - - - - - - - - */
   &__title {
     @include font-size($fz-body);
+    padding-bottom: rem(5px);
 
     a::before{
       content:'';
@@ -71,11 +72,11 @@
   \* - - - - - - - - - - - - */
   &__subtitle {
     @include font-size($fz-small);
-    color:   $grey;
 
     a{
       position: relative;
       z-index: 2;
+      color: $grey;
     }
   }
 

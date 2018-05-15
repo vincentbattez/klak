@@ -13,8 +13,9 @@
 
 
 <form class='forms' action="{{ URL::to('create/task') }}" method="post">
-                
-  <input type="text" placeholder='Task name' name="name"><br>
+  
+  <label for="name">Task name *</label>
+  <input type="text" name="name"><br>
 
   
   <select name="id_user">
