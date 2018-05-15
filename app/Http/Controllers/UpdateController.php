@@ -21,17 +21,19 @@ class UpdateController extends Controller
   */
 	public function changeStatusTask($idTask, Request $request) {
     /*—————————————— AUTRES ——————————————————*/
-    if(!$request->exists('archive')){
+    // if(!$request->exists('archive')){
       
       $idStatus = $request->idStatus;
   
-      if ($idStatus < 2) {
+      if ($idStatus < 3) {
         $idStatus++;
+      } else {
+        $idStatus--;
       }
     /*—————————————— ARCHIVE ——————————————————*/
-    }else{
-      $idStatus = 3;
-    }
+    // }else{
+      // $idStatus = 3;
+    // }
 
     Task::select('id','status')->whereId($idTask)->update([
       'status'=> $idStatus
