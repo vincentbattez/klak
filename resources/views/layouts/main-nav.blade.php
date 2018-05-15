@@ -10,7 +10,7 @@
   @auth
   <li class="main-nav__item"><a href='{{ url('/dashboard') }}' class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">Dashboard</a></li>
   <li class="main-nav__item"><a href='{{ url('/projects') }}' class="nav-link {{ Request::segment(1) === 'createProject' ? 'active' : null }}">Projects</a></li>
-  <li class="main-nav__item"><a href='{{ url('#') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">Teams</a></li>
+  <li class="main-nav__item"><a href='{{ url('/teams') }}' class="nav-link {{ Request::segment(1) === 'createTeam' ? 'active' : null }}">Teams</a></li>
   <li class="main-nav__item"><a href='{{ url('/logout') }}'class="nav-link">Logout</a></li>
 
     <li class="main-nav__item compte">
