@@ -19,8 +19,8 @@
     "app/Providers/BroadcastServiceProvider.php": true,
     "app/Providers/EventServiceProvider.php":     true,
     "app/Providers/RouteServiceProvider.php":     true,
-    "app/Http/Middleware":                        true,
-    "app/Http/Kernel.php":                        true,
+    // "app/Http/Middleware":                        true,
+    // "app/Http/Kernel.php":                        true,
     "app/Console":                                true,
 
     "config/broadcasting.php": true,

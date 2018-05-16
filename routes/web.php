@@ -23,12 +23,12 @@ Route::get('/projects','ProjectController@myProjects')
 
 Route::get('/project/{slug}','ProjectController@index')
     ->where('slug', '^[a-z][-a-z0-9]*$')
-    ->middleware('auth')
+    ->middleware('auth', 'inTeam')
 ;
 
 Route::get('/project/{slug}/tasks','ProjectController@allTask')
     ->where('slug', '^[a-z][-a-z0-9]*$')
-    ->middleware('auth')
+    ->middleware('auth', 'inTeam')
 ;
 
 /*———————————————————————————————————*\
@@ -38,7 +38,7 @@ Route::get('/teams','TeamController@myTeams')
     ->middleware('auth')
 ;
 Route::get('/team/{slug}','TeamController@index')
-    ->middleware('auth')
+    ->middleware('auth', 'inTeam')
     ->where('slug', '^[a-z][-a-z0-9]*$')
 ;
 

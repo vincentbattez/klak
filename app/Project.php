@@ -90,8 +90,8 @@ class Project extends Model
             ],
             'diffWithDeadline'     => $deadlineDiff->invert,
         ];
+        
         return $date_formated;
-
     }
 }
 

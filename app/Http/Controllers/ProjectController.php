@@ -24,7 +24,7 @@ class ProjectController extends Controller
     }
 
     public function index($slug) {
-
+        
         // ON RECUREPERE LES INFORMATION DU PROJET
         $project = Project::where('slug', $slug)->first();
 
