@@ -1,28 +1,65 @@
 /*------------------------------------*\
     $ LIST
 \*------------------------------------*/
-.list{
-    background: #FFF;
-    box-shadow: $shadow-main;
-    padding: rem($padding-list);
+
+.list {
+  background: #FFF;
+  box-shadow: $shadow-main;
+  padding: rem($padding-list);
+
+  &__content {
+    .card--task {
+      &:first-child {
+        border-top-left-radius:  0;
+        border-top-right-radius: 0;
+      }
+
+      &:first-child:not(:last-child) {
+        border-bottom-left-radius:  0;
+        border-bottom-right-radius: 0;
+        border-bottom:              0;
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-bottom-left-radius:  0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius:     0;
+        border-top-right-radius:    0;
+        border-bottom:              0;
+      }
+      
+      &:last-child {
+        border-top-left-radius:  0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+  &--tasks {
+    .card--todo {
+      border-bottom-left-radius:  0;
+      border-bottom-right-radius: 0;
+    }
+    > section {
+      margin-bottom: 30px;
+    }
+  }
+  &--projects {}
+
+  &-todo {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+
+  }
+  &-projectTasks {
     
-    &--projects{
-
+    ul {
+      display: flex;
+      justify-content: space-between;
     }
 
-    &-todo {
-        background: none;
-        box-shadow: none;
-        padding: 0;
+    .h1 {
+      margin-left: rem(10px);
     }
-
-    &-projectTasks {
-        ul {
-            display: flex;
-            justify-content: space-between;
-        }
-        .h1 {
-            margin-left: rem(10px);
-        }
-    }
-}
+  }
+} // .list

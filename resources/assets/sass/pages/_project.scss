@@ -5,17 +5,13 @@
 \*------------------------------------*/
 
 .projectSingle{
-    margin-top:rem($h-header);
     display:               grid;
+    margin-top:            rem($h-header);
+    margin-left:           rem(-20px);
     grid-gap:              rem($padding-website);
     grid-template-columns: 1.4fr 1.6fr;
-    margin-left:           rem(-20px);
 
-    &__deadline {
-        margin-top: rem(25px);
-    }
-
-    &__addUser {
+    &__projectTasks > section {
         margin-top: rem(25px);
     }
 }
