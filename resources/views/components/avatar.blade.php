@@ -19,7 +19,7 @@ if(!isset($isName)) $isName = false;
 <div class="member">
 
   <div class="member__avatar {{$type}}">
-    <a href="/profile/{{$idUser}}">
+    <a href="/profile/{{$idUser}}" data-pjax-main>
 
       @if($img)
         <div class='member__avatar__content'>
@@ -38,7 +38,7 @@ if(!isset($isName)) $isName = false;
   
   @if(isset($isName) && $isName)
     <div class="member__name">
-      <a href="/profile/{{$idUser}}">{{$surname}} {{$name}}</a>
+      <a href="/profile/{{$idUser}}" data-pjax-main>{{$surname}} {{$name}}</a>
     </div>
   @endif
 

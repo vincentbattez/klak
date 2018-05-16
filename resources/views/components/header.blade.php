@@ -28,7 +28,7 @@
       @endif
 
       @if($teamSlug)
-        <a href='/team/{{$teamSlug}}'>&#64;{{$teamName}}</a>
+        <a href='/team/{{$teamSlug}}' data-pjax-main>&#64;{{$teamName}}</a>
       @endif
     </h1>
     
@@ -49,7 +49,7 @@
     @endif
 
     <div class="header__upload">
-      <form class='' action="{{ URL::to('create/addImage') }}" method="post" enctype="multipart/form-data">
+      <form class='' action="{{ URL::to('create/addImage') }}" method="post" enctype="multipart/form-data" data-pjax-main>
         <input type="file" name='img'>
         <input type="submit" value='Upload'>
         <input type="hidden" name='type' value='{{$type}}'>

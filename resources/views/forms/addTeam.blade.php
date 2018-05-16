@@ -10,7 +10,7 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/team') }}" method="post" enctype="multipart/form-data">
+<form class='forms' action="{{ URL::to('create/team') }}" method="post" enctype="multipart/form-data" data-pjax-main>
 
   <label for="name">Team name *</label><br>
   <input type="text" name="name"><br>

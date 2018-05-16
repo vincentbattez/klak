@@ -56,11 +56,11 @@
                     'isName'  => true,
                 ])
                 @endavatar
-                <form class='' action="{{ URL::to('remove/userteam') }}" method="post">
+                <form class='' action="{{ URL::to('remove/userteam') }}" method="post" data-pjax-main>
+                    @csrf
                     <input type="submit" value="Remove user" name="submit">
                     <input type="hidden" name="id_user" value='{{$member->id}}'>
                     <input type="hidden" name="id_team" value='{{$team->id}}'>
-                    <input type="hidden" value="{{ csrf_token() }}" name="_token">
                 </form>
             @endforeach
 

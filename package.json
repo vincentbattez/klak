@@ -24,6 +24,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "jquery-pjax": "^2.0.1",
         "reset-css": "^3.0.0"
     }
 }

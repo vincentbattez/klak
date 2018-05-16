@@ -12,7 +12,7 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/task') }}" method="post">
+<form class='forms' action="{{ URL::to('create/task') }}" method="post" data-pjax-main>
   
   <label for="name">Task name *</label>
   <input type="text" name="name"><br>

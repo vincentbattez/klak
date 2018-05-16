@@ -11,8 +11,8 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/project') }}" method="post" enctype="multipart/form-data">
-                
+<form class='forms' action="{{ URL::to('create/project') }}" method="post" enctype="multipart/form-data" data-pjax-main>
+  @csrf
   <input type="text" placeholder='Project Name' name="name"><br>
   <input type="file" name="img"><br>
   <input type="date" name="deadline"><br>
@@ -20,7 +20,6 @@
   
   <input type="hidden" name="id_user" value='{{Auth::user()->id}}'>
   <input type="hidden" name="id_team" value='{{$id}}'>
-  <input type="hidden" value="{{ csrf_token() }}" name="_token">
 
 </form>
 

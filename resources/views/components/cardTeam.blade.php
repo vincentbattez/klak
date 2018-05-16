@@ -25,7 +25,7 @@
   {{-- Content --}}  
   <div class="card__content-container">
     <div class="card__content">
-      <h4 class="card__title"><a href="{{$link_team}}">&#64;{{$title}}</a></h4>
+      <h4 class="card__title"><a href="{{$link_team}}" data-pjax-main>&#64;{{$title}}</a></h4>
     </div>
     <div class="card__link-container">
       <div class="card__link">@icon('icon-arrow', 'icon-arrow')</div>

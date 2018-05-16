@@ -1,12 +1,12 @@
 body {
   background-color: $grey--l2;
   
-  > nav {
+  .main-nav {
     max-width: rem($w-nav);
     width:     100%;
   }
   
-  > main {
+  main {
     position:     relative;
     padding:      rem($padding-website);
     margin-left:  rem($w-nav + $padding-website);

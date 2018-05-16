@@ -27,7 +27,7 @@
 <article class="card card--task {{$priotityModifier}}{{$modifier ?? ''}}">
   {{-- Content --}}
   <div class="card__content">
-  <form action="{{ route('updateStatusTask', $id) }}" method="post">
+  <form action="{{ route('updateStatusTask', $id) }}" method="post" data-pjax-main>
       @csrf
       <input type="hidden" name="idStatus" value="{{$idStatus}}">
       
@@ -37,18 +37,4 @@
       <h4 class="card__title">{{$title}}</h4>
     </div>
   </div>
-
-  {{-- <div class="card__action">
-    <span class="timePassed">1:50:10</span>
-    <form action="#">
-      <button class="launchTimer" type="submit"> @icon('icon-timer', 'icon-timer') </button>
-    </form>
-  </div> --}}
-  {{-- Footer --}}
-  {{-- <div class="card__footer">
-    <div class="card__deadline">
-      <span class="card__deadline-date">{{$deadline}}</span>
-      <span class="card__deadline-bar"></span>
-    </div>
-  </div> --}}
 </article>

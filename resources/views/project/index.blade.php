@@ -74,7 +74,7 @@
                     @endforeach
                 </section>
             </div>
-            <a href="/project/{{$project->slug}}/tasks">see all task</a>         
+            <a href="/project/{{$project->slug}}/tasks" data-pjax-main>see all task</a>         
         </section>
         
         <div class="projectSingle__projectTasks">

@@ -11,7 +11,7 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/userteam') }}" method="post">
+<form class='forms' action="{{ URL::to('create/userteam') }}" method="post" data-pjax-main>
                 
   <input type="text" placeholder='Email' name="email"><br>
   <input type="submit" value="Add user" name="submit">

@@ -11,7 +11,7 @@
 @if($todos)
   <section>
     <h3 class='h3'>{{$title}}</h3>
-    <div class='list list-todo'>
+    <div class='list list-todo' data-pjax-main>
         @cardTodo( [
           'type' => '0',
           'nb'   => $todos,
