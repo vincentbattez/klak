@@ -35,12 +35,15 @@
     }
   }
   &--tasks {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
     .card--todo {
       border-bottom-left-radius:  0;
       border-bottom-right-radius: 0;
     }
     > section {
-      margin-bottom: 30px;
+      margin-bottom: rem(30px);
     }
   }
   &--projects {}

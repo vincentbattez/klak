@@ -11,7 +11,7 @@
     grid-gap:              rem($padding-website);
     grid-template-columns: 1.4fr 1.6fr;
 
-    &__projectTasks > section {
+    &__projectTasks > section:not(:first-child) {
         margin-top: rem(25px);
     }
 }

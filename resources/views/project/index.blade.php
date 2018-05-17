@@ -33,10 +33,12 @@
 
     <div class="projectSingle">
         
-        {{-- TODO: créer composant list todo --}}
         <section>
-            <h3 class="h3">My tasks</h3>
-            <div class='list list--tasks'>
+            @list([ 'title'      => 'My tasks',
+                    'modifier'   => 'list--tasks',
+                    'url'        => $project->slug,
+                    'link_title' => 'See all task'
+                    ])    
                 <section>
                     @cardTodo(['type' => '0', 'nb' => $myTasks->todo->count, 'large' => true])@endcardTodo 
                     <div class="list__content">
@@ -79,40 +81,42 @@
                         @endforeach
                     </div>
                 </section>
-            </div>
-            <a href="/project/{{$project->slug}}/tasks" data-pjax-main>see all task</a>         
+            @endlist
         </section>
         
         <div class="projectSingle__projectTasks">
             <section class="projectSingle__addUser">
-                <h3 class="h3">Add task</h3>
-                @addTask([
-                    'idProject' => $project->id,
-                    'allMember' => $project->team->users,
-                ])
-                @endaddTask
+                @list(['title' => 'Add task'])
+                    @addTask([
+                        'idProject' => $project->id,
+                        'allMember' => $project->team->users,
+                    ])
+                    @endaddTask
+                @endlist
+                
             </section>
             
             <section class="projectSingle__deadline">
-                <h3 class="h3">Deadline</h3>
-                @deadline([
-                    'start'       => $project->date_formated->humans->created,
-                    'end'         => $project->date_formated->humans->deadline,
-                    'timer'       => $project->date_formated->humans->diffWithDeadline,
-                    'pourcentage' => $project->date_formated->diffWithDeadline_pourcent,
-                    ])
-                @enddeadline
+                @list(['title' => 'Deadline'])
+                    @deadline([
+                        'start'       => $project->date_formated->humans->created,
+                        'end'         => $project->date_formated->humans->deadline,
+                        'timer'       => $project->date_formated->humans->diffWithDeadline,
+                        'pourcentage' => $project->date_formated->diffWithDeadline_pourcent,
+                        ])
+                    @enddeadline
+                @endlist
             </section>
 
             <section>
-                <h3 class="h3">Project tasks</h3>
-                <div class="list list-projectTasks">
+                @list([ 'title' => 'Project tasks',
+                        'modifier' => 'list-projectTasks'])                
                     <ul>
                         <h1>@icon('icon-todo')  <span class="h1"> {{$projectTasks->todo->count}}  </span></h1>
                         <h1>@icon('icon-doing') <span class="h1"> {{$projectTasks->doing->count}} </span></h1>
                         <h1>@icon('icon-done')  <span class="h1"> {{$projectTasks->done->count}}  </span></h1>
                     </ul>
-                </div>
+                @endlist                
             </section>
         </div>
     </div>
