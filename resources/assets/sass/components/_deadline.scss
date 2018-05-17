@@ -31,8 +31,7 @@
     border-radius:    rem($h-deadline);
     background-color: $grey--l1;
 
-    &:after {
-      content:          '';
+    .color {
       width:            100%;
       height:           rem($h-deadline);
       display:          inline-block;
@@ -41,7 +40,6 @@
       left:             0;
       border-radius:    rem($h-deadline);
       background-image: $orange--gradient-rightLeft;
-
     }
   }
 

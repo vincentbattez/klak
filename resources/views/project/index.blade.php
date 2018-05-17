@@ -96,9 +96,10 @@
             <section class="projectSingle__deadline">
                 <h3 class="h3">Deadline</h3>
                 @deadline([
-                    'start' => $project->date_formated->humans->created,
-                    'end'   => $project->date_formated->humans->deadline,
-                    'timer' => $project->date_formated->humans->diffWithDeadline,
+                    'start'       => $project->date_formated->humans->created,
+                    'end'         => $project->date_formated->humans->deadline,
+                    'timer'       => $project->date_formated->humans->diffWithDeadline,
+                    'pourcentage' => $project->date_formated->diffWithDeadline_pourcent,
                     ])
                 @enddeadline
             </section>
