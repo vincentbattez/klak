@@ -67,7 +67,7 @@
                         'isName'  => true,
                     ])
                     @endavatar
-                    <form class='' action="{{ route('removeUserTeam') }}" method="post">
+                    <form class='' action="{{ route('removeUserTeam') }}" method="post" data-pjax-main>
                         @csrf
                         <input type="submit" value="Remove user" name="submit">
                         <input type="hidden" name="_method" value="DELETE">
