@@ -20,6 +20,7 @@
   </nav>
 
   <div pjax-container-main>
+    @include('components/alerts')
     <main role="document" class="{{$currentPage['bodyClass']}}">
       @yield('content')
     </main>

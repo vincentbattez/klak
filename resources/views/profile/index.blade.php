@@ -42,8 +42,9 @@
 
 				<form action="{{ URL::to('upload/user/picture/'.$user->id) }}" method="post" enctype="multipart/form-data" data-pjax-main>
 					<label>Select image to upload:</label>
-					<input type="file" name="file" id="file">
-				  	<input type="submit" value="Upload" name="submit">
+					<input type="file" name="file" id="file" required value="{{ old('file') }}">
+					<input type="submit" value="Upload" name="submit">
+					<input name="_method" type="hidden" value="PUT">
 					<input type="hidden" value="{{ csrf_token() }}" name="_token">
 				</form>
 

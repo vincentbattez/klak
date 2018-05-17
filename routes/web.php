@@ -67,7 +67,7 @@ Route::get('logout', 'Auth\LoginController@logout')
 /*———————————————————————————————————*\
     $ UPLOAD
 \*———————————————————————————————————*/
-Route::post('upload/user/picture/{idUser}', 'UploadController@userPicture')
+Route::put('upload/user/picture/{idUser}', 'UploadController@userPicture')
     ->where('idUser', '[0-9]+')
     ->middleware('auth')
 ;
@@ -94,7 +94,7 @@ Route::post('create/task/', 'createController@task')
 /*———————————————————————————————————*\
     $ UPDATE
 \*———————————————————————————————————*/
-Route::post('update/task/{idTask}', 'UpdateController@changeStatusTask')
+Route::put('update/task/{idTask}', 'UpdateController@changeStatusTask')
     ->name('updateStatusTask')
     ->where('idUser', '[0-9]+')
     ->middleware('auth')
@@ -103,6 +103,7 @@ Route::post('update/task/{idTask}', 'UpdateController@changeStatusTask')
 /*———————————————————————————————————*\
     $ REMOVE (PROJECT, TEAM, TASK)
 \*———————————————————————————————————*/
-Route::post('remove/userteam/', 'removeController@userteam')
+Route::delete('remove/userteam/', 'removeController@userteam')
+    ->name('removeUserTeam')
     ->middleware('auth')
 ;

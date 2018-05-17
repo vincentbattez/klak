@@ -27,7 +27,7 @@
     </a>
   </li>
   <li class="main-nav__item">
-    <a href='{{ url('/logout') }}'class="nav-link" data-pjax-main>
+    <a href='{{ url('/logout') }}'class="nav-link" data-pjax-body>
       @icon('icon-logout', 'icon-logout')
       Logout
     </a>

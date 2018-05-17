@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
+use App\Http\Requests\ProjectRequest;
+use App\Http\Requests\TaskRequest;
+use App\Http\Requests\UserTeamRequest;
+use App\Http\Requests\TeamRequest;
+
 use App\Project;
 use App\Team;
 use App\TeamUsers;
 use App\User;
 use App\Task;
-use Illuminate\Support\Facades\Input;
+
 use Image;
 
 class createController extends Controller
@@ -26,13 +33,7 @@ class createController extends Controller
             @redirect  Retour à la page précédente
              
     */
-    public function userteam(Request $request){
-        //GET & VALIDATE FIELD        
-        $request->validate([
-            'email'   => 'required|string|email|max:255',
-            'id_team' => 'required',
-        ]);
-
+    public function userteam(UserTeamRequest $request){
         // user exist
         $user = User::where('email', $request->email)->first();
 
@@ -60,13 +61,7 @@ class createController extends Controller
             @return    Ajoute une nouvelle équipe
             @redirect  Redirige vers la page de la nouvelle l'équipe
     */
-    public function team(Request $request){
-        //GET & VALIDATE FIELD
-        $request->validate([
-            'name' => 'required|string|min:3',
-            'id_user' => 'required',
-        ]);
-
+    public function team(TeamRequest $request){
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
 
@@ -106,14 +101,7 @@ class createController extends Controller
             @return    Ajoute un nouveau projet à une équipe
             @redirect  Redirige vers la page du nouveau projet
     */
-    public function project(Request $request){
-        //GET & VALIDATE FIELD
-        $request->validate([
-            'name' => 'required|string|min:3',
-            'id_user' => 'required',
-            'id_team' => 'required'
-        ]);
-
+    public function project(ProjectRequest $request){
         //CREATE SLUG
         $slug = str_slug($request->name, '-');
 
@@ -149,15 +137,7 @@ class createController extends Controller
             @return    Ajoute une nouvelle tâche à un project
             @redirect  Retour à la page précédente
     */
-    public function task(Request $request){
-        //GET & VALIDATE FIELD
-        $request->validate([
-            'name'       => 'required|string|min:3',
-            'status'     => 'required',
-            'id_user'    => 'required',
-            'id_project' => 'required',
-        ]);
-
+    public function task(TaskRequest $request){
         //SAVE IN BDD
         $newProject = Task::create([
             'name'       => $request->name,

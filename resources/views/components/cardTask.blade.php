@@ -28,7 +28,8 @@
   {{-- Content --}}
   <div class="card__content">
   <form action="{{ route('updateStatusTask', $id) }}" method="post" data-pjax-main>
-      @csrf
+    @csrf
+      <input type="hidden" name="_method" value="PUT">    
       <input type="hidden" name="idStatus" value="{{$idStatus}}">
       
       <button class="changeStatus" type="submit">@icon("icon-$status", "icon-$status")</button>

@@ -71,24 +71,43 @@ class Project extends Model
         
         $dateCreated       = Carbon::parse($this->created_at);
         $humansDateCreated = Carbon::parse($this->created_at)->format('l j F Y');
-        
-        $deadline       = Carbon::parse($this->deadline);
+        $deadline          = Carbon::parse($this->deadline);
+
         $humansDeadline = Carbon::parse($this->deadline)->format('l j F Y');
+        if (
+            Carbon::now()->diffInDays($deadline) === 0 || // Moins d'un jours 
+            Carbon::now()->diffInDays($deadline) > 6 && Carbon::now()->diffInMonths($deadline) < 0 ||   // Plus d'une semaine ET moins d'une mois
+            Carbon::now()->diffInDays($deadline) > 0 && Carbon::now()->diffInDays($deadline) < 7 // Plus d'un jours ET moins d'une semaine
+        )
+            $nbShow = 2;
+        else
+            $nbShow = 3;
 
-        $humansDeadlineDiff = $dateCreated->diffForHumans($deadline, true, false, 3);
-        $deadlineDiff       = $dateCreated->diff($deadline);
+        $humansDeadlineDiff = Carbon::now()->diffForHumans($deadline, true, false, $nbShow);
+        $deadlineDiff       = Carbon::now()->diff($deadline);
 
-        if($deadlineDiff->invert === 0) { 
+        if($deadlineDiff->invert === 1) { 
             $humansDeadlineDiff = "Passed since " . $humansDeadlineDiff;
-        } 
+        }
 
+        if (
+            $deadline->timestamp - $dateCreated->timestamp == 0 ||
+            Carbon::now()->timestamp > $deadline->timestamp
+        ) {
+            $diffWithDeadline_pourcent = 100;
+        } else {
+
+            $diffWithDeadline_pourcent = ((Carbon::now()->timestamp - $dateCreated->timestamp) * 100) / ($deadline->timestamp - $dateCreated->timestamp);
+        }
+        
         $date_formated = (object) [
             'humans'   => (object) [
-                'created'          => $humansDateCreated,
-                'deadline'         => $humansDeadline,
-                'diffWithDeadline' => $humansDeadlineDiff,
+                'created'               => $humansDateCreated,
+                'deadline'              => $humansDeadline,
+                'diffWithDeadline'      => $humansDeadlineDiff,
             ],
-            'diffWithDeadline'     => $deadlineDiff->invert,
+            'diffWithDeadline'          => $deadlineDiff,
+            'diffWithDeadline_pourcent' => round($diffWithDeadline_pourcent, 2),
         ];
         
         return $date_formated;
