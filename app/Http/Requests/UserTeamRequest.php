@@ -23,7 +23,6 @@ class UserTeamRequest extends FormRequest
     public function rules() {
         return [
             'id_team' => 'required|integer',
-            'id_user' => 'required|integer',
         ];
     }
 }
