@@ -3,9 +3,10 @@
 \*------------------------------------*/
 
 .list {
-  background: #FFF;
-  box-shadow: $shadow-main;
-  padding: rem($padding-list);
+  background:    #FFF;
+  box-shadow:    $shadow-main;
+  padding:       rem($padding-list);
+  border-radius: 5px;
 
   &__content {
     .card--task {
@@ -46,14 +47,23 @@
       margin-bottom: rem(30px);
     }
   }
-  &--projects {}
+  &-projects {
+    .card:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
 
   &-todo {
     background: none;
     box-shadow: none;
     padding: 0;
 
+    .card:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
   }
+
   &-projectTasks {
     
     ul {

@@ -21,7 +21,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" data-pjax-main>
+                    <form method="POST" action="{{ route('login') }}" data-pjax-body>
                         @csrf
 
                         <div class="form-group row">

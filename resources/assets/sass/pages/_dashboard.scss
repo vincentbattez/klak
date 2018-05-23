@@ -3,10 +3,12 @@
 /*------------------------------------*\
     $ DASHBOARD
 \*------------------------------------*/
-.dashboard {
-    &__content {
-        display:               grid;
-        grid-gap:              rem($padding-website);
-        grid-template-columns: repeat(3, 1fr);
-    }
+&__content {
+  display: grid;
+  grid-gap: rem($padding-website);
+  grid-template-columns: 1.5fr repeat(2, 1fr);
+}
+
+.list-projects {
+  min-height: calc(100vh - 160px);
 }

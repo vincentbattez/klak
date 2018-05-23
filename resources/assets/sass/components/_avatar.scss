@@ -17,14 +17,18 @@
     position:        relative;
     overflow:        hidden;
     
-    &.small{
-      border-radius:   100%;
+    &.small,
+    &.small img,
+    &.small &__content{
+      border-radius: 100%;
       font-size:     rem(18px);
       height:        rem($sizeImg);
       width:         rem($sizeImg);
     }
     
-    &.medium{
+    &.medium,
+    &.medium img,
+    &.medium &__content{
       font-size:     rem(100px);
       height:        rem($sizeImg2);
       width:         rem($sizeImg2);
