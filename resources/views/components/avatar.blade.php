@@ -20,7 +20,7 @@ if(!isset($isName)) $isName = false;
 <div class="member {{$modifier ?? ''}}">
 
   <div class="member__avatar {{$type}}">
-    <a href="/profile/{{$idUser}}" data-pjax-main>
+    <a href="/profile/{{$idUser}}" data-pjax-body>
 
       @if($img)
         <div class='member__avatar__content'>
@@ -39,7 +39,7 @@ if(!isset($isName)) $isName = false;
   
   @if(isset($isName) && $isName)
     <div class="member__name">
-      <a href="/profile/{{$idUser}}" data-pjax-main>{{$surname}} {{$name}}</a>
+      <a href="/profile/{{$idUser}}" data-pjax-body>{{$surname}} {{$name}}</a>
     </div>
   @endif
 

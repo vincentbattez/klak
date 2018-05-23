@@ -56,7 +56,7 @@
         @endlist
         </div>
         <div class="addUser">
-            @list([ 'title' => 'Manege team'])
+            @list([ 'title' => 'Manage team'])
                 @foreach($team->users as $member)
                     @avatar( [
                         'type'    => 'small',

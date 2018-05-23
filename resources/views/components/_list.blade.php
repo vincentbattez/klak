@@ -19,6 +19,6 @@
   </div>
 
   @if(isset($url) && isset($link_title))
-    <a href="/project/{{$url}}/tasks" data-pjax-main>{{$link_title}}</a>
+    <a href="/project/{{$url}}/tasks" class="list__link" data-pjax-main>{{$link_title}}</a>
   @endif
 </section>
