@@ -40,7 +40,7 @@
 
 			<div class="profilUser__changeimage">
 
-				<form action="{{ URL::to('upload/user/picture/'.$user->id) }}" method="post" enctype="multipart/form-data" data-pjax-main>
+				<form action="{{ URL::to('upload/user/picture/'.$user->id) }}" method="post" enctype="multipart/form-data" data-pjax-body>
 					<label>Select image to upload:</label>
 					<input type="file" name="file" id="file" required value="{{ old('file') }}">
 					<input type="submit" value="Upload" name="submit">
