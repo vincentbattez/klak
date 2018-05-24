@@ -30,39 +30,52 @@
     @endheader
 
     <div class="projectSingle">
-        @listProject([
-            'title'=>'Projects List',
-            'projects'=>$projects,
-            ])
-        @endlistProject
+
+        @list([ 'title'      => 'Projects List',
+                'modifier'   => 'list-projects']) 
+            @foreach($projects as $p)
+                @cardProject( [
+                    'imageUrl'     => $p->imgSmall,
+                    'alt'          => 'image du projet '.$p->name,
+                    'title'        => $p->name,
+                    'team'         => $p->team->name,
+                    'link_project' => "/project/$p->slug",
+                    'link_team'    => '/team/'.$p->team->slug,
+                ])
+                @endcardProject
+            @endforeach
+        @endlist
         
         
         <div class="addProject">
-            <h3>Add project</h3>
+        @list([ 'title' => 'Add project'])
             @addProject([
                 'id'=>$team->id,
             ])
             @endaddProject
+        @endlist
         </div>
         <div class="addUser">
-            <h3>Manege team</h3>
-            @foreach($team->users as $member)
-                @avatar( [
-                    'type'    => 'small',
-                    'idUser'  => $member->id,
-                    'name'    => $member->name,
-                    'surname' => $member->surname,
-                    'img'     => $member->imgSmall,
-                    'isName'  => true,
-                ])
-                @endavatar
-                <form class='' action="{{ URL::to('remove/userteam') }}" method="post">
-                    <input type="submit" value="Remove user" name="submit">
-                    <input type="hidden" name="id_user" value='{{$member->id}}'>
-                    <input type="hidden" name="id_team" value='{{$team->id}}'>
-                    <input type="hidden" value="{{ csrf_token() }}" name="_token">
-                </form>
-            @endforeach
+            @list([ 'title' => 'Manage team'])
+                @foreach($team->users as $member)
+                    @avatar( [
+                        'type'    => 'small',
+                        'idUser'  => $member->id,
+                        'name'    => $member->name,
+                        'surname' => $member->surname,
+                        'img'     => $member->imgSmall,
+                        'isName'  => true,
+                    ])
+                    @endavatar
+                    <form class='' action="{{ route('removeUserTeam') }}" method="post" data-pjax-main>
+                        @csrf
+                        <input type="submit" value="Remove user" name="submit">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="id_user" value='{{$member->id}}'>
+                        <input type="hidden" name="id_team" value='{{$team->id}}'>
+                    </form>
+                @endforeach
+            @endlist
 
             @addUser([
                 'id'=>$team->id,

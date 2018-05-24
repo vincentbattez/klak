@@ -1,6 +1,6 @@
 <?php
 /*———————————————————————————————————*\
-    $ ADD PROJECT
+    $ ADD USER
 \*———————————————————————————————————*/
 /**
   * Variables
@@ -11,9 +11,9 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/userteam') }}" method="post">
+<form class='forms' action="{{ URL::to('create/userteam') }}" method="post" data-pjax-main>
                 
-  <input type="text" placeholder='Email' name="email"><br>
+  <input type="text" placeholder='Email' name="email" value="{{ old('email') }}" required><br>
   <input type="submit" value="Add user" name="submit">
   
   <input type="hidden" name="id_team" value='{{$id}}'>

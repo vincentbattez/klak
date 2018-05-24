@@ -12,8 +12,13 @@
     <span class="deadline__date date-start">{{$start}}</span>
     <span class="deadline__date date-end">{{$end}}</span>
   </div>
-  <span class="deadline__line"></span>
+  <span class="deadline__line">
+      <span class="color" style="width:{{$pourcentage}}%"></span>
+  </span>
   <div class="deadline__timer-container">
     @icon('icon-timer')<span class="deadline__timer">{{$timer}}</span>
   </div>
 </div>
+
+<script>
+</script>

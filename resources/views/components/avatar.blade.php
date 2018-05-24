@@ -11,15 +11,16 @@
   * @var $surname        @required   @type String   Surname
   * @var $img            @required   @type String   Image
   *
+  * @var $modifier       @optional   @type String   Modificateur
   * @var $isName         @optional   @type Bolean   nom de l'avatar
 */
 if(!isset($isName)) $isName = false;
 ?>
 
-<div class="member">
+<div class="member {{$modifier ?? ''}}">
 
   <div class="member__avatar {{$type}}">
-    <a href="/profile/{{$idUser}}">
+    <a href="/profile/{{$idUser}}" data-pjax-body>
 
       @if($img)
         <div class='member__avatar__content'>
@@ -38,8 +39,9 @@ if(!isset($isName)) $isName = false;
   
   @if(isset($isName) && $isName)
     <div class="member__name">
-      <a href="/profile/{{$idUser}}">{{$surname}} {{$name}}</a>
+      <a href="/profile/{{$idUser}}" data-pjax-body>{{$surname}} {{$name}}</a>
     </div>
   @endif
 
+  {{ $slot }}
 </div>

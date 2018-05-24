@@ -2,5 +2,23 @@
     $ FOOTER
 \*------------------------------------*/
 .main-footer {
-  // code footer
+  position:    absolute;
+  right:       0;
+  bottom:      -45px;
+  padding:     0 rem($padding-website) rem(10px) rem($padding-website);
+  font-weight: 300;
+  text-align:  right;
+
+  &,a {
+    @include  font-size(14px);
+    color:    $grey--l1;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .logo {
+    width:          40px;
+    vertical-align: -9px;
+    margin-left:     20px;
+  }
 }

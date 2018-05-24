@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    $ ALERTS
+\*------------------------------------*/
+.alert {
+  position:   absolute;
+  top:        0;
+  right:      0;
+  z-index:    2;
+  padding:    20px 40px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, .4);
+  
+  &--danger {
+    color:            $danger;
+    background-color: lighten($danger, 50);
+  }
+}

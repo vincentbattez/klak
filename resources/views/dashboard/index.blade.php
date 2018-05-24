@@ -16,27 +16,49 @@
     CONTENT
 ----------------}}
 @section('content')
-<section class="container">
+<div class="container">
     <div class="dashboard__content">
-        @listProject([
-            'title'=>'Latest projects',
-            'projects'=>$projects,
-        ])
-        @endlistProject
-
-        @listTodo([
-            'title'=>'All Tasks Statistics',
-            'todos'=>$todos,
-            'doing'=>$doing,
-            'done'=>$done,
-        ])
-        @endlistTodo
-        
+        @list([ 'title'      => 'My projects',
+                'modifier'   => 'list-projects']) 
+            @foreach($projects as $p)
+                @cardProject( [
+                    'imageUrl'     => $p->imgSmall,
+                    'alt'          => 'image du projet '.$p->name,
+                    'title'        => $p->name,
+                    'team'         => $p->team->name,
+                    'link_project' => "/project/$p->slug",
+                    'link_team'    => '/team/'.$p->team->slug,
+                ])
+                @endcardProject
+            @endforeach
+        @endlist
+        @list([ 'title'      => 'All Tasks Statistics',
+                'modifier'   => 'list-todo']) 
+            @cardTodo( [
+            'type' => '0',
+            'nb'   => $todos,
+            'large'=> true,
+            ])
+            @endcardTodo
+            @cardTodo( [
+            'type' => '1',
+            'nb'   => $doing,
+            'large'=> true,          
+            ])
+            @endcardTodo
+            @cardTodo( [
+            'type' => '2',
+            'nb'   => $done,
+            'large'=> true,          
+            ])
+            @endcardTodo
+        @endlist
         <div class="addProject">
-            <h3 class='h3'>Create a new team</h3>
-            @addTeam
-            @endaddTeam
+            @list(['title' => 'Create a new team'])
+                @addTeam
+                @endaddTeam
+            @endlist
         </div>
     </div>
-</section>
+</div>
 @endsection

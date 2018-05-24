@@ -1,6 +1,6 @@
 <?php
 /*———————————————————————————————————*\
-    $ ADD PROJECT
+    $ ADD TASK
 \*———————————————————————————————————*/
 /**
   * Variables
@@ -12,13 +12,13 @@
 ?>
 
 
-<form class='forms' action="{{ URL::to('create/task') }}" method="post">
+<form class='forms' action="{{ URL::to('create/task') }}" method="post" data-pjax-main>
   
   <label for="name">Task name *</label>
-  <input type="text" name="name"><br>
+  <input type="text" name="name" required min=3 value="{{ old('name') }}"><br>
 
   
-  <select name="id_user">
+  <select name="id_user" required value="{{ old('id_user') }}">
     @foreach($allMember as $member)
       <option value="{{$member->id}}">{{$member->surname}} {{$member->name}}</option>
     @endforeach  

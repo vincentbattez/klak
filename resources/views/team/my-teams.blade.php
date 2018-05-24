@@ -22,11 +22,18 @@
 <section class="container">
         
     <section class="my-project">
-        @listTeam([
-            'title'=>'My teams',
-            'teams'=>$teams,
-        ])
-        @endlistTeam
+        @list([ 'title'      => 'My teams',
+                'modifier'   => 'list-team']) 
+            @foreach($teams as $t)
+                @cardTeam( [
+                    'imageUrl'     => $t->imgSmall,
+                    'alt'          => 'image du projet '.$t->name,
+                    'title'        => $t->name,
+                    'link_team'    => '/team/'.$t->slug,
+                ])
+                @endcardTeam
+            @endforeach
+        @endlist
     </section>
         
 </section>

@@ -28,7 +28,7 @@
       @endif
 
       @if($teamSlug)
-        <a href='/team/{{$teamSlug}}'>&#64;{{$teamName}}</a>
+        <a href='/team/{{$teamSlug}}' data-pjax-main>&#64;{{$teamName}}</a>
       @endif
     </h1>
     
@@ -47,14 +47,14 @@
         @endforeach    
       </div>
     @endif
-
+    {{-- TODO: REMOVE URL::to(' --}}
     <div class="header__upload">
-      <form class='' action="{{ URL::to('create/addImage') }}" method="post" enctype="multipart/form-data">
-        <input type="file" name='img'>
+      <form class='' action="{{ URL::to('create/addImage') }}" method="post" enctype="multipart/form-data" data-pjax-main>
+        @csrf
+        <input type="file"   name='img' value="{{ old('img') }}" required>
         <input type="submit" value='Upload'>
         <input type="hidden" name='type' value='{{$type}}'>
         <input type="hidden" name='id' value='{{$id}}'>
-        <input type="hidden" value="{{ csrf_token() }}" name="_token">
       </form>
     </div>
     
