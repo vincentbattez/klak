@@ -47,8 +47,8 @@
   &__timer-container {
     .icon {
       vertical-align: middle;
-      width: 25px;
-      height: 25px;
+      width: rem(25px);
+      height: rem(25px);
 
       g {
         fill: $secondary;
@@ -57,6 +57,18 @@
   }
 
   &__timer {
-    margin-left: 10px;
+    margin-left: rem(10px);
   }
 }
+
+
+/*———————————————————————————————————*\
+    $ media: max-width: 1200px 
+\*———————————————————————————————————*/
+@media screen and (max-width: 1200px) {
+  .deadline {
+      &__date {
+        font-size: rem(16px);
+      }
+    }
+} // media: max-width: 1200px 
