@@ -4,14 +4,13 @@
     $ PROJECT
 \*------------------------------------*/
 
-.projectSingle{
-    display:               grid;
-    margin-top:            rem($h-header);
-    margin-left:           rem(-20px);
-    grid-gap:              rem($padding-website);
+.projectSingle {
+    display: grid;
+    margin-top: rem($h-header);
+    margin-left: rem(-20px);
+    grid-gap: rem($padding-website);
     grid-template-columns: 1.4fr 1.6fr;
-
-    &__projectTasks > section:not(:first-child) {
+    &__projectTasks>section:not(:first-child) {
         margin-top: rem(25px);
     }
 
@@ -20,9 +19,28 @@
     }
 }
 
-@include media('min-width:1540px'){
+
+@include media('min-width:1540px') {
     .container {
         width: 1170px;
         margin: 0 auto;
     }
-  };
+}
+
+/*———————————————————————————————————*\
+    $ media: max-width: 1200px 
+\*———————————————————————————————————*/
+@media screen and (max-width: 1200px) {
+    .projectSingle {
+        grid-template-columns: 0.6fr 1fr;
+    }
+} // media: max-width: 1200px
+
+/*———————————————————————————————————*\
+    $ media: max-width: 991px
+\*———————————————————————————————————*/
+@media screen and (max-width: 991px) {
+    .projectSingle {
+        grid-template-columns: 1fr;
+    }
+} // media: max-width: 991px 

@@ -20,3 +20,31 @@
 .list-projects {
   min-height: calc(100vh - 160px);
 }
+
+/*———————————————————————————————————*\
+    $ media: max-width: 1200px 
+\*———————————————————————————————————*/
+@media screen and (max-width: 1200px) {
+  &__content {
+    grid-template-columns: 1.5fr 1fr;
+
+    > .addProject {
+      grid-column: span 2;
+
+    }
+  }
+} // media: max-width: 1200px 
+
+/*———————————————————————————————————*\
+    $ media: max-width: 991px
+\*———————————————————————————————————*/
+@media screen and (max-width: 991px) {
+  &__content {
+    grid-template-columns: 1fr;
+
+    > .addProject {
+      grid-column: auto;
+
+    }
+  }
+} // media: max-width: 991px 
