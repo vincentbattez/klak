@@ -8,5 +8,11 @@
         display:               grid;
         grid-gap:              rem($padding-website);
         grid-template-columns: repeat(3, 1fr);
+
+        .card {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }

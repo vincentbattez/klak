@@ -78,7 +78,29 @@
         </section>
         
         <div class="projectSingle__projectTasks">
-            <section>
+
+            <div class="projectSingle__addUser">
+                <h3 class="h3">Add task</h3>
+                @addTask([
+                    'idProject' => $project->id,
+                    'allMember' => $project->team->users,
+                ])
+                @endaddTask
+            </div>
+            
+            <div class="projectSingle__deadline">
+                <h3 class="h3">Deadline</h3>
+                <div class="list">
+                    @deadline([
+                        'start' => $project->date_formated->humans->created,
+                        'end'   => $project->date_formated->humans->deadline,
+                        'timer' => $project->date_formated->humans->diffWithDeadline,
+                        ])
+                    @enddeadline
+                </div>
+            </div>
+
+            <section class="projectSingle__tasks">
                 <h3 class="h3">Project tasks</h3>
                 <div class="list list-projectTasks">
                     <ul>
@@ -89,24 +111,6 @@
                 </div>
             </section>
             
-            <div class="projectSingle__deadline">
-                <h3 class="h3">Deadline</h3>
-                @deadline([
-                    'start' => $project->date_formated->humans->created,
-                    'end'   => $project->date_formated->humans->deadline,
-                    'timer' => $project->date_formated->humans->diffWithDeadline,
-                    ])
-                @enddeadline
-            </div>
-
-            <div class="projectSingle__addUser">
-                <h3 class="h3">Add task</h3>
-                @addTask([
-                    'idProject' => $project->id,
-                    'allMember' => $project->team->users,
-                ])
-                @endaddTask
-            </div>
         </div>
     </div>
 </section>
